@@ -30,6 +30,7 @@
         transform: translate(-50%, -50%);
         text-align: center;
         color: white;
+        text-shadow: 2px 2px 50px rgba(0, 0, 0, 0.5);
         animation: fadeIn 2s forwards;
     }
     .visita {
@@ -60,7 +61,6 @@
         100% {
             transform: scale(0.8);
         }
-        
     }
 
     @keyframes fadeIn {
@@ -69,8 +69,6 @@
         }
         100% {
             opacity: 1;
-            
         }
-
     }
 </style>

@@ -7,8 +7,9 @@
         <!-- <div class="imageContainer">
             <img src={imageLogo} class="navbar-image" alt="Logo escape tours" />
         </div> -->
-        <li><a href="index">Inicio</a></li>
-        <li><a href="index">Acerca</a></li>
+        <li><a href="index">Sobre los tours</a></li>
+        <li><a href="index">¿Cómo reservar?</a></li>
+        <li><a href="index">Testimonios</a></li>
         <li><a href="index">Contacto</a></li>
     </ul>
 </nav>
@@ -45,7 +46,7 @@
         color: white;
         text-decoration: none;
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 400;
         transition: all 0.2s ease-in-out;
     }
 
