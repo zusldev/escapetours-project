@@ -8,8 +8,11 @@
             <img src={imageLogo} class="navbar-image" alt="Logo escape tours" />
         </div>
         <ul>
+            <!-- svelte-ignore a11y-invalid-attribute -->
             <li><a href="#">Inicio</a></li>
+            <!-- svelte-ignore a11y-invalid-attribute -->
             <li><a href="#">Acerca</a></li>
+            <!-- svelte-ignore a11y-invalid-attribute -->
             <li><a href="#">Contacto</a></li>
         </ul>
     </div>

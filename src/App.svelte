@@ -2,6 +2,7 @@
     import NavBar from "./lib/NavBar.svelte";
     import Body from "./lib/Body.svelte";
     import CityTour from "./lib/CityTour.svelte";
+    import Description from "./lib/Description.svelte";
 </script>
 
 <main>
@@ -12,6 +13,7 @@
         <CityTour title="Puerto peñasco" backgroundImage = "url('/src/assets/puertope.jpeg')"/>
         <CityTour title="San carlos" backgroundImage = "url('/src/assets/sancarlos.jpg')"/>
     </div>
+    <Description />
 </main>
 
 <style>
@@ -20,5 +22,6 @@
         justify-content: center;
         gap: 5rem;
         margin-top: 10px;
+        margin-bottom: 40px;
     }
 </style>
