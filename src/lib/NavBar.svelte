@@ -3,14 +3,16 @@
 </script>
 
 <nav>
-    <ul>
-        <!-- <div class="imageContainer">
+    <div class="container">
+        <div class="imageContainer">
             <img src={imageLogo} class="navbar-image" alt="Logo escape tours" />
-        </div> -->
-        <li><a href="index">Inicio</a></li>
-        <li><a href="index">Acerca</a></li>
-        <li><a href="index">Contacto</a></li>
-    </ul>
+        </div>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Acerca</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
 </nav>
 
 <style>
@@ -22,18 +24,20 @@
         padding: 20px 6px;
     }
 
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     ul {
         display: flex;
         align-items: center;
     }
 
-    /* .imageContainer {
-        margin-right: 10px;
-    }
-
     .navbar-image {
         height: 80px;
-    } */
+    }
 
     li {
         margin: 0 10px;

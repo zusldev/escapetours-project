@@ -60,7 +60,6 @@
         100% {
             transform: scale(0.8);
         }
-        
     }
 
     @keyframes fadeIn {
@@ -69,8 +68,6 @@
         }
         100% {
             opacity: 1;
-            
         }
-
     }
 </style>
