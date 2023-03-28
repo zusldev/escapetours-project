@@ -49,7 +49,7 @@
         color: white;
         text-decoration: none;
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 400;
         transition: all 0.2s ease-in-out;
     }
 
