@@ -6,7 +6,7 @@
             <div class="grow-0 shrink-0 basis-auto w-full lg:w-10/12 px-3">
                 <div class="grid md:grid-cols-2 gap-x-6 items-center">
                     <div class="mb-6 md:mb-0">
-                        <h2 class="text-3xl font-bold">
+                        <h2 class="text-3xl text-blue-500/40 font-bold">
                             No te pierdas nuestras noticias
                             <br />
                             <span class="text-yellow-300"
@@ -24,11 +24,11 @@
                             />
                             <button
                                 type="submit"
-                                class="inline-block px-7 py-3 bg-yellotext-yellow-300 font-medium text-sm leading-snug uppercase rounded shadow-md bg-yellow-300  hover:bg-gray-700 hover:shadow-lg focus:bg-gray-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-300 active:shadow-lg transition duration-150 ease-in-out"
+                                class="inline-block px-7 py-3 bg-yellotext-yellow-300 font-medium text-sm leading-snug uppercase rounded shadow-md bg-yellow-300 hover:text-white  hover:bg-blue-600 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-300 active:shadow-lg transition duration-150 ease-in-out"
                                 data-mdb-ripple="true"
                                 data-mdb-ripple-color="light"
                             >
-                                Subscribe
+                                Subscribirse
                             </button>
                         </div>
                     </div>

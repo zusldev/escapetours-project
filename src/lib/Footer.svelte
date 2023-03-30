@@ -1,132 +1,53 @@
-<div class="bg-gray-800 w-full p-8 text-white">
-    <div class="grid grid-rows-1 gap-8 md:grid-cols-12 xl:gap-8">
-        <div class="md:col-span-12 xl:col-span-4 flex flex-col gap-4">
-            <h1 class="text-3xl font-bold text-white">Escape Tours</h1>
-            <p class="text-white text-justify">
-                ¡Gracias por visitar Escape Tours! Esperamos que hayas
-                disfrutado de tu experiencia con nosotros. No dudes en
-                contactarnos para cualquier pregunta o comentario. ¡Esperamos
-                verte pronto de nuevo!
-            </p>
-        </div>
-        <div class="md:col-span-4 xl:col-span-2">
-            <h2 class="font-bold mb-6 uppercase">Menu</h2>
-            <nav class="flex flex-col gap-4">
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <a href="#" class="hover:underline"> Acerda de </a>
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <a href="#" class="hover:underline"> Contacto </a>
-                <!-- svelte-ignore a11y-invalid-attribute -->
-                <a href="#" class="hover:underline"> Preguntas frecuentes </a>
-            </nav>
-        </div>
-        <div class="md:col-span-4 xl:col-span-3">
-            <h2 class="font-bold mb-6 uppercase">Redes sociales</h2>
-            <nav>
-                <a
-                    href="https://www.facebook.com/escapetoursmx/"
-                    class="flex items-center gap-2 hover:bg-slate-600 p-2 rounded-lg transition-colors"
-                    target="_blank"
-                >
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                        class="w-[20px] h-[20px]"
-                        alt="JT Devs"
-                    />
-                    escapetoursmx
-                </a>
-                <a
-                    href="https://www.instagram.com/escapetoursmx/"
-                    class="flex items-center gap-2 hover:bg-slate-600 p-2 rounded-lg transition-colors"
-                    target="_blank"
-                >
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                        class="w-[20px] h-[20px]"
-                        alt="JT Devs"
-                    />
-                    escapetoursmx
-                </a>
-                <a
-                    href="https://twitter.com/escapetoursmx"
-                    class="flex items-center gap-2 hover:bg-slate-600 p-2 rounded-lg transition-colors"
-                    target="_blank"
-                >
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/512/1384/1384065.png"
-                        class="w-[20px] h-[20px]"
-                        alt="JT Devs"
-                    />
-                    escapetoursmx
-                </a>
-            </nav>
-        </div>
-        <div class="md:col-span-4 xl:col-span-3">
-            <h2 class="font-bold mb-6 uppercase">Contacto</h2>
-            <div class="flex flex-col gap-4">
-                <p class="flex items-center gap-2">
-                    <svg
+<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <div class="grid grid-flow-col gap-4">
+        <a class="link link-hover">Sobre nosotros</a>
+        <a class="link link-hover">Contactanos</a>
+        <a class="link link-hover">Preguntas frecuentes</a>
+        <a class="link link-hover">Ayuda</a>
+    </div>
+    <div>
+        <div class="grid grid-flow-col gap-4">
+            <a href="https://www.facebook.com/escapetoursmex"
+                ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    class="fill-current"
+                    ><path
+                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                    /></svg
+                ></a
+            >
+            <a href="https://www.instagram.com/escapetoursmex"
+                ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    class="fill-current"
+                    ><path
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    Hermosillo, Sonora, México
-                </p>
-                <p class="flex items-center gap-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                    </svg>
-                    escapetoursmx@gmail.com
-                </p>
-                <p class="flex items-center gap-2">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                        />
-                    </svg>
-                    (+52) 6457894728
-                </p>
-            </div>
+                        d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM12 15.88C9.86 15.88 8.12 14.14 8.12 12C8.12 9.86 9.86 8.12 12 8.12C14.14 8.12 15.88 9.86 15.88 12C15.88 14.14 14.14 15.88 12 15.88ZM17.92 6.88C17.87 7 17.8 7.11 17.71 7.21C17.61 7.3 17.5 7.37 17.38 7.42C17.26 7.47 17.13 7.5 17 7.5C16.73 7.5 16.48 7.4 16.29 7.21C16.2 7.11 16.13 7 16.08 6.88C16.03 6.76 16 6.63 16 6.5C16 6.37 16.03 6.24 16.08 6.12C16.13 5.99 16.2 5.89 16.29 5.79C16.52 5.56 16.87 5.45 17.19 5.52C17.26 5.53 17.32 5.55 17.38 5.58C17.44 5.6 17.5 5.63 17.56 5.67C17.61 5.7 17.66 5.75 17.71 5.79C17.8 5.89 17.87 5.99 17.92 6.12C17.97 6.24 18 6.37 18 6.5C18 6.63 17.97 6.76 17.92 6.88Z"
+                        fill="#a6adbb"
+                    /></svg
+                ></a
+            >
+            <a href="https://www.facebook.com/escapetoursmex"
+                ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    class="fill-current"
+                    ><path
+                        d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                    /></svg
+                ></a
+            >
         </div>
     </div>
-    <hr class="my-4" />
-    <div class="flex flex-col xl:flex-row gap-4 items-center justify-between">
-        <p class="text-white text-center md:text-left">
-            &copy; 2022
-            <span class="text-white font-bold">Escape tours</span> Todos los derechos
-            reservados.
-        </p>
-        <div class="flex flex-col md:flex-row items-center gap-2">
-            <!-- svelte-ignore a11y-invalid-attribute -->
-            <a href="#" class="text-white hover:text-white transition-colors">
-                Terminos y condiciones
-            </a>
-            <span class="hidden md:flex">|</span>
-            <!-- svelte-ignore a11y-invalid-attribute -->
-            <a href="#" class="text-white hover:text-white transition-colors">
-                Política de privacidad
-            </a>
-        </div>
+    <div>
+        <p>Copyright © 2023 - All right reserved by Escape tours</p>
     </div>
-</div>
+</footer>
