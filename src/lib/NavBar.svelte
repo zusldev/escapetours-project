@@ -4,14 +4,14 @@
 
 <nav>
     <div class="container">
-        <div class="imageContainer">
+        <!-- <div class="imageContainer">
             <img src={imageLogo} class="navbar-image" alt="Logo escape tours" />
-        </div>
+        </div> -->
         <ul>
             <!-- svelte-ignore a11y-invalid-attribute -->
             <li><a href="#">Inicio</a></li>
             <!-- svelte-ignore a11y-invalid-attribute -->
-            <li><a href="#">Acerca</a></li>
+            <li><a href="#">Acerca de</a></li>
             <!-- svelte-ignore a11y-invalid-attribute -->
             <li><a href="#">Contacto</a></li>
         </ul>
@@ -31,6 +31,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
     ul {
@@ -38,9 +39,9 @@
         align-items: center;
     }
 
-    .navbar-image {
+    /* .navbar-image {
         height: 80px;
-    }
+    } */
 
     li {
         margin: 0 10px;

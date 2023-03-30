@@ -9,7 +9,7 @@
     });
 </script>
 
-<div class="box" style="background-image: {backgroundImage}">
+<div class="box" style="background-image: url({backgroundImage})">
     <div class="title">{title}</div>
 </div>
 
@@ -22,6 +22,7 @@
         background-position: center;
         cursor: pointer;
         transition: all 0.3s ease;
+        border-radius: 1rem;
     }
 
     .box:hover {
