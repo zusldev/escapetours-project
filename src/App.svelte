@@ -1,4 +1,5 @@
 <script>
+    import FAQ from "./lib/FAQ.svelte";
     import NavBar from "./lib/NavBar.svelte";
     import Body from "./lib/Body.svelte";
     import CityTour from "./lib/CityTour.svelte";
@@ -9,39 +10,42 @@
     import sanCarlos from "./assets/sancarlos.jpg";
     import FlexPanels from "./lib/FlexPanels.svelte";
     import Panels from "./lib/Panels.svelte";
+    import Contact from "./lib/Contact.svelte";
+    import Footer from "./lib/Footer.svelte";
+    import Email from "./lib/Email.svelte";
+    import SocialMedia from "./lib/SocialMedia.svelte";
+    import ToursGallery from "./lib/ToursGallery.svelte";
+    import BahiaKino from "./lib/BahiaKino.svelte";
+    import Gallery from "./lib/Gallery.svelte";
 </script>
 
 <main>
     <div>
+        <NavBar />
         <Body />
+        <Email />
     </div>
-    <section class="container">
-        <div class="city-tours">
-            <CityTour title="Bahía de Kino" backgroundImage={bahiaKino} />
-            <CityTour title="Puerto peñasco" backgroundImage={puertoPe} />
-            <CityTour title="San carlos" backgroundImage={sanCarlos} />
-        </div>
-        <Description />
-    </section>
+    <div class="container p-2 mt-10 mb-10">
+        <BahiaKino />
+        <Gallery />
+        <BahiaKino />
+        <Gallery />
+        <FAQ />
+        <ToursGallery />
+        <Contact />
+        <SocialMedia />
+    </div>
+    <Footer />
 </main>
 
 <style>
-    .city-tours {
-        display: flex;
-        justify-content: center;
-        gap: 5rem;
-        margin-top: 2rem;
-    }
-
     .container {
-        background-color: white;
-        padding: 20px;
+        background-color: rgb(0, 0, 0);
+        padding: 10px;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
         height: 100%;
-        /* background: rgba(204,100,7, 0.7); */
-        border: 3px solid transparent;
-        width: 80%;
+        max-width: 80%;
     }
 </style>

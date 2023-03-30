@@ -22,9 +22,15 @@
     nav {
         background-color: transparent;
         display: flex;
+        align-items: center;
+        position: fixed;
         justify-content: space-between;
         justify-content: center;
-        padding: 20px 6px;
+        padding: 30px 6px;
+        width: 100%;
+        z-index: 100;
+        background-color: black;
+        color: white;
     }
 
     .container {
