@@ -1,8 +1,14 @@
-<footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+<footer
+    class="footer footer-center p-10 bg-[#1d1d1f] text-base-content rounded"
+>
     <div class="grid grid-flow-col gap-4">
+        <!-- svelte-ignore a11y-missing-attribute -->
         <a class="link link-hover">Sobre nosotros</a>
+        <!-- svelte-ignore a11y-missing-attribute -->
         <a class="link link-hover">Contactanos</a>
+        <!-- svelte-ignore a11y-missing-attribute -->
         <a class="link link-hover">Preguntas frecuentes</a>
+        <!-- svelte-ignore a11y-missing-attribute -->
         <a class="link link-hover">Ayuda</a>
     </div>
     <div>

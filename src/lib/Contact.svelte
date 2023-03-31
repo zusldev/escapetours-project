@@ -1,5 +1,9 @@
+<script>
+    import SocialMedia from "./SocialMedia.svelte";
+
+</script>
 <!-- Container for demo purpose -->
-<div class="my-24 px-6 mx-auto mt-56">
+<div class="px-6 mx-auto">
     <!-- Section: Design Block -->
     <section class="mb-32 text-gray-800">
         <style>
@@ -7,7 +11,7 @@
                 height: 500px;
             }
         </style>
-        <h2 class="text-4xl font-bold text-yellow-300 text-center mb-8">Contacto</h2>
+        <SocialMedia />
         <div class="block rounded-lg shadow-lg bg-[#EDEDED]">
             <div class="flex flex-wrap items-center">
                 <div

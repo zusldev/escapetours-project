@@ -2,7 +2,7 @@
     import imageLogo from "../assets/LogoEscapeTours.png";
 </script>
 
-<div class="navbar bg-black h-20 fixed z-20 p-4">
+<div class="navbar bg-[#050505] h-20 fixed z-20 p-4">
     <div class="navbar-start">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <div class="dropdown">
@@ -54,7 +54,7 @@
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
             <li
-                class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
+                class="hover:border-b-2 hover:bg-black hover:border-yellow-300 transition hover:bg-clip-border hover:text-yellow-300"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <a>Inicio</a>

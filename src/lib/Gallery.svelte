@@ -2,21 +2,27 @@
     let itinerario = [
         {
             imagen: "https://ik.imagekit.io/escapetours/Collage_de_fotos_horizontal_de_viajes_y_aventuras_color_gris__4_.png?updatedAt=1680156813363",
-            titulo: "Día 1: Kino viejo",
+            titulo: "Kino viejo",
             descripcion:
                 "Visita guiada a los principales atractivos turísticos de la ciudad.",
         },
         {
             imagen: "https://ik.imagekit.io/escapetours/Collage_de_fotos_horizontal_de_viajes_y_aventuras_color_gris__1_.png?updatedAt=1680156813342",
-            titulo: "Día 2: Isla Alcatraz",
+            titulo: "Isla Alcatraz",
             descripcion:
                 "Disfruta de un día de sol, arena y mar en una de las mejores playas de la zona.",
         },
         {
-            imagen: "https://ik.imagekit.io/escapetours/1679452936105.png?updatedAt=1680156825527",
-            titulo: "Día 3: Aventura en la naturaleza",
+            imagen: "https://ik.imagekit.io/escapetours/museo.png?updatedAt=1680157062129",
+            titulo: "Museo CONCA' AC",
             descripcion:
-                "Recorre los senderos del bosque y disfruta de las vistas panorámicas desde la montaña.",
+                "Visita el museo de la ciudad y conoce la historia de la región.",
+        },
+        {
+            imagen: "https://ik.imagekit.io/escapetours/playaesmeralda.png?updatedAt=1680157063196",
+            titulo: "Playa Esmeralda",
+            descripcion:
+                "Disfruta de un día de sol, arena y mar en una de las mejores playas de la zona.",
         },
     ];
 
@@ -58,8 +64,15 @@
 <style>
     .galeria {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         gap: 1rem;
+    }
+    @media screen and (max-width: 600px) {
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
     }
 
     .dia {

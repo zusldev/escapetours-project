@@ -53,6 +53,19 @@
         animation: scaleImage 2s forwards;
         filter: blur(3px);
     }
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .background {
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+
 
     @keyframes scaleImage {
         0% {

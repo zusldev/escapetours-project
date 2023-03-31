@@ -6,7 +6,7 @@
             <div class="grow-0 shrink-0 basis-auto w-full lg:w-10/12 px-3">
                 <div class="grid md:grid-cols-2 gap-x-6 items-center">
                     <div class="mb-6 md:mb-0">
-                        <h2 class="text-3xl font-bold">
+                        <h2 class="text-3xl text-blue-500/70 font-bold">
                             Mantengamosnos en contacto
                             <br />
                             <span class="text-yellow-300"
