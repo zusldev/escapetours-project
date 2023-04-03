@@ -64,7 +64,7 @@
 <style>
     .galeria {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
         gap: 1rem;
     }
     @media screen and (max-width: 600px) {

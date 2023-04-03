@@ -1,7 +1,13 @@
 <script>
-    import Activities from "./Activities.svelte";
-    import Carrousel from "./Carrousel.svelte";
-    import Gallery from "./Gallery.svelte";
+    export let title;
+    export let description;
+    export let resume;
+    export let imageWide;
+    export let altImgWide;
+    export let imageTwo;
+    export let altImgTwo;
+    export let imageThree;
+    export let altImgThree;
 </script>
 
 <div
@@ -43,58 +49,49 @@
                 </svg>
                 <span class="relative">Vente</span>
             </span>
-            a <span class="text-black text-5xl">Bahía de kino</span> con nosotros
+            a <span class="text-black text-5xl">{title}</span> con nosotros
         </h2>
         <p class="text-base text-gray-700 md:text-lg">
             ¿Quieres disfrutar de un paraíso terrenal? ¡Ven con <span
                 class="text-2xl">Escape Tours</span
-            > a Bahía de Kino! Déjate sorprender por sus hermosas playas de arena
+            > a {title}! Déjate sorprender por sus hermosas playas de arena
             blanca, aguas cristalinas y exquisita gastronomía local. ¡No te lo pierdas!
         </p>
     </div>
     <div class="grid max-w-screen-lg gap-8 lg:grid-cols-2 sm:mx-auto">
         <div class="grid grid-cols-2 gap-5">
             <img
-                class="object-cover w-full h-56 col-span-2 rounded shadow-lg"
-                src="https://ik.imagekit.io/escapetours/1679453075590.jpg?updatedAt=1680172217619"
-                alt=""
+                class="object-cover w-full h-56 col-span-2 rounded shadow-lg hover:scale-110 transition duration-300 ease-in-out"
+                src={imageWide}
+                alt={altImgWide}
             />
             <img
-                class="object-cover w-full h-48 rounded shadow-lg"
-                src="https://ik.imagekit.io/escapetours/kino_three.jpg?updatedAt=1680154493402"
-                alt=""
+                class="object-cover w-full h-48 rounded shadow-lg hover:scale-110 transition duration-300 ease-in-out"
+                src={imageTwo}
+                alt={altImgTwo}
             />
             <img
-                class="object-cover w-full h-48 rounded shadow-lg"
-                src="https://ik.imagekit.io/escapetours/kino_five.jpg?updatedAt=1680154489732"
-                alt=""
+                class="object-cover w-full h-48 rounded shadow-lg hover:scale-110 transition duration-300 ease-in-out"
+                src={imageThree}
+                alt={altImgThree}
             />
         </div>
         <div class="flex flex-col justify-center">
             <div class="pb-4 mb-4 border-b">
                 <h6 class="mb-2 font-semibold leading-5">
-                    Descubre la belleza natural de Bahía de Kino con Escape
+                    Descubre la belleza natural de {title} con Escape
                     Tours
                 </h6>
                 <p class="text-sm text-gray-900">
-                    Únete a Escape Tours y descubre la joya escondida de México,
-                    Bahía de Kino. Nuestro tour te llevará a las playas más
-                    hermosas de la región, donde podrás disfrutar del sol, arena
-                    y mar cristalino. También explorarás los lugares más
-                    icónicos de la zona, incluyendo la Reserva Ecológica Isla
-                    Alcatraz y la comunidad pesquera de Kino Nuevo. Además,
-                    disfrutarás de la deliciosa gastronomía local y te alojarás
-                    en los mejores hoteles de la zona. ¡No pierdas la
-                    oportunidad de vivir una experiencia inolvidable con Escape
-                    Tours!
+                    {description}
                 </p>
             </div>
             <div class="pb-4 mb-4 border-b">
                 <h6 class="mb-2 font-semibold leading-5">
-                    Diviertete con todo lo que Bahía de Kino tiene para ofrecer
+                    Diviertete con todo lo que {title} tiene para ofrecer
                     con Escape Tours
                 </h6>
-                <ul class="list-disc pl-5 mb-2 text-sm text-gray-900">
+                <!-- <ul class="list-disc pl-5 mb-2 text-sm text-gray-900">
                     <li>
                         Playas de ensueño con aguas cristalinas y arenas blancas
                     </li>
@@ -114,20 +111,9 @@
                         La tranquilidad y belleza natural de la región te
                         permitirán desconectar y relajarte completamente
                     </li>
-                </ul>
+                </ul> -->
                 <p class="text-sm text-gray-900">
-                    ¡Sumérgete en la maravilla natural de Bahía de Kino con
-                    nuestro tour de Escape Tours! Disfruta de las playas de
-                    ensueño con aguas cristalinas y arenas blancas, explora la
-                    Reserva Ecológica Isla Alcatraz y su gran variedad de
-                    especies marinas y terrestres, visita la comunidad pesquera
-                    de Kino Nuevo y prueba su deliciosa gastronomía local.
-                    Además, podrás participar en actividades acuáticas como
-                    paseos en kayak y buceo para explorar la belleza submarina
-                    de la zona. Todo esto en un ambiente de tranquilidad y
-                    belleza natural que te permitirá desconectar y relajarte
-                    completamente. ¡Únete a nosotros en esta aventura y descubre
-                    todo lo que Bahía de Kino tiene para ofrecer!
+                    {resume}
                 </p>
             </div>
         </div>
