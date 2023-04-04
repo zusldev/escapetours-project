@@ -6,9 +6,12 @@
 </script>
 
 <Router>
+    <nav>
+        <Link to="/">Home</Link>
+        <Link to="/tours">Tours</Link>
+        <Link to="/contact">Contact</Link>
+    </nav>
     <Route path="/" component={Home} />
     <Route path="/tours" component={AboutTours} />
     <Route path="/contact" component={ContactUs} />
-    <!-- <Route path="/tours" component={Tours} /> -->
-    <!-- <Route path="/contact" component={Contact} /> -->
 </Router>
