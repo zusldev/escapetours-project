@@ -7,6 +7,7 @@
         ShieldCheck,
         PhoneArrowUpRight,
     } from "svelte-hero-icons";
+    import Divisor from "./Divisor.svelte";
 
     export const canBring = [
         "Protector solar",
@@ -22,15 +23,15 @@
     ];
     export const teamMembers = [
         {
-            name: "Juan Perez",
-            role: "Guía Turístico",
-            bio: "Juan ha trabajado como guía turístico en la región de Sonora por más de 10 años y tiene un amplio conocimiento sobre la historia y cultura de la zona.",
+            name: "David Zuñiga",
+            role: "Fundador",
+            bio: "David es el fundador de la empresa. A lo largo de su vida ha recorrido gran parte de Sonora y ha aprendido mucho sobre la cultura y la historia de la región.",
             image: "https://via.placeholder.com/150",
         },
         {
-            name: "Maria Gutierrez",
-            role: "Cocinera",
-            bio: "Maria es la encargada de preparar los alimentos durante el tour. Con más de 15 años de experiencia, es una experta en la cocina sonorense.",
+            name: "Javier Socorro",
+            role: "Fundador",
+            bio: "Javier es el fundador de la empresa. A través de sus viajes ha aprendido mucho sobre la cultura y la historia de la región. Es un experto en la región y en la conducción de vehículos turísticos.",
             image: "https://via.placeholder.com/150",
         },
         {
@@ -88,7 +89,97 @@
             {/each}
         </ul>
     </div>
-
+    <div class="my-8 mt-20">
+        <h1
+            class="text-4xl mb-20 font-extrabold text-[#FFD200] dark:text-white"
+        >
+            Seguridad
+            <h3>
+                <span class="text-2xl font-bold text-gray-400"
+                    >En Escape Tours, estamos comprometidos con tu seguridad y
+                    nos enorgullece ser una empresa transparente</span
+                >
+            </h3>
+        </h1>
+        <h3 class="text-lg font-bold text-white mb-2">
+            COBERTURAS CONTRATADAS
+        </h3>
+        <ul class="text-lg text-gray-400 list-disc mb-8">
+            <p>
+                <span class="inline-block mr-2">
+                    <Icon
+                        src={ShieldCheck}
+                        theme="solid"
+                        class=" h-6 w-6 text-green-400 "
+                    />
+                </span>
+                Daños Materiales
+            </p>
+            <p>
+                <span class="inline-block mr-2">
+                    <Icon
+                        src={ShieldCheck}
+                        theme="solid"
+                        class=" h-6 w-6 text-green-400 "
+                    />
+                </span>
+                Robo Total
+            </p>
+            <p>
+                <span class="inline-block mr-2">
+                    <Icon
+                        src={ShieldCheck}
+                        theme="solid"
+                        class=" h-6 w-6 text-green-400 "
+                    />
+                </span>
+                Responsabilidad Civil por Daños a Terceros Gastos Médicos Conductor
+                y Familiares
+            </p>
+            <p>
+                <span class="inline-block mr-2">
+                    <Icon
+                        src={ShieldCheck}
+                        theme="solid"
+                        class=" h-6 w-6 text-green-400 "
+                    />
+                </span>
+                Gastos Legales
+            </p>
+            <p>
+                <span class="inline-block mr-2">
+                    <Icon
+                        src={ShieldCheck}
+                        theme="solid"
+                        class=" h-6 w-6 text-green-400 "
+                    />
+                </span>
+                Responsabilidad Civil Pasajero
+            </p>
+            <p>
+                <span class="inline-block mr-2">
+                    <Icon
+                        src={ShieldCheck}
+                        theme="solid"
+                        class=" h-6 w-6 text-green-400 "
+                    />
+                </span>
+                Muerte del Conductor por Acc. Automovilistico
+            </p>
+        </ul>
+        <p class="text-lg text-gray-400 mb-4">Plazo de Pago: 03 días</p>
+        <p class="text-lg text-gray-400 mb-4">SUMA ASEGURADA</p>
+        <p class="text-lg text-gray-400 mb-4">DEDUCIBLE</p>
+        <p class="text-lg text-gray-400 mb-4">PRIMAS</p>
+        <p class="text-lg text-gray-400 mb-4">
+            Las coberturas de "RESPONSABILIDAD CIVIL Y "RESPONSABILIDAD CIVIL
+            PASAJERO tienen carácter de SEGURO OBLIGATORIO, por lo que no podrán
+            cesar en sus efectos, rescindirse ni darse por terminadas con
+            anterioridad a la fecha de terminacion de su vigencia y el pago
+            deberá afectarse de contado.
+        </p>
+    </div>
+    <Divisor />
     <section class="py-8 flex justify-center items-center">
         <div class="container mx-auto px-2">
             <h2 class="text-4xl font-bold text-white text-center mb-8">
@@ -153,4 +244,7 @@
 </div>
 
 <style>
+    ul.list-disc li::marker {
+        display: none;
+    }
 </style>

@@ -8,6 +8,10 @@
     import sanca from "../content/sanca";
     import Gallery from "./Gallery.svelte";
     import Divisor from "./Divisor.svelte";
+    import Places from "./Places.svelte";
+    import places from "../content/places";
+    import ToursGallery from "./ToursGallery.svelte";
+    import Boxes from "./Boxes.svelte";
 </script>
 
 <main class="">
@@ -21,46 +25,19 @@
                 Nuestros Tours
             </h1>
             <h3 class="text-2xl font-bold text-gray-400 mb-8">
-                Por el momento contamos con 2 localidades:
+                Por el momento contamos con los siguientes tours:
             </h3>
         </div>
-        <div class="header mb-24 grid lg:xl:grid-cols-2 sm:grid-cols-1 gap-10">
-            <div
-                class="bg-cover bg-center relative h-96"
-                style="background-image:url('https://ik.imagekit.io/escapetours/kino_three.jpg?updatedAt=1680154493402'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-            >
-                <div
-                    class="absolute inset-0 flex bg-black hover:opacity-0 transition duration-300 ease-in opacity-80 items-center justify-center"
-                >
-                    <h1 class="text-5xl text-yellow-300 font-bold shadow-lg">
-                        Bahía Kino
-                    </h1>
-                </div>
-            </div>
-            <div
-                class="bg-cover bg-center relative h-96"
-                style="background-image:url('https://ik.imagekit.io/escapetours/sancarlosTwo.jpg?updatedAt=1680516677129'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-            >
-                <div
-                    class="absolute inset-0 flex bg-black hover:opacity-0 transition duration-300 ease-in opacity-80 items-center justify-center"
-                >
-                    <h1 class="text-5xl text-yellow-300 font-bold shadow-lg">
-                        San Carlos
-                    </h1>
-                </div>
-            </div>
+        <div class="grid lg:xl:grid-cols-2 sm:grid-cols-1 gap-10">
+            <Places
+                title={places.placesKino.title}
+                img={places.placesKino.img}
+            />
+            <Places
+                title={places.placesSanCarlos.title}
+                img={places.placesSanCarlos.img}
+            />
         </div>
-        <!-- <Tour
-            title={sanca.title}
-            description={sanca.description}
-            resume={sanca.resume}
-            imageWide={sanca.imageWide}
-            altImgWide={sanca.altImgWide}
-            imageTwo={sanca.imageTwo}
-            altImgTwo={sanca.altImgTwo}
-            imageThree={sanca.imageThree}
-            altImgThree={sanca.altImgThree}
-        /> -->
     </div>
     <Divisor />
     <Tour
@@ -74,6 +51,18 @@
         imageThree={bahia.imageThree}
         altImgThree={bahia.altImgThree}
     />
+    <Divisor />
+    <Tour
+        title={sanca.title}
+        description={sanca.description}
+        resume={sanca.resume}
+        imageWide={sanca.imageWide}
+        altImgWide={sanca.altImgWide}
+        imageTwo={sanca.imageTwo}
+        altImgTwo={sanca.altImgTwo}
+        imageThree={sanca.imageThree}
+        altImgThree={sanca.altImgThree}
+    />
     <div class="container">
         <div class="flex flex-col py-20 justify-center">
             <h1
@@ -86,7 +75,11 @@
             </h3>
             <Divisor />
         </div>
+    </div>
+    <div class="container">
+        <ToursGallery />
         <Gallery />
+        <Boxes />
     </div>
     <div class="bottom-0 w-full">
         <Footer />

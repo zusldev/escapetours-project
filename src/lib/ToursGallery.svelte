@@ -1,50 +1,161 @@
-<section class="overflow-hidden text-neutral-700">
-    <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
-        <div class="-m-1 flex flex-wrap md:-m-2">
-            <div class="flex w-1/2 flex-wrap">
-                <div class="w-1/2 p-1 md:p-2">
+<!-- component -->
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -m-4">
+            <div class="lg:w-1/3 sm:w-1/2 p-4">
+                <div class="flex relative">
                     <img
                         alt="gallery"
-                        class="block h-full w-full rounded-lg object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/escapetours.png?updatedAt=1680157063390"
+                        class="absolute inset-0 w-full h-full object-cover object-center"
+                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853109562.jpg?updatedAt=1680588448735"
                     />
-                </div>
-                <div class="w-1/2 p-1 md:p-2">
-                    <img
-                        alt="gallery"
-                        class="block h-full w-full rounded-lg object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/story_1679454034338.jpg?updatedAt=1680172217572"
-                    />
-                </div>
-                <div class="w-full p-1 md:p-2">
-                    <img
-                        alt="gallery"
-                        class="block h-full w-full rounded-lg object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/instrucciones.png?updatedAt=1680157060895"
-                    />
+                    <div
+                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+                    >
+                        <h2
+                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+                        >
+                            Primer viaje a kino
+                        </h2>
+                        <h1
+                            class="title-font text-lg font-medium text-gray-900 mb-3"
+                        >
+                            Shooting Stars
+                        </h1>
+                        <p class="leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="flex w-1/2 flex-wrap">
-                <div class="w-full p-1 md:p-2">
+            <div class="lg:w-1/3 sm:w-1/2 p-4">
+                <div class="flex relative">
                     <img
                         alt="gallery"
-                        class="block h-full w-full rounded-lg object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/agenda.png?updatedAt=1680157062601"
+                        class="absolute inset-0 w-full h-full object-cover object-center"
+                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853110335.jpg?updatedAt=1680588449279"
                     />
+                    <div
+                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+                    >
+                        <h2
+                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+                        >
+                            Primer viaje a kino
+                        </h2>
+                        <h1
+                            class="title-font text-lg font-medium text-gray-900 mb-3"
+                        >
+                            The Catalyzer
+                        </h1>
+                        <p class="leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                        </p>
+                    </div>
                 </div>
-                <div class="w-1/2 p-1 md:p-2">
+            </div>
+            <div class="lg:w-1/3 sm:w-1/2 p-4">
+                <div class="flex relative">
                     <img
                         alt="gallery"
-                        class="block h-full w-full rounded-lg object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/1679453075330.png?updatedAt=1680172217675"
+                        class="absolute inset-0 w-full h-full object-cover object-center"
+                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853110006.jpg?updatedAt=1680588446750"
                     />
+                    <div
+                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+                    >
+                        <h2
+                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+                        >
+                            Primer viaje a kino
+                        </h2>
+                        <h1
+                            class="title-font text-lg font-medium text-gray-900 mb-3"
+                        >
+                            The 400 Blows
+                        </h1>
+                        <p class="leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                        </p>
+                    </div>
                 </div>
-                <div class="w-1/2 p-1 md:p-2">
+            </div>
+            <div class="lg:w-1/3 sm:w-1/2 p-4">
+                <div class="flex relative">
                     <img
                         alt="gallery"
-                        class="block h-full w-full rounded-lg object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/kino_three.jpg?updatedAt=1680154493402"
+                        class="absolute inset-0 w-full h-full object-cover object-center"
+                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679852555836.jpeg?updatedAt=1680588444887"
                     />
+                    <div
+                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+                    >
+                        <h2
+                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+                        >
+                            Primer viaje a kino
+                        </h2>
+                        <h1
+                            class="title-font text-lg font-medium text-gray-900 mb-3"
+                        >
+                            Neptune
+                        </h1>
+                        <p class="leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/3 sm:w-1/2 p-4">
+                <div class="flex relative">
+                    <img
+                        alt="gallery"
+                        class="absolute inset-0 w-full h-full object-cover object-center"
+                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679852556163.webp?updatedAt=1680588441194"
+                    />
+                    <div
+                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+                    >
+                        <h2
+                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+                        >
+                            Primer viaje a kino
+                        </h2>
+                        <h1
+                            class="title-font text-lg font-medium text-gray-900 mb-3"
+                        >
+                            Holden Caulfield
+                        </h1>
+                        <p class="leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/3 sm:w-1/2 p-4">
+                <div class="flex relative">
+                    <img
+                        alt="gallery"
+                        class="absolute inset-0 w-full h-full object-cover object-center"
+                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853108324.jpg?updatedAt=1680588442333"
+                    />
+                    <div
+                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+                    >
+                        <h2
+                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+                        >
+                            Primer viaje a kino
+                        </h2>
+                        <h1
+                            class="title-font text-lg font-medium text-gray-900 mb-3"
+                        >
+                            Alper Kamu
+                        </h1>
+                        <p class="leading-relaxed">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

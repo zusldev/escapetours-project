@@ -1,7 +1,7 @@
 <script>
     let images = [
         {
-            url: "https://ik.imagekit.io/escapetours/agenda.png?updatedAt=1680157062601",
+            url: "https://ik.imagekit.io/escapetours/Gallery_tour/1679457424699.png?updatedAt=1680588449765",
             alt: "Placeholder image 1",
             isExpanded: false,
         },
