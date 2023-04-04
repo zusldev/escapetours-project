@@ -26,19 +26,19 @@
             name: "David Zuñiga",
             role: "Fundador",
             bio: "David es el fundador de la empresa. A lo largo de su vida ha recorrido gran parte de Sonora y ha aprendido mucho sobre la cultura y la historia de la región.",
-            image: "https://via.placeholder.com/150",
+            image: "https://ik.imagekit.io/escapetours/Gallery_tour/1679853108191.jpg?updatedAt=1680637374247",
         },
         {
-            name: "Javier Socorro",
+            name: "Javier Valenzuela",
             role: "Fundador",
             bio: "Javier es el fundador de la empresa. A través de sus viajes ha aprendido mucho sobre la cultura y la historia de la región. Es un experto en la región y en la conducción de vehículos turísticos.",
-            image: "https://via.placeholder.com/150",
+            image: "https://ik.imagekit.io/escapetours/Gallery_tour/1679853108191.jpg?updatedAt=1680637374247",
         },
         {
-            name: "Pedro Hernandez",
-            role: "Conductor",
-            bio: "Pedro es el conductor del vehículo durante el tour. Con más de 5 años de experiencia en conducción de vehículos turísticos, es un experto en la carretera.",
-            image: "https://via.placeholder.com/150",
+            name: "Diana Félix",
+            role: "Fundadora",
+            bio: "Diana es también una de las fundadoras de la empresa. En sus viajes ha aprendido mucho sobre la cultura y la historia de la región. Le encanta la naturaleza y la aventura.",
+            image: "https://ik.imagekit.io/escapetours/Gallery_tour/1679853108191.jpg?updatedAt=1680637374247",
         },
     ];
 </script>
@@ -195,7 +195,7 @@
                             <img
                                 src={member.image}
                                 alt={member.name}
-                                class="w-full h-auto rounded-lg mb-4"
+                                class="w-full h-auto bg-cover rounded-lg mb-4"
                             />
                             <h3
                                 class="text-lg flex font-medium text-gray-900 mb-2"

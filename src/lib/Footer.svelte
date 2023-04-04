@@ -3,13 +3,13 @@
 >
     <div class="grid grid-flow-col gap-4">
         <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="link link-hover">Sobre nosotros</a>
+        <a class="link link-hover" href="/">Sobre nosotros</a>
         <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="link link-hover">Contactanos</a>
+        <a class="link link-hover" href="/contact">Contactanos</a>
         <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="link link-hover">Preguntas frecuentes</a>
+        <a class="link link-hover" href="/">Preguntas frecuentes</a>
         <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="link link-hover">Ayuda</a>
+        <a class="link link-hover" href="/contact">Ayuda</a>
     </div>
     <div>
         <div class="grid grid-flow-col gap-4">
@@ -55,5 +55,14 @@
     </div>
     <div>
         <p>Copyright © 2023 - All right reserved by Escape tours</p>
+        <p>
+            Developed by: <span>
+                <a
+                    href="mailto:liborio07zs@gmail.com?subject=Contact%20Web%20Developer"
+                    target="_blank"
+                    class="text-yellow-300">zusldev</a
+                >
+            </span>
+        </p>
     </div>
 </footer>

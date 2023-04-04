@@ -1,4 +1,6 @@
 <script>
+    import { Icon } from "@steeze-ui/svelte-icon";
+    import { Map, MapPin } from "svelte-hero-icons";
     export let title;
     export let description;
     export let resume;
@@ -8,6 +10,12 @@
     export let altImgTwo;
     export let imageThree;
     export let altImgThree;
+    export let location;
+    export let locationDescription;
+    export let latitude;
+    export let longitude;
+    export let weather;
+    export let map;
 </script>
 
 <div
@@ -100,17 +108,54 @@
         </div>
     </div>
     <!-- svelte-ignore a11y-missing-attribute -->
-    <div class="flex justify-center">
-        <div class="w-full lg:w-3/4 xl:w-1/2">
-            <div class="relative" style="padding-top: 60%;">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55917.056654545864!2d-112.01209771547694!3d28.844336377527853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ccfa519710eaa7%3A0xc5d5b33e1b5ec0d0!2sBah%C3%ADa%20Kino%2C%20Sonora!5e0!3m2!1sen!2smx!4v1680590275353!5m2!1sen!2smx"
-                    class="absolute top-0 left-0 w-full h-full border-0"
-                    loading="lazy"
-                />
+    <!-- component -->
+    <section class="dark:bg-gray-900 py-10">
+        <div class="container px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+            <h1
+                class="text-3xl lg:text-4xl font-semibold text-yellow-300 mb-4 flex items-center"
+            >
+                <span class="mr-2">
+                    <Icon
+                        class="w-6 h-6 text-yellow-300"
+                        src={Map}
+                        theme="solid"
+                    />
+                </span>
+                Ubicación
+            </h1>
+
+            <div class="mt-8 lg:flex lg:items-center">
+                <div class="lg:w-1/2 lg:mr-6">
+                    <iframe
+                        src={map}
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        loading="lazy"
+                    />
+                </div>
+
+                <div class="lg:w-1/2">
+                    <h2 class="text-2xl font-bold mb-2">{location}</h2>
+                    <p class="text-gray-400 mb-4">{locationDescription}</p>
+                    <ul class="text-white mb-4">
+                        <li class="">
+                            <strong class="text-yellow-300">Latitud:</strong>
+                            {latitude}
+                        </li>
+                        <li>
+                            <strong class="text-yellow-300">Longitud:</strong>
+                            {longitude}
+                        </li>
+                        <li>
+                            <strong class="text-yellow-300">Clima:</strong>
+                            {weather}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- svelte-ignore a11y-missing-attribute -->
 </div>

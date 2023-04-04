@@ -1,9 +1,11 @@
 <!-- component -->
 <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
+    <div class="py-24 mx-auto">
         <div class="flex flex-wrap -m-4">
-            <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div class="flex relative">
+            <div class="lg:w-1/3 sm:w-full p-4">
+                <div
+                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
+                >
                     <img
                         alt="gallery"
                         class="absolute inset-0 w-full h-full object-cover object-center"
@@ -15,25 +17,28 @@
                         <h2
                             class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
                         >
-                            Primer viaje a kino
+                            Kino viejo
                         </h2>
                         <h1
                             class="title-font text-lg font-medium text-gray-900 mb-3"
                         >
-                            Shooting Stars
+                            Seccion del muelle
                         </h1>
                         <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                            Puestos de venta de comida y artesanias en el muelle
+                            de kino viejo
                         </p>
                     </div>
                 </div>
             </div>
             <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div class="flex relative">
+                <div
+                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
+                >
                     <img
                         alt="gallery"
                         class="absolute inset-0 w-full h-full object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853110335.jpg?updatedAt=1680588449279"
+                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853109023.jpg?updatedAt=1680637375247"
                     />
                     <div
                         class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
@@ -49,13 +54,19 @@
                             The Catalyzer
                         </h1>
                         <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eius, consequuntur aperiam sunt inventore, cum
+                            nesciunt dolorum fugiat eos, fuga eligendi similique
+                            nostrum sapiente assumenda doloremque ut? Rerum rem
+                            provident atque?
                         </p>
                     </div>
                 </div>
             </div>
             <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div class="flex relative">
+                <div
+                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
+                >
                     <img
                         alt="gallery"
                         class="absolute inset-0 w-full h-full object-cover object-center"
@@ -75,13 +86,19 @@
                             The 400 Blows
                         </h1>
                         <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eius, consequuntur aperiam sunt inventore, cum
+                            nesciunt dolorum fugiat eos, fuga eligendi similique
+                            nostrum sapiente assumenda doloremque ut? Rerum rem
+                            provident atque?
                         </p>
                     </div>
                 </div>
             </div>
             <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div class="flex relative">
+                <div
+                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
+                >
                     <img
                         alt="gallery"
                         class="absolute inset-0 w-full h-full object-cover object-center"
@@ -101,13 +118,19 @@
                             Neptune
                         </h1>
                         <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eius, consequuntur aperiam sunt inventore, cum
+                            nesciunt dolorum fugiat eos, fuga eligendi similique
+                            nostrum sapiente assumenda doloremque ut? Rerum rem
+                            provident atque?
                         </p>
                     </div>
                 </div>
             </div>
             <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div class="flex relative">
+                <div
+                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
+                >
                     <img
                         alt="gallery"
                         class="absolute inset-0 w-full h-full object-cover object-center"
@@ -127,17 +150,23 @@
                             Holden Caulfield
                         </h1>
                         <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eius, consequuntur aperiam sunt inventore, cum
+                            nesciunt dolorum fugiat eos, fuga eligendi similique
+                            nostrum sapiente assumenda doloremque ut? Rerum rem
+                            provident atque?
                         </p>
                     </div>
                 </div>
             </div>
             <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div class="flex relative">
+                <div
+                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
+                >
                     <img
                         alt="gallery"
                         class="absolute inset-0 w-full h-full object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853108324.jpg?updatedAt=1680588442333"
+                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853109891.jpg?updatedAt=1680637372596"
                     />
                     <div
                         class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
@@ -153,7 +182,11 @@
                             Alper Kamu
                         </h1>
                         <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, consequuntur aperiam sunt inventore, cum nesciunt dolorum fugiat eos, fuga eligendi similique nostrum sapiente assumenda doloremque ut? Rerum rem provident atque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eius, consequuntur aperiam sunt inventore, cum
+                            nesciunt dolorum fugiat eos, fuga eligendi similique
+                            nostrum sapiente assumenda doloremque ut? Rerum rem
+                            provident atque?
                         </p>
                     </div>
                 </div>

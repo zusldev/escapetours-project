@@ -50,6 +50,13 @@
         altImgTwo={bahia.altImgTwo}
         imageThree={bahia.imageThree}
         altImgThree={bahia.altImgThree}
+        location={bahia.locationBahia.location}
+        locationDescription={bahia.locationBahia.locationDescription}
+        latitude={bahia.locationBahia.latitude}
+        longitude={bahia.locationBahia.longitude}
+        weather={bahia.locationBahia.weather}
+        map={bahia.locationBahia.map}
+
     />
     <Divisor />
     <Tour
@@ -62,6 +69,13 @@
         altImgTwo={sanca.altImgTwo}
         imageThree={sanca.imageThree}
         altImgThree={sanca.altImgThree}
+        location={sanca.locationSanCarlos.location}
+        locationDescription={sanca.locationSanCarlos.locationDescription}
+        latitude={sanca.locationSanCarlos.latitude}
+        longitude={sanca.locationSanCarlos.longitude}
+        weather={sanca.locationSanCarlos.weather}
+        map={sanca.locationSanCarlos.map}
+
     />
     <div class="container">
         <div class="flex flex-col py-20 justify-center">

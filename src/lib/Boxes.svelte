@@ -43,7 +43,7 @@
                 >
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
                     <img
-                        class="max-w-full max-h-full"
+                        class="max-w-full max-h-full cursor-pointer"
                         src={image.url}
                         alt={image.alt}
                         on:click={() => toggleExpand(index)}
@@ -62,6 +62,14 @@
     @media (max-width: 640px) {
         img {
             height: 300px;
+        }
+    }
+    @media (max-width: 640px) {
+        .grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        img {
+            height: 500px;
         }
     }
 </style>

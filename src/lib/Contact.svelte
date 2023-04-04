@@ -1,17 +1,15 @@
 <script>
     import SocialMedia from "./SocialMedia.svelte";
-
 </script>
-<!-- Container for demo purpose -->
-<div class="px-6 mx-auto">
-    <!-- Section: Design Block -->
+
+<div class="px-24 mx-auto">
     <section class="mb-32 text-gray-800">
         <style>
             .map-container-2 {
                 height: 500px;
             }
         </style>
-        <SocialMedia />
+
         <div class="block rounded-lg shadow-lg bg-[#EDEDED]">
             <div class="flex flex-wrap items-center">
                 <div
@@ -59,11 +57,9 @@
                                         Respondemos tus dudas
                                     </p>
                                     <p class="text-gray-500">
-                                        escapetoursmx@gmail.com
+                                        escapetours.mex@gmail.com
                                     </p>
-                                    <p class="text-gray-500">
-                                        (+52) 6421567894
-                                    </p>
+                                    <p class="text-gray-500">(+64) 21023238</p>
                                 </div>
                             </div>
                         </div>
@@ -97,11 +93,9 @@
                                         Precios accesibles
                                     </p>
                                     <p class="text-gray-500">
-                                        escapetorsmx@gmail.com
+                                        escapetours.mex@gmail.com
                                     </p>
-                                    <p class="text-gray-500">
-                                        (+52) 6421567894
-                                    </p>
+                                    <p class="text-gray-500">(+64) 21023238</p>
                                 </div>
                             </div>
                         </div>
@@ -133,11 +127,9 @@
                                 <div class="grow ml-6">
                                     <p class="font-bold mb-1">Noticias</p>
                                     <p class="text-gray-500">
-                                        press@example.com
+                                        escapetours.mex@gmail.com
                                     </p>
-                                    <p class="text-gray-500">
-                                        (+52) 6421567894
-                                    </p>
+                                    <p class="text-gray-500">(+64) 21023238</p>
                                 </div>
                             </div>
                         </div>
@@ -171,11 +163,9 @@
                                         Informar un problema
                                     </p>
                                     <p class="text-gray-500">
-                                        escapetoursmx@gmail.com
+                                        escapetours.mex@gmail.com
                                     </p>
-                                    <p class="text-gray-500">
-                                        (+52) 6421567894
-                                    </p>
+                                    <p class="text-gray-500">(+64) 21023238</p>
                                 </div>
                             </div>
                         </div>
@@ -184,6 +174,5 @@
             </div>
         </div>
     </section>
-    <!-- Section: Design Block -->
 </div>
-<!-- Container for demo purpose -->
+<SocialMedia />
