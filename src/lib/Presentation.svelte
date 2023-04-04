@@ -1,6 +1,7 @@
 <script>
     import { Icon } from "@steeze-ui/svelte-icon";
     import { ArrowRight } from "svelte-hero-icons";
+    import { Link } from "svelte-routing";
     export let title;
     export let description;
     export let imageSrc;
@@ -13,15 +14,17 @@
                 <img src={imageSrc} alt={title} class="w-full mb-8 md:mb-0" />
             </div>
             <div class="md:w-1/2 lg:w-7/12 md:pl-12">
-                <h2 class="text-5xl lg:text-5xl font-extrabold mb-4 text-[#FFD200]">
+                <h2
+                    class="text-5xl lg:text-5xl font-extrabold mb-4 text-[#FFD200]"
+                >
                     {title}
                 </h2>
                 <p class="text-lg lg:text-xl text-gray-300 mb-6">
                     {description}
                 </p>
                 <!-- svelte-ignore a11y-invalid-attribute -->
-                <a
-                    href="/tours"
+                <Link
+                    to="/tours"
                     class="flex lg:xl:w-1/4 justify-between py-3 px-6 text-lg font-bold bg-yellow-300 text-gray-900 rounded-full hover:bg-yellow-500 transition ease-in-out duration-300"
                     >Explorar <span>
                         <Icon
@@ -29,7 +32,7 @@
                             theme="solid"
                             class="h-6 w-6 text-blue-600 ml-2"
                         />
-                    </span></a
+                    </span></Link
                 >
             </div>
         </div>

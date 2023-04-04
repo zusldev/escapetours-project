@@ -1,4 +1,6 @@
 <script>
+    import { fly, scale, slide } from "svelte/transition";
+    import { fade } from "svelte/transition";
     import Contact from "./Contact.svelte";
     import Footer from "./Footer.svelte";
     import FormContact from "./FormContact.svelte";
@@ -14,9 +16,8 @@
     import Boxes from "./Boxes.svelte";
 </script>
 
-<main class="">
-    <NavBar />
-
+<NavBar />
+<main in:fly={{ y: 200, duration: 800 }} out:fly={{ y: 500, duration: 800 }}>
     <div class="px-3 md:lg:xl:px-40 py-20 mb-10">
         <div class="flex flex-col justify-center">
             <h1
@@ -56,7 +57,6 @@
         longitude={bahia.locationBahia.longitude}
         weather={bahia.locationBahia.weather}
         map={bahia.locationBahia.map}
-
     />
     <Divisor />
     <Tour
@@ -75,7 +75,6 @@
         longitude={sanca.locationSanCarlos.longitude}
         weather={sanca.locationSanCarlos.weather}
         map={sanca.locationSanCarlos.map}
-
     />
     <div class="container">
         <div class="flex flex-col py-20 justify-center">

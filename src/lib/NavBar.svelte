@@ -1,5 +1,7 @@
 <script>
+    import { Link } from "svelte-routing";
     import imageLogo from "../assets/LogoEscapeTours.png";
+    import * as animateScroll from "svelte-scrollto";
 </script>
 
 <div class="navbar bg-[#050505] h-20 flex z-20 p-4">
@@ -31,20 +33,29 @@
                 <li
                     class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
                 >
-                    <a href="/">Inicio</a>
+                    <Link to="/">Home</Link>
                 </li>
                 <li
                     class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
                     tabindex="0"
                 >
                     <!-- svelte-ignore a11y-missing-attribute -->
-                    <a href="/tours"> Sobre los tours </a>
+                    <Link to="/tours">Tours</Link>
                 </li>
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <li
                     class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
                 >
-                    <a>Preguntas frecuentes</a>
+                    <!-- svelte-ignore a11y-click-events-have-key-events -->
+                    <a
+                        on:click={() =>
+                            animateScroll.scrollTo({
+                                element: "#faq",
+                                duration: 1000,
+                            })}
+                    >
+                        Preguntas frecuentes
+                    </a>
                 </li>
             </ul>
         </div>
@@ -57,7 +68,7 @@
                 class="hover:border-b-2 hover:bg-black hover:border-yellow-300 transition hover:bg-clip-border hover:text-yellow-300"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <a href="/">Inicio</a>
+                <Link to="/">Home</Link>
             </li>
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
             <li
@@ -65,13 +76,22 @@
                 tabindex="0"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <a href="/tours"> Sobre los tours </a>
+                <Link to="/tours">Tours</Link>
             </li>
             <li
                 class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <a>Preguntas frecuentes</a>
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <a
+                    on:click={() =>
+                        animateScroll.scrollTo({
+                            element: "#faq",
+                            duration: 1000,
+                        })}
+                >
+                    Preguntas frecuentes
+                </a>
             </li>
         </ul>
     </div>
@@ -79,9 +99,9 @@
         <!-- svelte-ignore a11y-missing-attribute -->
         <a
             class="btn hover:border-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
-            href="/contact"
-            >Contactanos</a
         >
+            <Link to="/contact">Contact</Link>
+        </a>
     </div>
 </div>
 

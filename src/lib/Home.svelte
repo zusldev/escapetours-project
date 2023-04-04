@@ -9,23 +9,28 @@
     import Contact from "./Contact.svelte";
     import Footer from "./Footer.svelte";
     import ContactUs from "./ContactUs.svelte";
+    import { scale, fly, slide, crossfade } from "svelte/transition";
 </script>
 
-<div>
-    <NavBar />
-    <Body />
-</div>
-<div class="items-center justify-center mx-auto">
-    <Email />
-</div>
-<Presentation
-    title={presentation.title}
-    description={presentation.description}
-    imageSrc={presentation.imageSrc}
-/>
-<Instructions />
-<FAQ />
+<NavBar />
+<main in:fly={{ y: 200, duration: 800 }} out:fly={{ y: 500, duration: 800 }}>
+    <div>
+        <Body />
+    </div>
+    <div class="items-center justify-center mx-auto">
+        <Email />
+    </div>
+    <Presentation
+        title={presentation.title}
+        description={presentation.description}
+        imageSrc={presentation.imageSrc}
+    />
+    <Instructions />
+    <section id="faq">
+        <FAQ />
+    </section>
 
-<div class="bottom-0 w-full">
-    <Footer />
-</div>
+    <div class="bottom-0 w-full">
+        <Footer />
+    </div>
+</main>
