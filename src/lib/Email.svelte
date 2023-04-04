@@ -9,7 +9,7 @@
                         <h2 class="text-3xl text-blue-500/70 font-bold">
                             No te pierdas nuestras noticias
                             <br />
-                            <span class="text-yellow-300"
+                            <span class="text-[#FFD200]"
                                 >Subscribete a nuestro newsletter</span
                             >
                         </h2>
@@ -19,12 +19,13 @@
                         <div class="md:flex flex-row">
                             <input
                                 type="text"
-                                class="form-control block w-full px-4 py-2 mb-2 md:mb-0 md:mr-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellotext-yellow-300 focus:outline-none"
+                                class="form-control block w-full px-4 py-2 mb-2 md:mb-0 md:mr-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-yellow focus:outline-none"
                                 placeholder="Ingresa tu correo electrónico"
                             />
                             <button
                                 type="submit"
-                                class="inline-block px-7 py-3 bg-yellotext-yellow-300 font-medium text-sm leading-snug uppercase rounded shadow-md bg-yellow-300 hover:text-white  hover:bg-blue-600 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-300 active:shadow-lg transition duration-150 ease-in-out"
+                                class="inline-block px-7 py-3 font-medium text-sm leading-snug uppercase rounded shadow-md bg-[#FFD200] hover:text-white  hover:bg-blue-600 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0
+                                active:scale-90 active:shadow-lg transition duration-150 ease-in-out"
                                 data-mdb-ripple="true"
                                 data-mdb-ripple-color="light"
                             >

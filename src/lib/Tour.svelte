@@ -11,7 +11,7 @@
 </script>
 
 <div
-    class="px-4 py-16 bg-[#F4F4F4] text-black mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+    class="px-4 py-16 bg-gray-900 text-black mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
 >
     <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>

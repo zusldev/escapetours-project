@@ -2,7 +2,7 @@
     import imageLogo from "../assets/LogoEscapeTours.png";
 </script>
 
-<div class="navbar bg-[#050505] h-20 fixed z-20 p-4">
+<div class="navbar bg-[#050505] h-20 flex z-20 p-4">
     <div class="navbar-start">
         <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
         <div class="dropdown">
@@ -31,14 +31,14 @@
                 <li
                     class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
                 >
-                    <a>Inicio</a>
+                    <a href="/">Inicio</a>
                 </li>
                 <li
                     class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
                     tabindex="0"
                 >
                     <!-- svelte-ignore a11y-missing-attribute -->
-                    <a> Sobre los tours </a>
+                    <a href="/tours"> Sobre los tours </a>
                 </li>
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <li
@@ -57,7 +57,7 @@
                 class="hover:border-b-2 hover:bg-black hover:border-yellow-300 transition hover:bg-clip-border hover:text-yellow-300"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <a>Inicio</a>
+                <a href="/">Inicio</a>
             </li>
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
             <li
@@ -65,7 +65,7 @@
                 tabindex="0"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <a> Sobre los tours </a>
+                <a href="/tours"> Sobre los tours </a>
             </li>
             <li
                 class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
@@ -79,6 +79,7 @@
         <!-- svelte-ignore a11y-missing-attribute -->
         <a
             class="btn hover:border-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
+            href="/contact"
             >Contactanos</a
         >
     </div>

@@ -1,10 +1,13 @@
-<div class="container px-6 mx-auto">
+<div
+    class="h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparentdark:opacity-100"
+/>
+<div class="container bg-gradient-to-b to-[#1111] from-gray-900 py-20 px-6 mx-auto">
     <section class="mb-32 text-gray-800">
         <div class="container mx-auto xl:px-32 text-center lg:text-left">
             <div class="grid lg:grid-cols-2 items-center">
                 <div class="lg:mb-0">
                     <div
-                        class="block rounded-lg shadow-lg px-6 py-12 lg:py-6 xl:py-12 md:px-12 lg:-mr-14"
+                        class="block max-w-full px-6 py-12 lg:py-6 xl:py-12 md:px-12 lg:-mr-14"
                     >
                         <h3 class="text-2xl text-yellow-300 font-bold">
                             Sabemos lo valioso que es tu tiempo
