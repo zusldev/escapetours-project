@@ -36,6 +36,7 @@
     }
     .visita {
         font-size: 1.4rem;
+        font-weight: 100;
         font-family: Georgia, "Times New Roman", Times, serif;
     }
     .sonora {
@@ -45,20 +46,21 @@
     .eslogan {
         font-size: 1rem;
         font-weight: 100;
+        font-family: Georgia, "Times New Roman", Times, serif;
     }
 
     img {
         width: 100%;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
         animation: scaleImage 2s forwards;
-        filter: blur(3px);
+        animation-delay: 0.8s;
     }
     @media (max-width: 768px) {
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: drop-shadow( rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(rgba(0, 0, 0, 0.15));
             animation: 2s forwards;
             filter: blur(1px);
         }
@@ -73,16 +75,7 @@
             transform: scale(1);
         }
         100% {
-            transform: scale(0.8);
-        }
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
+            transform: scale(0.9);
         }
     }
 </style>
