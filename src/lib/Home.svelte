@@ -6,10 +6,8 @@
     import presentation from "../content/presentation";
     import Instructions from "./Instructions.svelte";
     import FAQ from "./FAQ.svelte";
-    import Contact from "./Contact.svelte";
     import Footer from "./Footer.svelte";
-    import ContactUs from "./ContactUs.svelte";
-    import { scale, fly, slide, crossfade } from "svelte/transition";
+    import { fly } from "svelte/transition";
 </script>
 
 <NavBar />

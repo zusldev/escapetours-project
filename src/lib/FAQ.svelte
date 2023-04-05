@@ -1,9 +1,15 @@
 <div
     class="h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparentdark:opacity-100"
 />
-<div class="container bg-gradient-to-b to-[#1111] from-gray-900 py-20 px-6 mx-auto">
+<div
+    class="bg-gradient-to-b to-[#1111] from-gray-900 py-20 px-6 mx-auto"
+>
     <section class="mb-32 text-gray-800">
-        <div class="container mx-auto xl:px-32 text-center lg:text-left">
+        <div class="mx-auto xl:px-32 text-center lg:text-left">
+            <h2 class="text-5xl font-bold text-center text-[#FFD200] mb-20">
+                FAQ
+            </h2>
+
             <div class="grid lg:grid-cols-2 items-center">
                 <div class="lg:mb-0">
                     <div
@@ -12,9 +18,7 @@
                         <h3 class="text-2xl text-yellow-300 font-bold">
                             Sabemos lo valioso que es tu tiempo
                         </h3>
-                        <h5
-                            class="text-lg text-blue-500/70 font-bold mb-12 lg:mb-10 xl:mb-12"
-                        >
+                        <h5 class=" text-white mb-12 lg:mb-10 xl:mb-12">
                             Permítenos responder tus preguntas
                         </h5>
 
@@ -53,10 +57,10 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="justify-center hidden sm:block">
                     <img
                         src="https://mdbootstrap.com/img/new/ecommerce/vertical/075.jpg"
-                        class="w-full rounded-lg shadow-lg"
+                        class="w-3/4 rounded-lg shadow-lg"
                         alt=""
                     />
                 </div>

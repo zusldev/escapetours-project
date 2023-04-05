@@ -12,7 +12,7 @@
             <label tabindex="0" class="btn btn-ghost lg:hidden">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    class="h-7 w-7"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -24,31 +24,32 @@
                     /></svg
                 >
             </label>
-            <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
             <ul
                 tabindex="0"
-                class="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 hover:bg-black"
+                class="menu menu-compact text-gray-300 bg-black dropdown-content mt-3 p-2 w-52"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <li
-                    class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
-                >
+                <li class="hover:underline transition hover:text-yellow-300">
                     <Link to="/">Home</Link>
                 </li>
                 <li
-                    class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
+                    class="hover:underline transition hover:text-yellow-300"
                     tabindex="0"
                 >
                     <!-- svelte-ignore a11y-missing-attribute -->
                     <Link to="/tours">Tours</Link>
                 </li>
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <li
-                    class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
-                >
+                <li class="hover:underline transition hover:text-yellow-300">
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
                     <a
+                        href="/#faq"
                         on:click={() =>
+                            animateScroll.scrollTo({
+                                element: "#faq",
+                                duration: 1000,
+                            })}
+                        on:keydown={() =>
                             animateScroll.scrollTo({
                                 element: "#faq",
                                 duration: 1000,
@@ -59,8 +60,20 @@
                 </li>
             </ul>
         </div>
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="btn btn-ghost normal-case text-xl ">Escape tours</a>
+        <div class="flex items-center">
+            <Link to="/" class="h-16 w-16 ">
+                <img src={imageLogo} alt="Logo" class="h-16 w-16" />
+            </Link>
+        </div>
+        <div>
+            <Link to="/" class="hidden sm:block">
+                <h1
+                    class="ml-2 btn btn-ghost normal-case text-xl text-gray-300"
+                >
+                    Escape tours
+                </h1>
+            </Link>
+        </div>
     </div>
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
@@ -81,10 +94,14 @@
             <li
                 class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
             >
-                <!-- svelte-ignore a11y-missing-attribute -->
-                <!-- svelte-ignore a11y-click-events-have-key-events -->
                 <a
+                    href="/#faq"
                     on:click={() =>
+                        animateScroll.scrollTo({
+                            element: "#faq",
+                            duration: 1000,
+                        })}
+                    on:keydown={() =>
                         animateScroll.scrollTo({
                             element: "#faq",
                             duration: 1000,
@@ -104,6 +121,3 @@
         </a>
     </div>
 </div>
-
-<style>
-</style>

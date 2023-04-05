@@ -58,14 +58,15 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: drop-shadow( rgba(0, 0, 0, 0.15));
+            animation: 2s forwards;
+            filter: blur(1px);
         }
         .background {
             background-size: cover;
             background-position: center;
         }
     }
-
-
 
     @keyframes scaleImage {
         0% {
