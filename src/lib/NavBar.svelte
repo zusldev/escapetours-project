@@ -75,7 +75,7 @@
             </Link>
         </div>
     </div>
-    <div class="navbar-center hidden lg:flex">
+    <div class="navbar-center hidden text-gray-300 lg:flex">
         <ul class="menu menu-horizontal px-1">
             <li
                 class="hover:border-b-2 hover:bg-black hover:border-yellow-300 transition hover:bg-clip-border hover:text-yellow-300"
@@ -115,7 +115,7 @@
     <div class="navbar-end">
         <!-- svelte-ignore a11y-missing-attribute -->
         <a
-            class="btn hover:border-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
+            class="btn hover:border-2 text-gray-300 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
         >
             <Link to="/contact">Contact</Link>
         </a>
