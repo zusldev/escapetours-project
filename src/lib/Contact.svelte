@@ -2,24 +2,19 @@
     import SocialMedia from "./SocialMedia.svelte";
 </script>
 
-<div class="px-24 mx-auto">
+<div class="px-4 lg:px-24 mx-auto">
     <section class="mb-32 text-gray-800">
-        <style>
-            .map-container-2 {
-                height: 500px;
-            }
-        </style>
-
         <div class="block rounded-lg shadow-lg bg-[#EDEDED]">
             <div class="flex flex-wrap items-center">
                 <div
                     class="grow-0 shrink-0 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12"
                 >
-                    <div class="map-container-2 w-full">
+                    <div class="h-[500px] lg:h-[550px] w-full">
                         <!-- svelte-ignore a11y-missing-attribute -->
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27895.707946087154!2d-110.9858989323161!3d29.07722373156453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce84687adfaee5%3A0xb33d5395e9887ff9!2sHermosillo%2C%20Son.!5e0!3m2!1ses-419!2smx!4v1680170154474!5m2!1ses-419!2smx"
                             class="w-full h-full"
+                            loading="lazy"
                         />
                     </div>
                 </div>

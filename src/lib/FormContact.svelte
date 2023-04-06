@@ -2,20 +2,16 @@
     import Divisor from "./Divisor.svelte";
 </script>
 
-<!-- component -->
-<link
-    rel="stylesheet"
-    href="https://cdn.tailgrids.com/tailgrids-fallback.css"
-/>
-
-<!-- ====== Contact Section Start -->
-
-<section class="py-20 px-24 lg:py-[120px] overflow-hidden relative z-10">
-    <div class="container">
-        <div class="flex flex-wrap lg:justify-between -mx-4">
-            <div class="w-full lg:w-1/2 xl:w-6/12 px-4">
-                <div class="max-w-[570px] mb-12 lg:mb-0">
-                    <span class="block mb-4 text-blue-600 font-semibold">
+<section
+    class="py-12 px-4 sm:py-20 sm:px-6 lg:py-[120px] lg:px-24 overflow-hidden relative z-10"
+>
+    <div class="max-w-screen-xl mx-auto">
+        <div class="flex flex-wrap justify-between -mx-4">
+            <div class="w-full sm:w-auto lg:w-1/2 xl:w-6/12 px-4">
+                <div class="max-w-lg mb-12 lg:mb-0">
+                    <span
+                        class="block mb-4 text-blue-600 font-semibold"
+                    >
                         Contáctanos
                     </span>
                     <h2
@@ -24,27 +20,27 @@
                   mb-6
                   uppercase
                   font-bold
-                  text-[32px]
-                  sm:text-[40px]
+                  text-[24px]
+                  sm:text-[32px]
                   lg:text-[36px]
                   xl:text-[40px]
                   "
                     >
                         Mantente en contacto con nosotros
                     </h2>
-                    <p class="text-gray-400 leading-relaxed mb-9">
+                    <p class="text-gray-400 leading-relaxed mb-6 sm:mb-9">
                         El equipo de escape tours está listo para ayudarte a
                         planificar tu próximo viaje. Si tienes alguna pregunta,
                         no dudes en contactarnos.
                     </p>
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
+            <div class="w-full sm:w-auto lg:w-1/2 xl:w-5/12 px-4">
                 <div
                     class="bg-[#F4F4F4] relative rounded-lg p-8 sm:p-12 shadow-lg"
                 >
                     <form>
-                        <div class="mb-6">
+                        <div class="mb-4 sm:mb-6">
                             <input
                                 type="text"
                                 placeholder="Nombre completo"
@@ -61,7 +57,7 @@
                         "
                             />
                         </div>
-                        <div class="mb-6">
+                        <div class="mb-4 sm:mb-6">
                             <input
                                 type="email"
                                 placeholder="Tu correo electrónico"
@@ -77,7 +73,7 @@
                         "
                             />
                         </div>
-                        <div class="mb-6">
+                        <div class="mb-4 sm:mb-6">
                             <input
                                 type="text"
                                 placeholder="Número de telefono"
@@ -94,7 +90,7 @@
                         "
                             />
                         </div>
-                        <div class="mb-6">
+                        <div class="mb-4 sm:mb-6">
                             <textarea
                                 rows="6"
                                 placeholder="Tu mensaje"
