@@ -7,6 +7,10 @@
     export let title;
     export let description;
     export let imageSrc;
+
+    function handleClick() {
+        history.pushState({}, null, "/tours");
+    }
 </script>
 
 <div class="bg-gradient-to-b from-[#1111] to-gray-900 px-8 py-10 lg:py-16">
@@ -29,6 +33,7 @@
                 <!-- svelte-ignore a11y-invalid-attribute -->
                 <Link
                     to="/tours"
+                    on:handleClick
                     class="flex lg:xl:w-1/4 justify-between py-3 px-6 text-lg font-bold bg-yellow-300 text-gray-900 rounded-full hover:bg-yellow-500 transition ease-in-out duration-300"
                     >Explorar <span>
                         <Icon
