@@ -2,13 +2,17 @@
     import { Icon } from "@steeze-ui/svelte-icon";
     import { ArrowRight } from "svelte-hero-icons";
     import { Link } from "svelte-routing";
+    import Email from "./Email.svelte";
+    import Divisor from "./Divisor.svelte";
     export let title;
     export let description;
     export let imageSrc;
 </script>
 
 <div class="bg-gradient-to-b from-[#1111] to-gray-900 px-8 py-10 lg:py-16">
-    <div class="max-w-7xl mx-auto">
+    <Email />
+    <Divisor />
+    <div class="max-w-7xl mt-16 mx-auto">
         <div class="flex flex-col md:flex-row md:items-center">
             <div class="md:w-1/2 lg:w-5/12">
                 <img src={imageSrc} alt={title} class="w-full mb-8 md:mb-0" />

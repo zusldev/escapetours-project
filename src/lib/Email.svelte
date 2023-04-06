@@ -7,7 +7,7 @@
                 <div class="grid md:grid-cols-2 gap-x-6 items-center">
                     <div class="mb-6 md:mb-0">
                         <h2 class="text-3xl text-blue-500/70 font-bold">
-                            No te pierdas nuestras noticias
+                            No te pierdas nuestros proximos tours
                             <br />
                             <span class="text-[#FFD200]"
                                 >Subscribete a nuestro newsletter</span
@@ -24,7 +24,7 @@
                             />
                             <button
                                 type="submit"
-                                class="inline-block px-7 py-3 font-medium text-sm leading-snug uppercase rounded shadow-md bg-[#FFD200] hover:text-white  hover:bg-blue-600 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0
+                                class="inline-block px-7 py-3 font-medium text-sm leading-snug uppercase rounded shadow-md bg-[#FFD200] hover:text-white hover:bg-blue-600 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0
                                 active:scale-90 active:shadow-lg transition duration-150 ease-in-out"
                                 data-mdb-ripple="true"
                                 data-mdb-ripple-color="light"

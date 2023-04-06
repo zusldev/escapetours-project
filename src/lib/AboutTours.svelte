@@ -8,12 +8,10 @@
     import Tour from "./Tour.svelte";
     import bahia from "../content/bahia";
     import sanca from "../content/sanca";
-    import Gallery from "./Gallery.svelte";
     import Divisor from "./Divisor.svelte";
     import Places from "./Places.svelte";
     import places from "../content/places";
     import ToursGallery from "./ToursGallery.svelte";
-    import Boxes from "./Boxes.svelte";
 </script>
 
 <NavBar />

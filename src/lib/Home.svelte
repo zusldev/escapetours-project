@@ -15,9 +15,7 @@
     <div>
         <Body />
     </div>
-    <div class="items-center justify-center mx-auto">
-        <Email />
-    </div>
+    
     <Presentation
         title={presentation.title}
         description={presentation.description}
