@@ -1,0 +1,19 @@
+{
+    "redirects": [
+        {
+            "source": "/",
+            "destination": "/index.html",
+            "permanent": true
+        },
+        {
+            "source": "/tours",
+            "destination": "/tours.html",
+            "permanent": true
+        },
+        {
+            "source": "/contact",
+            "destination": "/contact.html",
+            "permanent": true
+        }
+    ]
+}
