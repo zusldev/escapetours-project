@@ -91,10 +91,8 @@
     </div>
     <div class="container">
         <ToursGallery />
-        <Gallery />
-        <Boxes />
     </div>
-    <div class="bottom-0 w-full">
+    <div class="bottom-0 w-full mt-20">
         <Footer />
     </div>
 </main>

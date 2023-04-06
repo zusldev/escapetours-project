@@ -1,195 +1,40 @@
 <!-- component -->
-<section class="text-gray-600 body-font">
-    <div class="py-24 mx-auto">
+<script>
+    import galleryTour from "../content/galleryData";
+</script>
+
+<section class="text-gray-600 flex justify-center body-font">
+    <div class="mx-auto">
         <div class="flex flex-wrap -m-4">
-            <div class="lg:w-1/3 sm:w-full p-4">
-                <div
-                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
-                >
-                    <img
-                        alt="gallery"
-                        class="absolute inset-0 w-full h-full object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853109562.jpg?updatedAt=1680588448735"
-                    />
-                    <div
-                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
-                    >
-                        <h2
-                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
-                        >
-                            Kino viejo
-                        </h2>
-                        <h1
-                            class="title-font text-lg font-medium text-gray-900 mb-3"
-                        >
-                            Seccion del muelle
-                        </h1>
-                        <p class="leading-relaxed">
-                            Puestos de venta de comida y artesanias en el muelle
-                            de kino viejo
-                        </p>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+                {#each galleryTour as item}
+                    <div class="p-4">
+                        <div class="relative rounded overflow-hidden">
+                            <img
+                                alt={item.alt}
+                                class="w-full h-full object-cover object-center lg:h-[500px] sm:h-[300px] md:h-[400px]"
+                                src={item.src}
+                            />
+                            <div
+                                class="px-8 py-10 absolute inset-0 z-10 border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
+                            >
+                                <h2
+                                    class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
+                                >
+                                    {item.alt}
+                                </h2>
+                                <h1
+                                    class="title-font text-lg font-medium text-gray-900 mb-3"
+                                >
+                                    {item.title}
+                                </h1>
+                                <p class="leading-relaxed">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div
-                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
-                >
-                    <img
-                        alt="gallery"
-                        class="absolute inset-0 w-full h-full object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853109023.jpg?updatedAt=1680637375247"
-                    />
-                    <div
-                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
-                    >
-                        <h2
-                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
-                        >
-                            Primer viaje a kino
-                        </h2>
-                        <h1
-                            class="title-font text-lg font-medium text-gray-900 mb-3"
-                        >
-                            The Catalyzer
-                        </h1>
-                        <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eius, consequuntur aperiam sunt inventore, cum
-                            nesciunt dolorum fugiat eos, fuga eligendi similique
-                            nostrum sapiente assumenda doloremque ut? Rerum rem
-                            provident atque?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div
-                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
-                >
-                    <img
-                        alt="gallery"
-                        class="absolute inset-0 w-full h-full object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853110006.jpg?updatedAt=1680588446750"
-                    />
-                    <div
-                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
-                    >
-                        <h2
-                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
-                        >
-                            Primer viaje a kino
-                        </h2>
-                        <h1
-                            class="title-font text-lg font-medium text-gray-900 mb-3"
-                        >
-                            The 400 Blows
-                        </h1>
-                        <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eius, consequuntur aperiam sunt inventore, cum
-                            nesciunt dolorum fugiat eos, fuga eligendi similique
-                            nostrum sapiente assumenda doloremque ut? Rerum rem
-                            provident atque?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div
-                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
-                >
-                    <img
-                        alt="gallery"
-                        class="absolute inset-0 w-full h-full object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679852555836.jpeg?updatedAt=1680588444887"
-                    />
-                    <div
-                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
-                    >
-                        <h2
-                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
-                        >
-                            Primer viaje a kino
-                        </h2>
-                        <h1
-                            class="title-font text-lg font-medium text-gray-900 mb-3"
-                        >
-                            Neptune
-                        </h1>
-                        <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eius, consequuntur aperiam sunt inventore, cum
-                            nesciunt dolorum fugiat eos, fuga eligendi similique
-                            nostrum sapiente assumenda doloremque ut? Rerum rem
-                            provident atque?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div
-                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
-                >
-                    <img
-                        alt="gallery"
-                        class="absolute inset-0 w-full h-full object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679852556163.webp?updatedAt=1680588441194"
-                    />
-                    <div
-                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
-                    >
-                        <h2
-                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
-                        >
-                            Primer viaje a kino
-                        </h2>
-                        <h1
-                            class="title-font text-lg font-medium text-gray-900 mb-3"
-                        >
-                            Holden Caulfield
-                        </h1>
-                        <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eius, consequuntur aperiam sunt inventore, cum
-                            nesciunt dolorum fugiat eos, fuga eligendi similique
-                            nostrum sapiente assumenda doloremque ut? Rerum rem
-                            provident atque?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div
-                    class="flex relative rounded overflow-hidden w-[500x] h-[500px]"
-                >
-                    <img
-                        alt="gallery"
-                        class="absolute inset-0 w-full h-full object-cover object-center"
-                        src="https://ik.imagekit.io/escapetours/Gallery_tour/1679853109891.jpg?updatedAt=1680637372596"
-                    />
-                    <div
-                        class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100"
-                    >
-                        <h2
-                            class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"
-                        >
-                            Primer viaje a kino
-                        </h2>
-                        <h1
-                            class="title-font text-lg font-medium text-gray-900 mb-3"
-                        >
-                            Alper Kamu
-                        </h1>
-                        <p class="leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eius, consequuntur aperiam sunt inventore, cum
-                            nesciunt dolorum fugiat eos, fuga eligendi similique
-                            nostrum sapiente assumenda doloremque ut? Rerum rem
-                            provident atque?
-                        </p>
-                    </div>
-                </div>
+                {/each}
             </div>
         </div>
     </div>
