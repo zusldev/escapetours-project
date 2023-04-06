@@ -30,7 +30,7 @@
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <li class="hover:underline transition hover:text-yellow-300">
-                    <Link to="/">Home</Link>
+                    <Link to="/">Inicio</Link>
                 </li>
                 <li
                     class="hover:underline transition hover:text-yellow-300"
@@ -81,7 +81,7 @@
                 class="hover:border-b-2 hover:bg-black hover:border-yellow-300 transition hover:bg-clip-border hover:text-yellow-300"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <Link to="/">Home</Link>
+                <Link to="/">Inicio</Link>
             </li>
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
             <li
@@ -117,7 +117,7 @@
         <a
             class="btn hover:border-2 text-gray-300 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
         >
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Contacto</Link>
         </a>
     </div>
 </div>

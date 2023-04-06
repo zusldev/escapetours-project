@@ -8,6 +8,7 @@
     import FAQ from "./FAQ.svelte";
     import Footer from "./Footer.svelte";
     import { fly } from "svelte/transition";
+    import ScrollTop from "./ScrollTop.svelte";
 </script>
 
 <NavBar />
@@ -25,7 +26,7 @@
     <section id="faq">
         <FAQ />
     </section>
-
+    <ScrollTop />
     <div class="bottom-0 w-full">
         <Footer />
     </div>

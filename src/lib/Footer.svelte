@@ -1,14 +1,31 @@
+<script>
+    import { Link } from "svelte-routing";
+    import * as animateScroll from "svelte-scrollto";
+</script>
+
 <footer
     class="footer footer-center p-10 bg-[#1d1d1f] text-base-content rounded"
 >
     <div class="grid grid-flow-col gap-4">
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="link link-hover" href="/">Sobre nosotros</a>
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="link link-hover" href="/contact">Contactanos</a>
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a class="link link-hover" href="/">Preguntas frecuentes</a>
-        <!-- svelte-ignore a11y-missing-attribute -->
+        <Link to="/" class="link link-hover">Inicio</Link>
+        <Link to="/tours" class="link link-hover">Tours</Link>
+        <Link to="/contact" class="link link-hover">Contacto</Link>
+        <a
+            href="/#faq"
+            class="hover:underline"
+            on:click={() =>
+                animateScroll.scrollTo({
+                    element: "#faq",
+                    duration: 1000,
+                })}
+            on:keydown={() =>
+                animateScroll.scrollTo({
+                    element: "#faq",
+                    duration: 1000,
+                })}
+        >
+            Preguntas frecuentes
+        </a>
         <a class="link link-hover" href="/contact">Ayuda</a>
     </div>
     <div>

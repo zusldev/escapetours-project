@@ -12,6 +12,21 @@
     import Places from "./Places.svelte";
     import places from "../content/places";
     import ToursGallery from "./ToursGallery.svelte";
+    import * as animateScroll from "svelte-scrollto";
+    import ScrollTop from "./ScrollTop.svelte";
+    import { onMount } from "svelte";
+
+    let buttonStyle = "";
+
+    onMount(() => {
+        window.addEventListener("scroll", handleScroll);
+    });
+
+    function handleScroll() {
+        let scrollPosition =
+            window.pageYOffset || document.documentElement.scrollTop;
+        buttonStyle = `bottom-${scrollPosition > 0 ? "4" : "0"} right-4`;
+    }
 </script>
 
 <NavBar />
@@ -90,6 +105,7 @@
     <div class="container">
         <ToursGallery />
     </div>
+    <ScrollTop />
     <div class="bottom-0 w-full mt-20">
         <Footer />
     </div>
