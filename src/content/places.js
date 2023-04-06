@@ -1,11 +1,11 @@
 const places = {
     placesKino: {
         title: "Bahia de Kino",
-        img: "https://ik.imagekit.io/escapetours/kino_three.jpg?updatedAt=1680154493402",
+        img: "https://ik.imagekit.io/escapetours/kino_five.jpg?updatedAt=1680154489732",
     },
     placesSanCarlos: {
         title: "San Carlos",
-        img: "https://ik.imagekit.io/escapetours/sancarlosTwo.jpg?updatedAt=1680516677129",
+        img: "https://ik.imagekit.io/escapetours/Gallery_tour/sancarlos-transformed.jpeg?updatedAt=1680735299396",
     },
 };
 

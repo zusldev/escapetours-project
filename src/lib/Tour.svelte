@@ -63,15 +63,14 @@
             ¿Quieres disfrutar de un paraíso terrenal? ¡Ven con <span
                 class="text-2xl underline">Escape Tours</span
             >
-            a {title}! Déjate sorprender por sus hermosas playas de arena
-            blanca, aguas cristalinas y exquisita gastronomía local. ¡No te lo
-            pierdas!
+            a {title}! Déjate sorprender por sus hermosas playas, aguas
+            cristalinas y exquisita gastronomía local. ¡No te lo pierdas!
         </p>
     </div>
     <div class="grid max-w-screen-lg gap-8 lg:grid-cols-2 sm:mx-auto">
         <div class="grid grid-cols-2 gap-5">
             <img
-                class="object-cover w-full h-56 col-span-2 rounded shadow-lg hover:scale-110 transition duration-300 ease-in-out"
+                class="object-cover object-bottom w-full h-56 col-span-2 rounded shadow-lg hover:scale-110 transition duration-300 ease-in-out"
                 src={imageWide}
                 alt={altImgWide}
             />

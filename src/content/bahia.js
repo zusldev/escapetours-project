@@ -1,9 +1,9 @@
 const bahia = {
     title: "Bahia de Kino",
     description:
-        "Únete a Escape Tours y descubre la joya escondida de México, Bahía de Kino. Nuestro tour te llevará a las playas más hermosas de la región, donde podrás disfrutar del sol, arena y mar cristalino. También explorarás los lugares más icónicos de la zona, incluyendo la Reserva Ecológica Isla Alcatraz y la comunidad pesquera de Kino Nuevo. Además, disfrutarás de la deliciosa gastronomía local y te alojarás en los mejores hoteles de la zona. ¡No pierdas la oportunidad de vivir una experiencia inolvidable con Escape Tours!",
+        "Únete a Escape Tours y descubre la joya escondida de México, Bahía de Kino. Nuestro tour te llevará a las playas más hermosas de la región. Explorarás los lugares más icónicos de la zona, incluyendo la Reserva Ecológica Isla Alcatraz y la comunidad pesquera de Kino Nuevo. Además, disfrutarás de la deliciosa gastronomía local y te alojarás en los mejores hoteles de la zona. ¡No pierdas la oportunidad de vivir una experiencia inolvidable con Escape Tours!",
     imageWide:
-        "https://ik.imagekit.io/escapetours/1679453075590.jpg?updatedAt=1680172217619",
+        "https://ik.imagekit.io/escapetours/Gallery_tour/1679852555975.jpg?updatedAt=1680588416217",
     altImgWide: "Bahia de Kino",
     imageTwo:
         "https://ik.imagekit.io/escapetours/kino_three.jpg?updatedAt=1680154493402",
