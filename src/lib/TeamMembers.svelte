@@ -42,7 +42,7 @@
                             >
                                 <!-- Avatar -->
                                 <img
-                                    class="w-full h-72 object-cover object-top"
+                                    class="w-full h-72 object-cover object-center bg-contain"
                                     src={member.image}
                                     alt={member.name}
                                 />

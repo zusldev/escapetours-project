@@ -1,6 +1,4 @@
-<!-- Container for demo purpose -->
 <div class="container my-24 px-6 mx-auto">
-    <!-- Section: Design Block -->
     <section class="mb-32 text-gray-800 text-center md:text-left">
         <div class="flex flex-wrap justify-center">
             <div class="grow-0 shrink-0 basis-auto w-full lg:w-10/12 px-3">
@@ -37,6 +35,5 @@
             </div>
         </div>
     </section>
-    <!-- Section: Design Block -->
+    
 </div>
-<!-- Container for demo purpose -->

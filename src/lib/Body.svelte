@@ -5,8 +5,8 @@
 <div class="background">
     <img src={imageBackground} alt="Palapa en la playa en sonora" />
     <div class="text-container">
-        <p class="visita">VISITA</p>
-        <p class="sonora">SONORA</p>
+        <p class="visita" />
+        <p class="sonora">ESCAPE TOURS</p>
         <p class="eslogan px-10">
             "Date un tour y escapa de la rutina. ¡Disfruta la vida que es un
             viaje muy corto!"
@@ -15,6 +15,13 @@
 </div>
 
 <style>
+    @font-face {
+        font-family: "angry_birds";
+        src: url("../assets/fonts/feastoffleshbbitalic-qr0-webfont.woff")
+            format("woff2");
+        font-weight: normal;
+        font-style: normal;
+    }
     .background {
         display: flex;
         justify-content: center;
@@ -36,18 +43,22 @@
         animation: fadeIn 2s forwards;
     }
     .visita {
-        font-size: 1.4rem;
+        font-size: 2rem;
         font-weight: 100;
         font-family: Georgia, "Times New Roman", Times, serif;
+        /* font-family: "angry_birds"; */
     }
     .sonora {
-        font-size: 5em;
-        font-weight: bold;
+        font-size: 5rem;
+        font-weight: 200;
+        /* font-family: "angry_birds"; */
+        color: #fff;
     }
     .eslogan {
-        font-size: 1rem;
+        font-size: 2rem;
         font-weight: 100;
         font-family: Georgia, "Times New Roman", Times, serif;
+        /* font-family: "angry_birds"; */
     }
 
     img {

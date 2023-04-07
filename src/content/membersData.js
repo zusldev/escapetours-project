@@ -3,7 +3,7 @@ export const teamMembers = [
         name: "David Zuñiga",
         role: "Fundador",
         bio: "David es el fundador de la empresa. A lo largo de su vida ha recorrido gran parte de Sonora y ha aprendido mucho sobre la cultura y la historia de la región.",
-        image: "https://ik.imagekit.io/escapetours/Gallery_tour/1679853108191.jpg?updatedAt=1680637374247",
+        image: "https://ik.imagekit.io/escapetours/equipo/davidprofile-transformed-member.jpeg?updatedAt=1680902449381",
         instagram: "https://www.instagram.com/",
         facebook: "https://www.facebook.com/davidalfredozunigasoto",
         twitter: "https://twitter.com/",

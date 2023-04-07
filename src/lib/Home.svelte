@@ -9,6 +9,7 @@
     import Footer from "./Footer.svelte";
     import { fly } from "svelte/transition";
     import ScrollTop from "./ScrollTop.svelte";
+    import LastPost from "./LastPost.svelte";
 </script>
 
 <NavBar />
@@ -16,12 +17,14 @@
     <div>
         <Body />
     </div>
-
-    <Presentation
-        title={presentation.title}
-        description={presentation.description}
-        imageSrc={presentation.imageSrc}
-    />
+    <div class="">
+        <Presentation
+            title={presentation.title}
+            description={presentation.description}
+            imageSrc={presentation.imageSrc}
+        />
+    </div>
+    <LastPost />
 
     <Instructions />
 
