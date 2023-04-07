@@ -12,7 +12,7 @@
                     <div class="h-[500px] lg:h-[550px] w-full">
                         <!-- svelte-ignore a11y-missing-attribute -->
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27895.707946087154!2d-110.9858989323161!3d29.07722373156453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce84687adfaee5%3A0xb33d5395e9887ff9!2sHermosillo%2C%20Son.!5e0!3m2!1ses-419!2smx!4v1680170154474!5m2!1ses-419!2smx"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.042173471638!2d-110.92730676555975!3d31.33020837914445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d6ad47c0b8c859%3A0x95c147946bee9230!2sSerena%20Residencial!5e0!3m2!1ses-419!2smx!4v1680899999370!5m2!1ses-419!2smx"
                             class="w-full h-full"
                             loading="lazy"
                         />
