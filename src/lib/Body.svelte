@@ -7,8 +7,9 @@
     <div class="text-container">
         <p class="visita">VISITA</p>
         <p class="sonora">SONORA</p>
-        <p class="eslogan">
-            La vida es un viaje, hazlo inolvidable con nosotros
+        <p class="eslogan px-10">
+            "Date un tour y escapa de la rutina. ¡Disfruta la vida que es un
+            viaje muy corto!"
         </p>
     </div>
 </div>

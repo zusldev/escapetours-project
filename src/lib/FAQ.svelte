@@ -1,9 +1,7 @@
 <div
     class="h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparentdark:opacity-100"
 />
-<div
-    class="bg-gradient-to-b to-[#1111] from-gray-900 py-20 px-6 mx-auto"
->
+<div class="bg-gradient-to-b to-[#1111] from-gray-900 py-20 px-6 mx-auto">
     <section class="mb-32 text-gray-800">
         <div class="mx-auto xl:px-32 text-center lg:text-left">
             <h2 class="text-5xl font-bold text-center text-[#FFD200] mb-20">
@@ -59,9 +57,9 @@
 
                 <div class="justify-center hidden sm:block">
                     <img
-                        src="https://mdbootstrap.com/img/new/ecommerce/vertical/075.jpg"
+                        src="https://ik.imagekit.io/escapetours/equipo/1680754127803.jpg?updatedAt=1680891306415"
                         class="w-3/4 rounded-lg shadow-lg"
-                        alt=""
+                        alt="Equipo de Escape Tours"
                     />
                 </div>
             </div>

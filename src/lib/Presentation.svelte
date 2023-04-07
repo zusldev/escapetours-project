@@ -13,7 +13,7 @@
     }
 </script>
 
-<div class="bg-gradient-to-b from-[#1111] to-gray-900 px-8 py-10 lg:py-16">
+<div class="bg-gradient-to-b from-[#1111] to-gray-900 px-10 py-10 lg:py-16">
     <Email />
     <Divisor />
     <div class="max-w-7xl mt-16 mx-auto">

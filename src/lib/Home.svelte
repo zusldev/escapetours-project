@@ -16,13 +16,15 @@
     <div>
         <Body />
     </div>
-    
+
     <Presentation
         title={presentation.title}
         description={presentation.description}
         imageSrc={presentation.imageSrc}
     />
+
     <Instructions />
+
     <section id="faq">
         <FAQ />
     </section>
