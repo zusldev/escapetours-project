@@ -43,7 +43,7 @@
             <div class="lg:w-1/2 order-0 lg:order-1 mt-6 lg:mt-0">
                 <div class="postContainer">
                     <iframe
-                        src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fescapetoursmex&width=350&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=700"
+                        src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fescapetoursmex&width=350&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=700"
                         scrolling="yes"
                         style="border:none; overflow:hidden; width:350px; height:700px; background: white;"
                         class="rounded-lg"
