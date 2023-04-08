@@ -32,6 +32,8 @@
     },
     "dependencies": {
         "daisyui": "^2.51.5",
+        "instafeed.js": "^2.0.0",
+        "moment": "^2.29.4",
         "svelte-routing": "^1.6.0",
         "svelte-scrollto": "^0.2.0"
     }

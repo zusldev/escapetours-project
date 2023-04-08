@@ -46,19 +46,19 @@
         font-size: 2rem;
         font-weight: 100;
         font-family: Georgia, "Times New Roman", Times, serif;
-        /* font-family: "angry_birds"; */
+        font-family: "angry_birds";
     }
     .sonora {
         font-size: 5rem;
         font-weight: 200;
-        /* font-family: "angry_birds"; */
+        font-family: "angry_birds";
         color: #fff;
     }
     .eslogan {
         font-size: 2rem;
         font-weight: 100;
         font-family: Georgia, "Times New Roman", Times, serif;
-        /* font-family: "angry_birds"; */
+        font-family: "angry_birds";
     }
 
     img {
