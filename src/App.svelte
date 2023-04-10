@@ -10,5 +10,5 @@
     <Route path="/" component={Home} />
     <Route path="/tours" component={AboutTours} />
     <Route path="/contact" component={ContactUs} />
-    <Route path="/" component={Home} />
+    <Route path="/social" component={SocialNetworkPost} />
 </Router>

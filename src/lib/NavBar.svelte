@@ -40,11 +40,11 @@
                     <Link to="/tours">Tours</Link>
                 </li>
                 <li
-                    class="hover:underline disabled transition hover:text-yellow-300"
+                    class="hover:underline transition hover:text-yellow-300"
                     tabindex="0"
                 >
                     <!-- svelte-ignore a11y-missing-attribute -->
-                    <Link to="/">Social</Link>
+                    <Link to="/social">Social</Link>
                 </li>
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <li class="hover:underline transition hover:text-yellow-300">
@@ -100,11 +100,11 @@
             </li>
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
             <li
-                class="hover:border-b-2 disabled hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
+                class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
                 tabindex="0"
             >
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <Link to="/">Social</Link>
+                <Link to="/social">Social</Link>
             </li>
             <li
                 class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
