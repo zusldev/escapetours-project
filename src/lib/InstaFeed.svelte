@@ -11,35 +11,18 @@
         SpeakerXMark,
     } from "svelte-hero-icons";
     import { onMount } from "svelte";
-    import moment from "moment";
-
+    import getTimeSince from "./timeSince";
     let posts = [];
 
     onMount(async () => {
         const response = await fetch(
-            "https://graph.facebook.com/17841459158447007/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=EAAlkIUSqvNwBAN3livsWQ46TZCqNma8nhj6iZBrZA261oTOCvSjA5oKbiSTlvIkPHKlziKgIRxtm6wA4CxWtbUYD05RiAhkIocGPYOLVVXlBbuvVbTV8GAdEBNRsGZA43lbs1imuAwtazj0d0ZCaHGIBpmWl1nTW1dfoO1h4RCdTBc0ZAuY47F7QOLLCOGWwgi4reqn32l5YHT417hbLBILpvArhzXGmIZD"
+            "https://graph.facebook.com/17841459158447007/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=" +
+                process.env.ACCESS_TOKEN
         );
         const json = await response.json();
         posts = json.data;
         console.log(posts);
     });
-
-    function getTimeSince(timestamp) {
-        const date = new Date(timestamp);
-        const now = new Date();
-        const difference = now.getTime() - date.getTime();
-        const duration = moment.duration(difference);
-
-        if (duration.asMinutes() < 1) {
-            return "hace unos segundos";
-        } else if (duration.asHours() < 1) {
-            return `hace ${Math.floor(duration.asMinutes())} minutos`;
-        } else if (duration.asDays() < 1) {
-            return `hace ${Math.floor(duration.asHours())} horas`;
-        } else {
-            return `hace ${Math.floor(duration.asDays())} días`;
-        }
-    }
 </script>
 
 <!-- component -->
