@@ -150,34 +150,7 @@
         }
     }
 
-    @media (max-width: 769px) and (max-height: 1025px) {
-        .sonora {
-            font-size: 8rem !important;
-        }
-        .eslogan {
-            font-size: 3rem;
-        }
-        .text-container::after,
-        .text-container::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            border-bottom: 6px solid white;
-            width: calc(20% - 12px);
-            transform: translateX(-50%);
-            border-bottom-left-radius: 2px;
-            border-bottom-right-radius: 2px;
-        }
-
-        .text-container::after {
-            left: 60px;
-        }
-
-        .text-container::before {
-            right: 60px;
-            transform: translateX(50%);
-        }
-    }
+    
 
     .sonora {
         font-size: 10rem;
