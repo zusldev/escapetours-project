@@ -4,6 +4,10 @@
         Heart,
         ChatBubbleLeftRight,
         ArrowTopRightOnSquare,
+        ArrowLeftOnRectangle,
+        ArrowRightOnRectangle,
+        ArrowLeftCircle,
+        ArrowRightCircle,
     } from "svelte-hero-icons";
     import { onMount } from "svelte";
     import Carousel from "./Carousel.svelte";
@@ -18,7 +22,7 @@
         const response = await fetch(
             "https://graph.facebook.com/" +
                 ACCOUNT_ID +
-                "/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,children{media_url},timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=" +
+                "/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,children{media_url,media_type},timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=" +
                 ACCESS_TOKEN
         );
         const json = await response.json();
@@ -32,6 +36,69 @@
         );
         console.log(posts);
     });
+
+    //swiper carousel
+    import Swiper from "swiper";
+    import "swiper/css/bundle";
+
+    let swiper = null;
+
+    function initSwiper() {
+        swiper = new Swiper(".swiper-container", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                },
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+            scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+            },
+
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
+            },
+
+            mousewheel: {
+                sensitivity: 1,
+            },
+        });
+    }
+    function slidePrev() {
+        swiper.slidePrev();
+    }
+
+    function slideNext() {
+        swiper.slideNext();
+    }
 </script>
 
 <!-- component -->
@@ -67,7 +134,7 @@
                 <div
                     class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl"
                 >
-                    <div class="md:flex-shrink-0">
+                    <div class="md:flex-shrink-0 overflow-x-auto">
                         {#if post.media_type == "IMAGE"}
                             <!-- content here -->
                             <img
@@ -77,11 +144,52 @@
                             />
                         {/if}
                         {#if post.media_type == "CAROUSEL_ALBUM"}
-                            <img
-                                src={post.media_url}
-                                alt="Blog Cover"
-                                class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
-                            />
+                            <div
+                                class="swiper-container"
+                                on:afterUpdate={initSwiper}
+                            >
+                                <div class="swiper-wrapper">
+                                    {#each post.children.data as item}
+                                        <div class="swiper-slide relative">
+                                            {#if item.media_type == "IMAGE"}
+                                                <img
+                                                    src={item.media_url}
+                                                    alt="Blog Cover"
+                                                    class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
+                                                />
+                                            {/if}
+                                            {#if item.media_type == "VIDEO"}
+                                                <!-- svelte-ignore a11y-media-has-caption -->
+                                                <video
+                                                    src={item.media_url}
+                                                    class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
+                                                    controls
+                                                />
+                                            {/if}
+                                            <div
+                                                class="absolute lg:hidden bottom-0 left-1/2 transform -translate-x-1/2 flex w-full"
+                                            >
+                                                <div
+                                                    class="flex bg-black rounded-full mx-auto my-2 px-2"
+                                                >
+                                                    <Icon
+                                                        class="w-8 h-8 mr-1"
+                                                        src={ArrowLeftCircle}
+                                                        color="currentColor"
+                                                        on:click={slidePrev}
+                                                    />
+                                                    <Icon
+                                                        class="w-8 h-8 mr-1"
+                                                        src={ArrowRightCircle}
+                                                        color="currentColor"
+                                                        on:click={slideNext}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {/each}
+                                </div>
+                            </div>
                         {/if}
                     </div>
                     <div
@@ -103,6 +211,7 @@
                                 />
                             </a>
                         </span>
+
                         <div class="flex flex-row items-center">
                             <div
                                 class="text-xs font-medium text-gray-500 flex flex-row items-center mr-2"
@@ -127,6 +236,7 @@
                             </div>
                         </div>
                     </div>
+
                     <hr class="border-gray-300" />
                     <div
                         class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto"
