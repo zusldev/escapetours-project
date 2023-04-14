@@ -12,7 +12,7 @@
 </script>
 
 <NavBar />
-<main in:fly={{ y: 200, duration: 800 }} out:fly={{ y: 500, duration: 800 }}>
+<main in:fly={{ duration: 800 }} out:fly={{ y: 500, duration: 800 }}>
     <div>
         <Body />
     </div>

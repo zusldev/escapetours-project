@@ -13,12 +13,12 @@
     <div class="text-container mirror">
         <!-- <img src={logo} alt="Logo de Escape Tours" class="logo-img" /> -->
         <p class="sonora">ESCAPE TOURS</p>
-    </div>
-    <div class="divEslogan">
-        <p class="eslogan">
-            "Date un tour y escapa de la rutina. ¡Disfruta la vida que es un
-            viaje muy corto!"
-        </p>
+        <div class="divEslogan">
+            <p class="eslogan">
+                "Date un tour y escapa de la rutina. ¡Disfruta la vida que es un
+                viaje muy corto!"
+            </p>
+        </div>
     </div>
 </div>
 
@@ -80,11 +80,109 @@
         transform: translateX(50%);
     }
 
+    .divEslogan {
+        position: absolute;
+        bottom: 0px;
+        width: 66%;
+        padding: 20px;
+    }
+
+    .eslogan {
+        position: absolute;
+        text-align: center;
+        margin-top: -20px;
+        font-size: 3rem;
+        font-family: "Dongle";
+        color: white;
+
+        line-height: 0.7;
+    }
+
+    @media (max-width: 768px) {
+        .text-container {
+            position: absolute;
+            padding: 0px;
+        }
+
+        .text-container::after,
+        .text-container::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            border-bottom: 6px solid white;
+            width: calc(20% - 12px);
+            transform: translateX(-50%);
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        .text-container::after {
+            left: 30px;
+        }
+
+        .text-container::before {
+            right: 30px;
+            transform: translateX(50%);
+        }
+
+        .divEslogan {
+            position: relative;
+            bottom: 0px;
+            width: 66%;
+            padding: 0px;
+        }
+
+        .eslogan {
+            position: absolute;
+            text-align: center;
+            margin-top: -20px;
+            font-size: 2rem;
+            font-family: "Dongle";
+            color: white;
+            line-height: 0.7;
+            padding: 10px;
+        }
+        .sonora {
+            font-size: 5rem !important;
+            text-align: center;
+            font-family: "angry_birds";
+            padding: 0px;
+        }
+    }
+
+    @media (max-width: 769px) and (max-height: 1025px) {
+        .sonora {
+            font-size: 8rem !important;
+        }
+        .eslogan {
+            font-size: 3rem;
+        }
+        .text-container::after,
+        .text-container::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            border-bottom: 6px solid white;
+            width: calc(20% - 12px);
+            transform: translateX(-50%);
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        .text-container::after {
+            left: 60px;
+        }
+
+        .text-container::before {
+            right: 60px;
+            transform: translateX(50%);
+        }
+    }
+
     .sonora {
         font-size: 10rem;
         text-align: center;
         font-family: "angry_birds";
-        white-space: nowrap;
         background: linear-gradient(to right, white, orange);
         -webkit-background-clip: text;
         background-clip: text;
@@ -93,352 +191,6 @@
         -ms-text-fill-color: transparent;
         -o-text-fill-color: transparent;
         padding: 0 2rem;
-    }
-
-    .divEslogan {
-        position: absolute;
-        bottom: 210px;
-        width: 50%;
-        padding: 0 2rem;
-    }
-
-    .eslogan {
-        text-align: center;
-        margin-top: 0;
-        font-size: 3rem;
-        font-family: "Dongle";
-        color: white;
-        line-height: 0.7;
-    }
-
-    @media screen and (max-width: 768px) {
-        .text-container {
-            border: 6px solid white;
-            border-radius: 5px;
-            display: flex;
-            border-bottom: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-        .sonora {
-            font-size: 6rem;
-            text-align: center;
-            white-space: pre-line;
-            padding: 5px;
-            line-height: 1;
-        }
-        .eslogan {
-            font-size: 1.7rem;
-        }
-        .divEslogan {
-            position: absolute;
-            bottom: 270px;
-            width: 85%;
-            padding: 0 2rem;
-        }
-        .text-container::after,
-        .text-container::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            border-bottom: 6px solid white;
-            width: calc(20% - 12px);
-            transform: translateX(-50%);
-        }
-
-        .text-container::after {
-            left: 30px;
-        }
-
-        .text-container::before {
-            right: 30px;
-            transform: translateX(50%);
-        }
-    }
-
-    @media screen and (max-width: 425px) {
-        .text-container {
-            border: 6px solid white;
-            border-radius: 5px;
-            display: flex;
-            border-bottom: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-        .sonora {
-            font-size: 6rem;
-            text-align: center;
-            white-space: pre-line;
-            padding: 5px;
-            line-height: 1;
-        }
-        .eslogan {
-            font-size: 1.7rem;
-        }
-        .divEslogan {
-            position: absolute;
-            bottom: 220px;
-            width: 85%;
-            padding: 0 2rem;
-        }
-        .text-container::after,
-        .text-container::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            border-bottom: 6px solid white;
-            width: calc(15% - 12px);
-            transform: translateX(-50%);
-        }
-
-        .text-container::after {
-            left: 10px;
-        }
-
-        .text-container::before {
-            right: 10px;
-            transform: translateX(50%);
-        }
-    }
-
-    @media screen and (max-width: 415px) {
-        .text-container {
-            border: 6px solid white;
-            border-radius: 5px;
-            display: flex;
-            border-bottom: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-        .sonora {
-            font-size: 6rem;
-            text-align: center;
-            white-space: pre-line;
-            padding: 5px;
-            line-height: 1;
-        }
-        .eslogan {
-            font-size: 1.7rem;
-        }
-        .divEslogan {
-            position: absolute;
-            bottom: 300px;
-            width: 85%;
-            padding: 0 3rem;
-        }
-        .text-container::after,
-        .text-container::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            border-bottom: 6px solid white;
-            width: calc(19% - 12px);
-            transform: translateX(-50%);
-        }
-
-        .text-container::after {
-            left: 30px;
-        }
-
-        .text-container::before {
-            right: 30px;
-            transform: translateX(50%);
-        }
-    }
-
-    @media screen and (max-width: 415px) and (max-height: 750px) {
-        .text-container {
-            border: 6px solid white;
-            border-radius: 5px;
-            display: flex;
-            border-bottom: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-        .sonora {
-            font-size: 6rem;
-            text-align: center;
-            white-space: pre-line;
-            padding: 5px;
-            line-height: 1;
-        }
-        .eslogan {
-            font-size: 1.7rem;
-        }
-        .divEslogan {
-            position: absolute;
-            bottom: 215px;
-            width: 85%;
-            padding: 0 3rem;
-        }
-        .text-container::after,
-        .text-container::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            border-bottom: 6px solid white;
-            width: calc(19% - 12px);
-            transform: translateX(-50%);
-        }
-
-        .text-container::after {
-            left: 30px;
-        }
-
-        .text-container::before {
-            right: 30px;
-            transform: translateX(50%);
-        }
-    }
-
-
-    @media screen and (max-width: 395px) {
-        .text-container {
-            border: 6px solid white;
-            border-radius: 5px;
-            display: flex;
-            border-bottom: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-        .sonora {
-            font-size: 6rem;
-            text-align: center;
-            white-space: pre-line;
-            padding: 5px;
-            line-height: 1;
-        }
-        .eslogan {
-            font-size: 1.7rem;
-        }
-        .divEslogan {
-            position: absolute;
-            bottom: 270px;
-            width: 85%;
-            padding: 0 2rem;
-        }
-        .text-container::after,
-        .text-container::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            border-bottom: 6px solid white;
-            width: calc(20% - 12px);
-            transform: translateX(-50%);
-        }
-
-        .text-container::after {
-            left: 29px;
-        }
-
-        .text-container::before {
-            right: 29px;
-            transform: translateX(50%);
-        }
-    }
-
-    @media screen and (max-width: 376px) {
-        .text-container {
-            border: 6px solid white;
-            border-radius: 5px;
-            display: flex;
-            border-bottom: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-        .sonora {
-            font-size: 6rem;
-            text-align: center;
-            white-space: pre-line;
-            padding: 5px;
-            line-height: 1;
-        }
-        .eslogan {
-            font-size: 1.7rem;
-        }
-        .divEslogan {
-            position: absolute;
-            bottom: 180px;
-            width: 85%;
-            padding: 0 2rem;
-        }
-        .text-container::after,
-        .text-container::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            border-bottom: 6px solid white;
-            width: calc(20% - 12px);
-            transform: translateX(-50%);
-        }
-
-        .text-container::after {
-            left: 29px;
-        }
-
-        .text-container::before {
-            right: 29px;
-            transform: translateX(50%);
-        }
-    }
-
-    @media screen and (max-width: 360px) {
-        .text-container {
-            border: 6px solid white;
-            border-radius: 5px;
-            display: flex;
-            border-bottom: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-        .sonora {
-            font-size: 6rem;
-            text-align: center;
-            white-space: pre-line;
-            padding: 5px;
-            line-height: 1;
-        }
-        .eslogan {
-            font-size: 1.7rem;
-        }
-        .divEslogan {
-            position: absolute;
-            bottom: 220px;
-            width: 85%;
-            padding: 0 2rem;
-        }
-        .text-container::after,
-        .text-container::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            border-bottom: 6px solid white;
-            width: calc(20% - 12px);
-            transform: translateX(-50%);
-        }
-
-        .text-container::after {
-            left: 20px;
-        }
-
-        .text-container::before {
-            right: 20px;
-            transform: translateX(50%);
-        }
     }
 
     #imgBG {
