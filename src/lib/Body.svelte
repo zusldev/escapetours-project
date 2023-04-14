@@ -93,23 +93,18 @@
     }
     .eslogan {
         background: linear-gradient(
-                to left,
-                rgba(0, 0, 0, 0.5),
-                transparent 50%,
-                transparent 100%
-            ),
-            linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.5),
-                transparent 50%,
-                transparent 100%
-            );
-        color: #fff; /* Cambia el color del texto a blanco para que contraste con el fondo oscuro */
-        font-weight: 200; /* Usa una fuente más negrita para que el texto se destaque */
+            45deg,
+            rgba(194, 171, 240, 0.6),
+            rgba(240, 6, 229, 0.6),
+            rgba(228, 131, 4, 0.6)
+        );
+        color: #fff;
+        font-weight: 200;
         font-size: 1.2rem;
-        font-family: "Comic Sans MS", cursive; /* Utiliza una fuente más juguetona como "Comic Sans MS" */
-        padding: 10px; /* Añade un poco de espacio alrededor del texto para mejorar la legibilidad */
-        text-align: center; /* Centra el texto dentro de su contenedor */
+        font-family: "Comic Sans MS", cursive;
+        padding: 10px;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agrega una sombra de texto para hacer las letras más legibles */
     }
 
     #imgBG {
@@ -137,7 +132,7 @@
             transform: scale(1);
         }
         100% {
-            transform: scale(0.9);
+            transform: scale(1);
         }
     }
 </style>
