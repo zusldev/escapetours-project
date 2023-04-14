@@ -1,4 +1,6 @@
 <script>
+    // @ts-nocheck
+
     import { Router, Route } from "svelte-routing";
     import Home from "./lib/Home.svelte";
     import AboutTours from "./lib/AboutTours.svelte";

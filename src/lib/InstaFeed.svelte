@@ -2,25 +2,34 @@
     import { Icon } from "@steeze-ui/svelte-icon";
     import {
         Heart,
-        MagnifyingGlass,
-        Bookmark,
-        PaperAirplane,
         ChatBubbleLeftRight,
         ArrowTopRightOnSquare,
-        Play,
-        SpeakerXMark,
     } from "svelte-hero-icons";
     import { onMount } from "svelte";
+    import Carousel from "./Carousel.svelte";
     import getTimeSince from "./timeSince";
     let posts = [];
+    let videoPosts = [];
+
+    const ACCOUNT_ID = process.env.ACCOUNT_ID;
+    const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
     onMount(async () => {
         const response = await fetch(
-            "https://graph.facebook.com/17841459158447007/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=" +
-                process.env.ACCESS_TOKEN
+            "https://graph.facebook.com/" +
+                ACCOUNT_ID +
+                "/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,children{media_url},timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=" +
+                ACCESS_TOKEN
         );
         const json = await response.json();
+
         posts = json.data;
+        videoPosts = posts.filter((post) => post.media_type == "VIDEO");
+        posts = posts.filter(
+            (post) =>
+                post.media_type == "IMAGE" ||
+                post.media_type == "CAROUSEL_ALBUM"
+        );
         console.log(posts);
     });
 </script>
@@ -34,10 +43,12 @@
         <p class="mt-4 text-gray-300 dark:text-gray-400 text-lg">
             Síguenos en Instagram para ver más contenido
         </p>
-        <button
-            class="bg-white text-blue-600 px-6 py-3 rounded-full mt-8 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out"
-            >Seguir en Instagram</button
-        >
+        <a href="https://www.instagram.com/escapetours.mx" target="_blank">
+            <button
+                class="bg-white text-blue-600 px-6 py-3 rounded-full mt-8 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out"
+                >Seguir en Instagram</button
+            >
+        </a>
     </div>
 </div>
 
@@ -45,10 +56,11 @@
     class="flex bg-gradient-to-r from-pink-500 to-orange-500 flex-row flex-wrap mx-auto"
 >
     <!-- Card Component for image post -->
-    {#each posts as post}
+    {#each posts.slice(0, 6) as post}
         <!-- only images-->
         {#if post.media_type == "IMAGE" || post.media_type == "CAROUSEL_ALBUM"}
-            <!-- content here -->
+            <!---->
+
             <div
                 class="transition-all duration-150 flex w-full px-4 py-6 md:w-1/2 lg:w-1/3"
             >
@@ -56,11 +68,21 @@
                     class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl"
                 >
                     <div class="md:flex-shrink-0">
-                        <img
-                            src={post.media_url}
-                            alt="Blog Cover"
-                            class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
-                        />
+                        {#if post.media_type == "IMAGE"}
+                            <!-- content here -->
+                            <img
+                                src={post.media_url}
+                                alt="Blog Cover"
+                                class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
+                            />
+                        {/if}
+                        {#if post.media_type == "CAROUSEL_ALBUM"}
+                            <img
+                                src={post.media_url}
+                                alt="Blog Cover"
+                                class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
+                            />
+                        {/if}
                     </div>
                     <div
                         class="flex items-center justify-between px-4 py-2 overflow-hidden"
@@ -109,17 +131,19 @@
                     <div
                         class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto"
                     >
-                        <a
-                            href={post.permalink}
-                            target="_blank"
-                            class="hover:underline"
-                        >
-                            <h2
-                                class="text-2xl font-bold tracking-normal text-gray-800"
-                            >
-                                {post.caption}
-                            </h2>
-                        </a>
+                        {#if post.caption != null}
+                            <!-- content here -->
+                            <p class="text-sm text-gray-700">
+                                {post.caption.substring(0, 150).trim()}
+                                {#if post.caption.length > 150}
+                                    <a
+                                        href={post.permalink}
+                                        class="text-blue-500 hover:underline"
+                                        >...ver más</a
+                                    >
+                                {/if}
+                            </p>
+                        {/if}
                     </div>
                     <hr class="border-gray-300" />
                     <!--COMENTARIOS - MOSTRAR LOS PRIMEROS 2 -->
@@ -211,7 +235,7 @@
 <section
     class="flex flex-row bg-gradient-to-r from-pink-500 to-orange-500 flex-wrap mx-auto"
 >
-    {#each posts as post}
+    {#each videoPosts.slice(0, 3) as post}
         <!-- content here -->
 
         {#if post.media_type == "VIDEO"}
@@ -235,7 +259,7 @@
                         />
                     </div>
                     <div
-                        class="flex flex-col md:flex-row md:justify-between md:items-center w-full"
+                        class="flex flex-col justify-between md:flex-row md:justify-between md:items-center w-full"
                     >
                         <div
                             class="flex items-center justify-between px-4 py-2 overflow-hidden"
@@ -280,60 +304,19 @@
                                 </div>
                             </div>
                         </div>
-                        <hr class="border-gray-300" />
-                        {#if post.comments_count > 0}
-                            <!-- content here -->
-                            <a
-                                href={post.permalink}
-                                target="_blank"
-                                class="block text-sm font-medium text-blue-600 hover:text-blue-500 ml-4 mb-2 p-2"
-                            >
-                                Ver {post.comments_count} comentarios
-                            </a>
-                        {/if}
-                        <div
-                            class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto"
-                        >
-                            <a
-                                href={post.permalink}
-                                target="_blank"
-                                class="hover:underline"
-                            >
-                                <h2
-                                    class="text-2xl font-bold tracking-normal text-gray-800"
+                        <div>
+                            <hr class="border-gray-300" />
+                            {#if post.comments_count > 0}
+                                <!-- content here -->
+                                <a
+                                    href={post.permalink}
+                                    target="_blank"
+                                    class="block text-sm font-medium text-blue-600 hover:text-blue-500 ml-4 mb-2 p-2"
                                 >
-                                    {#if post.caption}
-                                        {post.caption}
-                                    {/if}
-                                </h2>
-                            </a>
+                                    Ver {post.comments_count} comentarios
+                                </a>
+                            {/if}
                         </div>
-
-                        <hr class="border-gray-300" />
-                        <section class="px-4 py-2 mt-2">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center flex-1">
-                                    <img
-                                        class="object-cover h-10 rounded-full"
-                                        src="https://ik.imagekit.io/escapetours/LogoEscapeTours.png?updatedAt=1680559962943"
-                                        alt="Avatar"
-                                    />
-                                    <div class="flex flex-col mx-2">
-                                        <a
-                                            href={post.permalink}
-                                            class="font-semibold text-gray-700 hover:underline"
-                                        >
-                                            {post.username}
-                                        </a>
-                                        <span class="mx-1 text-xs text-gray-600"
-                                            >{getTimeSince(
-                                                post.timestamp
-                                            )}</span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
                     </div>
                 </div>
             </div>

@@ -17,6 +17,7 @@
         "@tsconfig/svelte": "^3.0.0",
         "autoprefixer": "^10.4.7",
         "classnames": "^2.3.2",
+        "dotenv": "^16.0.3",
         "flowbite": "^1.6.4",
         "flowbite-svelte": "^0.34.3",
         "postcss": "^8.4.14",
@@ -36,6 +37,7 @@
         "instafeed.js": "^2.0.0",
         "moment": "^2.29.4",
         "svelte-routing": "^1.6.0",
-        "svelte-scrollto": "^0.2.0"
+        "svelte-scrollto": "^0.2.0",
+        "swiper": "^9.2.0"
     }
 }

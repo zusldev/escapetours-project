@@ -1,5 +1,4 @@
 <script>
-    // Importar la librería de solicitud HTTP para realizar llamadas a la API de Instagram
     import axios from "axios";
     import getTimeSince from "./timeSince";
     import { onMount } from "svelte";
@@ -23,16 +22,20 @@
         openModal(story);
     }
 
-    // Definir un componente de Svelte que muestra las historias de Instagram
-    let accessToken = process.env.ACCESS_TOKEN;
     let stories = [];
+
+    // variables de entorno
+    const ACCOUNT_ID = process.env.ACCOUNT_ID;
+    const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
     // Hacer una solicitud a la API de Instagram para obtener las historias de usuario
     const getStories = async () => {
         try {
             const response = await axios.get(
-                "https://graph.facebook.com/17841459158447007/stories?fields=media_url,caption,like_count,permalink,username,timestamp,thumbnail_url,media_type,comments_count&access_token=" +
-                    accessToken
+                "https://graph.facebook.com/" +
+                    ACCOUNT_ID +
+                    "/stories?fields=media_url,caption,like_count,permalink,username,comments_count,media_type,timestamp,thumbnail_url&access_token=" +
+                    ACCESS_TOKEN
             );
             stories = response.data.data;
         } catch (error) {
@@ -47,7 +50,7 @@
 </script>
 
 {#if stories.length > 0}
-    <div class="max-w-full mx-auto p-8">
+    <div class="max-w-full mx-auto p-8 overflow-x-auto whitespace-nowrap">
         <h2
             class="sm:text-lg sm:text-pink-700 leading-snug tracking-widest uppercase font-semibold"
         >
@@ -59,39 +62,35 @@
 
         <ul class="flex space-x-6 font-serif">
             {#each stories as story}
-                <li class="flex flex-col items-center space-y-1">
-                    <div
-                        class="bg-gradient-to-tr from-yellow-500 to-fuchsia-600 p-1 rounded-full"
+                {#if story.media_url}
+                    <!-- content here -->
+                    <li
+                        class="flex-shrink-0 flex flex-col items-center space-y-1"
                     >
-                        <!-- svelte-ignore a11y-missing-attribute -->
-                        <a
-                            class=" bg-white block rounded-full p-1 hover:-rotate-6 transform transition"
-                            on:click={(event) => handleClick(event, story)}
-                            on:keydown={(event) => handleClick(event, story)}
+                        <div
+                            class="bg-gradient-to-tr from-yellow-500 to-fuchsia-600 p-1 rounded-full"
                         >
-                            <!-- svelte-ignore a11y-media-has-caption -->
-                            {#if story.media_type === "IMAGE"}
+                            <!-- svelte-ignore a11y-missing-attribute -->
+                            <a
+                                class=" bg-white block rounded-full p-1 hover:-rotate-6 transform transition"
+                                on:click={(event) => handleClick(event, story)}
+                                on:keydown={(event) =>
+                                    handleClick(event, story)}
+                            >
+                                <!-- svelte-ignore a11y-media-has-caption -->
                                 <img
-                                    class="w-24 h-24 rounded-full object-cover"
-                                    src="https://ik.imagekit.io/escapetours/LogoEscapeTours.png?updatedAt=1680559962943"
+                                    class="h-24 w-24 rounded-full"
+                                    src={story.thumbnail_url}
                                     alt={story.caption}
                                 />
-                            {:else if story.media_type === "VIDEO"}
-                                <video
-                                    class="w-24 h-24 rounded-full object-cover"
-                                    src={story.media_url}
-                                    autoplay
-                                    muted
-                                    loop
-                                />
-                            {/if}
-                        </a>
-                    </div>
-                    <p class="text-md text-gray-500">{story.username}</p>
-                    <p class="text-sm text-gray-500">
-                        {getTimeSince(story.timestamp)}
-                    </p>
-                </li>
+                            </a>
+                        </div>
+                        <p class="text-md text-gray-500">{story.username}</p>
+                        <p class="text-sm text-gray-500">
+                            {getTimeSince(story.timestamp)}
+                        </p>
+                    </li>
+                {/if}
             {/each}
         </ul>
         <!--MODAL-->
