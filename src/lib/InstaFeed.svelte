@@ -46,26 +46,7 @@
         swiper = new Swiper(".swiper-container", {
             slidesPerView: 1,
             spaceBetween: 10,
-            loop: true,
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 50,
-                },
-            },
-
+            centeredSlides: true,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
@@ -91,13 +72,8 @@
             },
         });
     }
-    function slidePrev() {
-        swiper.slidePrev();
-    }
 
-    function slideNext() {
-        swiper.slideNext();
-    }
+    $: initSwiper();
 </script>
 
 <!-- component -->
@@ -133,7 +109,7 @@
                 <div
                     class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl"
                 >
-                    <div class="md:flex-shrink-0 overflow-x-auto">
+                    <div class="md:flex-shrink-0">
                         {#if post.media_type == "IMAGE"}
                             <!-- content here -->
                             <img
@@ -143,11 +119,8 @@
                             />
                         {/if}
                         {#if post.media_type == "CAROUSEL_ALBUM"}
-                            <div
-                                class="swiper-container"
-                                on:afterUpdate={initSwiper}
-                            >
-                                <div class="swiper-wrapper">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper overflow-x-scroll">
                                     {#each post.children.data as item}
                                         <div class="swiper-slide relative">
                                             {#if item.media_type == "IMAGE"}
@@ -165,26 +138,6 @@
                                                     controls
                                                 />
                                             {/if}
-                                            <div
-                                                class="absolute lg:hidden bottom-0 left-1/2 transform -translate-x-1/2 flex w-full"
-                                            >
-                                                <div
-                                                    class="flex bg-black rounded-full mx-auto my-2 px-2"
-                                                >
-                                                    <Icon
-                                                        class="w-8 h-8 mr-1"
-                                                        src={ArrowLeftCircle}
-                                                        color="currentColor"
-                                                        on:click={slidePrev}
-                                                    />
-                                                    <Icon
-                                                        class="w-8 h-8 mr-1"
-                                                        src={ArrowRightCircle}
-                                                        color="currentColor"
-                                                        on:click={slideNext}
-                                                    />
-                                                </div>
-                                            </div>
                                         </div>
                                     {/each}
                                 </div>
@@ -432,3 +385,32 @@
         {/if}
     {/each}
 </section>
+
+<style>
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+        
+    }
+
+    ::-moz-scrollbar {
+        width: 10px;
+    }
+
+    ::-moz-scrollbar-track {
+        background-color: #f1f1f1;
+    }
+
+    ::-moz-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+    }
+</style>
