@@ -1,6 +1,6 @@
 <script>
   import { Link } from "svelte-routing";
-  import imageLogo from "../assets/LogoEscapeTours.png";
+  import imageLogo from "../assets/LogoEscapeTours.webp";
   import * as animateScroll from "svelte-scrollto";
 </script>
 
