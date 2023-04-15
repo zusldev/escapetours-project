@@ -1,6 +1,6 @@
 import "./app.postcss";
 import App from "./App.svelte";
-import "./lib/scrollToTopProxy";
+import "./static files/scrollToTopProxy";
 
 const app = new App({
     target: document.getElementById("app"),
