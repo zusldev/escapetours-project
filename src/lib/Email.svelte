@@ -21,13 +21,13 @@
                                 placeholder="Ingresa tu correo electrónico"
                             />
                             <button
-                                type="submit"
+                                type="button"
                                 class="inline-block px-7 py-3 font-medium text-sm leading-snug uppercase rounded shadow-md bg-[#FFD200] hover:text-white hover:bg-blue-600 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0
-                                active:scale-90 active:shadow-lg transition duration-150 ease-in-out"
+                active:scale-90 active:shadow-lg transition duration-150 ease-in-out"
                                 data-mdb-ripple="true"
                                 data-mdb-ripple-color="light"
                             >
-                                Subscribirse
+                                Subscribete
                             </button>
                         </div>
                     </div>
@@ -35,5 +35,4 @@
             </div>
         </div>
     </section>
-    
 </div>

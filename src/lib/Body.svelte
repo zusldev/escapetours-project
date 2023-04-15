@@ -1,15 +1,12 @@
 <script>
     import imageBackground from "../assets/img-background.jpg";
     import imageBackgroundSecond from "../assets/img-backgroundSecond.jpeg";
-    import logo from "../assets/LogoEscapeTours.png";
+    let bg =
+        "https://ik.imagekit.io/escapetours/Home_page/1681531693116.jpeg?updatedAt=1681540059087";
 </script>
 
 <div class="background">
-    <img
-        src={imageBackgroundSecond}
-        id="imgBG"
-        alt="Palapa en la playa en sonora"
-    />
+    <img src={bg} id="imgBG" alt="Palapa en la playa en sonora" />
     <div class="text-container mirror">
         <!-- <img src={logo} alt="Logo de Escape Tours" class="logo-img" /> -->
         <p class="sonora">ESCAPE TOURS</p>
@@ -150,8 +147,6 @@
         }
     }
 
-    
-
     .sonora {
         font-size: 10rem;
         text-align: center;
@@ -171,7 +166,7 @@
         height: 100%;
         object-fit: cover;
         filter: drop-shadow(0px 4px 4px rgba(210, 156, 156, 0.15))
-            hue-rotate(35deg) brightness(0.5);
+            hue-rotate(35deg) brightness(0.8);
 
         transform: scale(1.5);
         animation: scaleImage 2s forwards ease-in-out 0.5s;

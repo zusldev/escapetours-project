@@ -3,6 +3,9 @@
     import getTimeSince from "./timeSince";
     import { onMount } from "svelte";
 
+    let escapeToursLogo =
+        "https://ik.imagekit.io/escapetours/LogoEscapeTours.png?updatedAt=1680559962943";
+
     let showModal = false;
     let currentStory = null;
 
@@ -79,7 +82,7 @@
                                 <!-- svelte-ignore a11y-media-has-caption -->
                                 <img
                                     class="h-24 w-24 rounded-full"
-                                    src={story.thumbnail_url}
+                                    src={escapeToursLogo}
                                     alt={story.caption}
                                 />
                             </a>
