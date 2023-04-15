@@ -9,6 +9,7 @@
     import Footer from "./Footer.svelte";
     import { fly } from "svelte/transition";
     import ScrollTop from "./ScrollTop.svelte";
+    import Carousel from "./Carousel.svelte";
 </script>
 
 <NavBar />

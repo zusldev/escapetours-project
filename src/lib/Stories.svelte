@@ -9,7 +9,6 @@
     function openModal(story) {
         currentStory = story;
         showModal = true;
-        console.log(currentStory);
     }
 
     function closeModal() {

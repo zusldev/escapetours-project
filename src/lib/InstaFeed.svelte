@@ -34,7 +34,6 @@
                 post.media_type == "IMAGE" ||
                 post.media_type == "CAROUSEL_ALBUM"
         );
-        console.log(posts);
     });
 
     //swiper carousel

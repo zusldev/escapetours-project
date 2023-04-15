@@ -38,6 +38,6 @@
         "moment": "^2.29.4",
         "svelte-routing": "^1.6.0",
         "svelte-scrollto": "^0.2.0",
-        "swiper": "^9.2.0"
+        "swiper": "^9.2.2"
     }
 }

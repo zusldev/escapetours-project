@@ -1,58 +1,64 @@
 <script>
-    import Swiper from "swiper";
-    import "swiper/css";
-    import "swiper/css/navigation";
-    import "swiper/css/pagination";
     import { onMount } from "svelte";
-    import { Icon } from "@steeze-ui/svelte-icon";
-    import { ArrowLeftCircle, ArrowRightCircle } from "svelte-hero-icons";
+    import "swiper/swiper-bundle.min.css";
+    import Swiper, { Navigation } from "swiper";
 
-    let swiper;
+    Swiper.use([Navigation]);
+
+    export let media = [];
 
     onMount(() => {
-        swiper = new Swiper(".swiper-container", {
-            direction: "horizontal",
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
+        const swiper = new Swiper(".swiper-container", {
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-                delay: 3000,
             },
         });
     });
 </script>
 
-<div class="swiper-container overflow-hidden">
+<div class="swiper-container overflow-hidden relative">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <img src="https://picsum.photos/id/1/500/300" alt="Slide 1" />
-        </div>
-        <div class="swiper-slide">
-            <img src="https://picsum.photos/id/2/500/300" alt="Slide 2" />
-        </div>
-        <div class="swiper-slide">
-            <img src="https://picsum.photos/id/3/500/300" alt="Slide 3" />
-        </div>
+        {#each media as item}
+            {#if item.type === "IMAGE"}
+                <div class="swiper-slide">Slide image</div>
+            {/if}
+            {#if item.type === "VIDEO"}
+                <div class="swiper-slide">Slide VIDEO</div>
+            {/if}
+        {/each}
     </div>
-    <div class="swiper-pagination" />
-    <div>
-        <Icon
-            src={ArrowLeftCircle}
-            theme="solid"
-            class="swiper-button-prev w-5 h-5 text-white"
-        />
-    </div>
-    <div>
-        <Icon
-            src={ArrowRightCircle}
-            theme="solid"
-            class="swiper-button-next w-5 h-5 text-white"
-        />
-    </div>
+    <!-- Add Arrows -->
+    <div
+        class="swiper-button-next text-red-500 hover:text-red-700 text-3xl font-bold absolute top-1/2 right-0 transform -translate-y-1/2 z-10"
+    />
+    <div
+        class="swiper-button-prev text-red-500 hover:text-red-700 text-3xl font-bold absolute top-1/2 left-0 transform -translate-y-1/2 z-10"
+    />
 </div>
+
+<style>
+    .swiper-container {
+        max-width: 470px;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        height: 250px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+        color: #f00;
+    }
+</style>
