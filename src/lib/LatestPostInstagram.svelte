@@ -1,38 +1,26 @@
-<script>
+<script lang="ts">
   import {Icon} from "@steeze-ui/svelte-icon";
   import {ArrowTopRightOnSquare, ChatBubbleLeftRight, Heart,} from "svelte-hero-icons";
   import getTimeSince from "../static files/timeSince.js";
   import Swiper from "swiper";
   import "swiper/css/bundle";
   import {onMount} from "svelte";
-  import axios from "axios";
+  import {getInstagramFeed, getPosts, getVideoPosts} from "../api/getInstagramFeed.ts";
 
-  // instagram posts
-  let posts = [];
-  let videoPosts = [];
-  const ACCOUNT_ID = process.env.ACCOUNT_ID;
-  const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
-  async function getPosts() {
+  let loading = true;
+  let posts: any[] = [];
+  let videoPosts: any[] = [];
+
+  onMount(async () => {
     try {
-      const response = await axios.get(
-        `https://graph.facebook.com/${ACCOUNT_ID}/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,children{media_url,media_type},timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=${ACCESS_TOKEN}`
-      );
-
-      posts = response.data.data;
-      videoPosts = posts.filter((post) => post.media_type === "VIDEO");
-      posts = posts.filter(
-        (post) =>
-          post.media_type === "IMAGE" || post.media_type === "CAROUSEL_ALBUM"
-      );
+      await getInstagramFeed();
+      posts = await getPosts();
+      videoPosts = await getVideoPosts();
+      loading = false;
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
-  }
-
-  //get posts on mount component
-  onMount(() => {
-    getPosts();
   });
 
 

@@ -1,6 +1,6 @@
 <script>
-  import { Icon } from "@steeze-ui/svelte-icon";
-  import { ArrowTopRightOnSquare } from "svelte-hero-icons";
+  import {Icon} from "@steeze-ui/svelte-icon";
+  import {ArrowTopRightOnSquare} from "svelte-hero-icons";
 </script>
 
 <section
@@ -23,8 +23,8 @@
         <div class="flex mt-6">
           <a
             href="https://www.facebook.com/escapetoursmex"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <button
               class="flex items-center justify-center p-5 py-3 text-sm font-medium text-white transition-colors duration-200 bg-blue-600 rounded-full shadow-md sm:w-auto hover:bg-blue-700 dark:hover:bg-blue-500 dark:bg-blue-700"
@@ -45,11 +45,11 @@
       <div class="lg:w-1/2 order-0 lg:order-1 mt-6 lg:mt-0">
         <div class="postContainer">
           <iframe
-            src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fescapetoursmex&width=350&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=700"
-            scrolling="yes"
-            style="border:none; overflow:hidden; width:350px; height:700px; background: white;"
             class="rounded-lg"
             frameborder="0"
+            scrolling="yes"
+            src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fescapetoursmex&width=350&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=700"
+            style="border:none; overflow:hidden; width:350px; height:700px; background: white;"
             title="Nuestras últimas publicaciones en Facebook"
           />
         </div>

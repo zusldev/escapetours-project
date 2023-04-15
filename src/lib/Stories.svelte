@@ -1,9 +1,9 @@
 <script>
-  import axios from "axios";
   import getTimeSince from "../static files/timeSince.js";
-  import { onMount } from "svelte";
+  import {onMount} from "svelte";
+  import {getInstagramStories} from "../api/getInstagramStories.ts";
 
-  let escapeToursLogo =
+  const escapeToursLogo =
     "https://ik.imagekit.io/escapetours/LogoEscapeTours.png?updatedAt=1680559962943";
 
   let showModal = false;
@@ -24,31 +24,14 @@
     openModal(story);
   }
 
+  // get stories
   let stories = [];
-
-  // variables de entorno
-  const ACCOUNT_ID = process.env.ACCOUNT_ID;
-  const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
-
-  // Hacer una solicitud a la API de Instagram para obtener las historias de usuario
-  const getStories = async () => {
-    try {
-      const response = await axios.get(
-        "https://graph.facebook.com/" +
-          ACCOUNT_ID +
-          "/stories?fields=media_url,caption,like_count,permalink,username,comments_count,media_type,timestamp,thumbnail_url&access_token=" +
-          ACCESS_TOKEN
-      );
-      stories = response.data.data;
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  // Llamar a la función getStories() cuando el componente se monta
-  onMount(() => {
-    getStories();
+  // deposit stories in stories variable when component is mounted
+  onMount(async () => {
+    stories = await getInstagramStories();
   });
+
+
 </script>
 
 {#if stories.length > 0}
@@ -103,7 +86,7 @@
         class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
       >
         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-          <div class="absolute inset-0 bg-gray-500 opacity-75" />
+          <div class="absolute inset-0 bg-gray-500 opacity-75"/>
         </div>
         <span
           class="hidden sm:inline-block sm:align-middle sm:h-screen"
