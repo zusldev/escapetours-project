@@ -1,46 +1,45 @@
 <script>
-  import { Icon } from "@steeze-ui/svelte-icon";
-  import {
-    Heart,
-    ChatBubbleLeftRight,
-    ArrowTopRightOnSquare,
-    ArrowLeftOnRectangle,
-    ArrowRightOnRectangle,
-    ArrowLeftCircle,
-    ArrowRightCircle,
-  } from "svelte-hero-icons";
-  import { onMount } from "svelte";
-  import Carousel from "./Carousel.svelte";
+  import {Icon} from "@steeze-ui/svelte-icon";
+  import {ArrowTopRightOnSquare, ChatBubbleLeftRight, Heart,} from "svelte-hero-icons";
   import getTimeSince from "../static files/timeSince.js";
+  import Swiper from "swiper";
+  import "swiper/css/bundle";
+  import {onMount} from "svelte";
+  import axios from "axios";
+
+  // instagram posts
   let posts = [];
   let videoPosts = [];
-
   const ACCOUNT_ID = process.env.ACCOUNT_ID;
   const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
-  onMount(async () => {
-    const response = await fetch(
-      "https://graph.facebook.com/" +
-        ACCOUNT_ID +
-        "/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,children{media_url,media_type},timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=" +
-        ACCESS_TOKEN
-    );
-    const json = await response.json();
+  async function getPosts() {
+    try {
+      const response = await axios.get(
+        `https://graph.facebook.com/${ACCOUNT_ID}/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,children{media_url,media_type},timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=${ACCESS_TOKEN}`
+      );
 
-    posts = json.data;
-    videoPosts = posts.filter((post) => post.media_type === "VIDEO");
-    posts = posts.filter(
-      (post) =>
-        post.media_type === "IMAGE" || post.media_type === "CAROUSEL_ALBUM"
-    );
+      posts = response.data.data;
+      videoPosts = posts.filter((post) => post.media_type === "VIDEO");
+      posts = posts.filter(
+        (post) =>
+          post.media_type === "IMAGE" || post.media_type === "CAROUSEL_ALBUM"
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  //get posts on mount component
+  onMount(() => {
+    getPosts();
   });
 
-  //swiper carousel
-  import Swiper from "swiper";
-  import "swiper/css/bundle";
 
+  //swiper
   let swiper = null;
 
+  //swiper init function config
   function initSwiper() {
     swiper = new Swiper(".swiper-container", {
       slidesPerView: 1,
@@ -72,6 +71,7 @@
     });
   }
 
+  // swiper
   $: initSwiper();
 </script>
 
@@ -87,7 +87,8 @@
     <a href="https://www.instagram.com/escapetours.mx" target="_blank">
       <button
         class="bg-white text-blue-600 px-6 py-3 rounded-full mt-8 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out"
-        >Seguir en Instagram</button
+      >Seguir en Instagram
+      </button
       >
     </a>
   </div>
@@ -99,7 +100,7 @@
   <!-- Card Component for image post -->
   {#each posts.slice(0, 6) as post}
     <!-- only images-->
-    {#if post.media_type == "IMAGE" || post.media_type == "CAROUSEL_ALBUM"}
+    {#if post.media_type === "IMAGE" || post.media_type === "CAROUSEL_ALBUM"}
       <!---->
 
       <div
@@ -109,7 +110,7 @@
           class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl"
         >
           <div class="md:flex-shrink-0">
-            {#if post.media_type == "IMAGE"}
+            {#if post.media_type === "IMAGE"}
               <!-- content here -->
               <img
                 src={post.media_url}
@@ -117,25 +118,24 @@
                 class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
               />
             {/if}
-            {#if post.media_type == "CAROUSEL_ALBUM"}
+            {#if post.media_type === "CAROUSEL_ALBUM"}
               <div class="swiper-container">
                 <div class="swiper-wrapper overflow-x-scroll">
                   {#each post.children.data as item}
                     <div class="swiper-slide relative">
-                      {#if item.media_type == "IMAGE"}
+                      {#if item.media_type === "IMAGE"}
                         <img
                           src={item.media_url}
                           alt="Blog Cover"
                           class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
                         />
                       {/if}
-                      {#if item.media_type == "VIDEO"}
+                      {#if item.media_type === "VIDEO"}
                         <!-- svelte-ignore a11y-media-has-caption -->
                         <video
                           src={item.media_url}
                           class="object-fill w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
-                          controls
-                        />
+                          controls></video>
                       {/if}
                     </div>
                   {/each}
@@ -161,7 +161,7 @@
               <div
                 class="text-xs font-medium text-gray-500 flex flex-row items-center mr-2"
               >
-                <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor" />
+                <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor"/>
                 <span>{post.like_count}</span>
               </div>
 
@@ -178,7 +178,7 @@
             </div>
           </div>
 
-          <hr class="border-gray-300" />
+          <hr class="border-gray-300"/>
           <div
             class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto"
           >
@@ -188,13 +188,13 @@
                 {post.caption.substring(0, 150).trim()}
                 {#if post.caption.length > 150}
                   <a href={post.permalink} class="text-blue-500 hover:underline"
-                    >...ver más</a
+                  >...ver más</a
                   >
                 {/if}
               </p>
             {/if}
           </div>
-          <hr class="border-gray-300" />
+          <hr class="border-gray-300"/>
           <!--COMENTARIOS - MOSTRAR LOS PRIMEROS 2 -->
           <div>
             <!-- Comentarios -->
@@ -236,7 +236,7 @@
             </div>
           </div>
 
-          <hr class="border-gray-300" />
+          <hr class="border-gray-300"/>
           <section class="px-4 py-2 mt-2">
             <div class="flex items-center justify-between">
               <div class="flex items-center flex-1">
@@ -253,7 +253,7 @@
                     {post.username}
                   </a>
                   <span class="mx-1 text-xs text-gray-600"
-                    >{getTimeSince(post.timestamp)}</span
+                  >{getTimeSince(post.timestamp)}</span
                   >
                 </div>
               </div>
@@ -281,7 +281,7 @@
   {#each videoPosts.slice(0, 3) as post}
     <!-- content here -->
 
-    {#if post.media_type == "VIDEO"}
+    {#if post.media_type === "VIDEO"}
       <div
         class="transition-all duration-150 flex w-full px-4 py-6 md:w-1/2 lg:w-1/3"
       >
@@ -298,8 +298,7 @@
               loop
               playsinline
               preload="auto"
-              on:click={() => {}}
-            />
+              on:click={() => {}}></video>
           </div>
           <div
             class="flex flex-col justify-between md:flex-row md:justify-between md:items-center w-full"
@@ -321,7 +320,7 @@
                 <div
                   class="text-xs font-medium text-gray-500 flex flex-row items-center mr-2"
                 >
-                  <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor" />
+                  <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor"/>
                   <span>{post.like_count}</span>
                 </div>
 
@@ -338,7 +337,7 @@
               </div>
             </div>
             <div>
-              <hr class="border-gray-300" />
+              <hr class="border-gray-300"/>
               {#if post.comments_count > 0}
                 <!-- content here -->
                 <a
@@ -358,29 +357,29 @@
 </section>
 
 <style>
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
 
-  ::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-  }
+    ::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 5px;
-  }
+    ::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+    }
 
-  ::-moz-scrollbar {
-    width: 10px;
-  }
+    ::-moz-scrollbar {
+        width: 10px;
+    }
 
-  ::-moz-scrollbar-track {
-    background-color: #f1f1f1;
-  }
+    ::-moz-scrollbar-track {
+        background-color: #f1f1f1;
+    }
 
-  ::-moz-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 5px;
-  }
+    ::-moz-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 5px;
+    }
 </style>
