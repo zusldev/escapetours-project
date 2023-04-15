@@ -1,6 +1,6 @@
 <script>
     import { Icon } from "@steeze-ui/svelte-icon";
-    import { Map, MapPin } from "svelte-hero-icons";
+    import { Map } from "svelte-hero-icons";
     export let title;
     export let description;
     export let resume;

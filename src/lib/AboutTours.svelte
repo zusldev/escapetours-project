@@ -1,9 +1,6 @@
 <script>
-    import { fly, scale, slide } from "svelte/transition";
-    import { fade } from "svelte/transition";
-    import Contact from "./Contact.svelte";
+    import { fly } from "svelte/transition";
     import Footer from "./Footer.svelte";
-    import FormContact from "./FormContact.svelte";
     import NavBar from "./NavBar.svelte";
     import Tour from "./Tour.svelte";
     import bahia from "../content/bahia";
@@ -12,7 +9,6 @@
     import Places from "./Places.svelte";
     import places from "../content/places";
     import ToursGallery from "./ToursGallery.svelte";
-    import * as animateScroll from "svelte-scrollto";
     import ScrollTop from "./ScrollTop.svelte";
     import { onMount } from "svelte";
 

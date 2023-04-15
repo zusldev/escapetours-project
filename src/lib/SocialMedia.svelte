@@ -1,4 +1,3 @@
-<!-- Container for demo purpose -->
 <div class="container my-24 px-6 mx-auto">
     <!-- Section: Design Block -->
     <section class="mb-32 text-gray-800 text-center md:text-left">
@@ -94,4 +93,3 @@
     </section>
     <!-- Section: Design Block -->
 </div>
-<!-- Container for demo purpose -->

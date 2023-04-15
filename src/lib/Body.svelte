@@ -1,6 +1,4 @@
 <script>
-    import imageBackground from "../assets/img-background.jpg";
-    import imageBackgroundSecond from "../assets/img-backgroundSecond.jpeg";
     let bg =
         "https://ik.imagekit.io/escapetours/Home_page/1681531693116.jpeg?updatedAt=1681540059087";
 </script>
@@ -8,7 +6,6 @@
 <div class="background">
     <img src={bg} id="imgBG" alt="Palapa en la playa en sonora" />
     <div class="text-container mirror">
-        <!-- <img src={logo} alt="Logo de Escape Tours" class="logo-img" /> -->
         <p class="sonora">ESCAPE TOURS</p>
         <div class="divEslogan">
             <p class="eslogan">
