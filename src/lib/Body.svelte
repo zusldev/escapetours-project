@@ -25,7 +25,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
   .container-whatsapp {
     position: absolute;
-    top: 25rem;
+    top: 20rem;
   }
   @font-face {
     font-family: "angry_birds";
@@ -47,7 +47,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     position: relative;
     overflow: hidden;
   }

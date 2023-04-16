@@ -9,7 +9,24 @@
   <button
     class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full inline-flex items-center"
   >
-    <img src={whatsapplogosvg} alt="whatsapp" class="w-10 h-10 mr-2" />
+    <img src={whatsapplogosvg} alt="whatsapp" class="w-10 h-10 mr-2 iconwha" />
     <span class="font-bold">Chatea con nosotros</span>
   </button>
 </a>
+
+<style>
+  .iconwha {
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
