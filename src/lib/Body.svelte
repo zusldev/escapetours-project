@@ -109,7 +109,7 @@
     }
     .container-whatsapp {
       position: absolute;
-      top: 18rem;
+      top: 19rem;
     }
     .text-container {
       position: absolute;
@@ -160,7 +160,7 @@
       text-align: center;
       font-family: "angry_birds";
       padding: 0px;
-      line-height: 1;
+      line-height: 1.2;
     }
   }
 
