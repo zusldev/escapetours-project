@@ -1,4 +1,6 @@
 <script>
+  import ButtonWhatsapp from "./ButtonWhatsapp.svelte";
+
   let bg =
     "https://ik.imagekit.io/escapetours/Home_page/1681531693116.jpeg?updatedAt=1681540059087";
 </script>
@@ -13,12 +15,18 @@
         muy corto!"
       </p>
     </div>
+    <div class="container-whatsapp absolute">
+      <ButtonWhatsapp />
+    </div>
   </div>
 </div>
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
-
+  .container-whatsapp {
+    position: absolute;
+    top: 25rem;
+  }
   @font-face {
     font-family: "angry_birds";
     src: url("../assets/fonts/feastoffleshbbitalic-qr0-webfont.woff")
@@ -96,6 +104,13 @@
   }
 
   @media (max-width: 768px) {
+    .background {
+      max-height: 90vh;
+    }
+    .container-whatsapp {
+      position: absolute;
+      top: 18rem;
+    }
     .text-container {
       position: absolute;
       padding: 0px;
@@ -125,14 +140,14 @@
     .divEslogan {
       position: relative;
       bottom: 0px;
-      width: 66%;
+      width: 70%;
       padding: 0px;
     }
 
     .eslogan {
       position: absolute;
       text-align: center;
-      margin-top: -20px;
+      margin-top: -10px;
       font-size: 2rem;
       font-family: "Dongle";
       color: white;
@@ -145,6 +160,7 @@
       text-align: center;
       font-family: "angry_birds";
       padding: 0px;
+      line-height: 1;
     }
   }
 
