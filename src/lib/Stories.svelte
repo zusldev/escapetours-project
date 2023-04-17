@@ -90,7 +90,7 @@
                 <!-- svelte-ignore a11y-media-has-caption -->
                 <img
                   class="h-24 w-24 rounded-full"
-                  src={escapeToursLogo}
+                  src={story.thumbnail_url ? story.thumbnail_url : escapeToursLogo}
                   alt={story.caption}
                 />
               </a>
