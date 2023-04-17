@@ -1,13 +1,43 @@
-<script>
+<script lang="ts">
   import getTimeSince from "../static files/timeSince.js";
-  import {onMount} from "svelte";
-  import {getInstagramStories} from "../api/getInstagramStories.ts";
+  import { onMount } from "svelte";
+  import { getInstagramStories } from "../api/getInstagramStories.ts";
+  import { Icon } from "@steeze-ui/svelte-icon";
+  import { Play, XMark } from "svelte-hero-icons";
 
   const escapeToursLogo =
     "https://ik.imagekit.io/escapetours/LogoEscapeTours.png?updatedAt=1680559962943";
 
   let showModal = false;
   let currentStory = null;
+
+  // close modal
+
+  addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
+
+  addEventListener("closeModal", () => {
+    closeModal();
+  });
+
+  // play story modal
+  let video;
+  let playButtonVisible = true;
+
+  function togglePlay() {
+    if (video.paused) {
+      video.play();
+      playButtonVisible = false;
+    } else {
+      video.pause();
+      playButtonVisible = true;
+    }
+  }
+
+  // Modal functions
 
   function openModal(story) {
     currentStory = story;
@@ -26,12 +56,10 @@
 
   // get stories
   let stories = [];
-  // deposit stories in stories variable when component is mounted
+  // deposit stories when component is mounted
   onMount(async () => {
     stories = await getInstagramStories();
   });
-
-
 </script>
 
 {#if stories.length > 0}
@@ -76,46 +104,74 @@
       {/each}
     </ul>
     <!--MODAL-->
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
-      class="fixed z-10 inset-0 overflow-y-auto"
+      class="fixed z-10 inset-0"
       style="display: {showModal ? 'block' : 'none'};"
-      on:click={closeModal}
-      on:keydown={closeModal}
     >
       <div
-        class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+        class="flex items-center justify-center min-h-screen px-4 text-center sm:block sm:p-0"
       >
         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-          <div class="absolute inset-0 bg-gray-500 opacity-75"/>
+          <div
+            class="absolute inset-0 bg-gray-700 transition-all duration-300"
+          />
         </div>
         <span
           class="hidden sm:inline-block sm:align-middle sm:h-screen"
           aria-hidden="true">&#8203;</span
         >
         <div
-          class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+          class="inline-block align-bottom px-4 text-left overflow-hidden transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-headline"
         >
           <div>
-            <div class="mt-3 text-center sm:mt-5">
-              <div class="relative h-screen">
+            <div class="text-center sm:mt-5">
+              <div class="story-container rounded-lg">
                 {#if currentStory && currentStory.media_type === "IMAGE"}
                   <!-- mostrar imagen -->
                   <img
-                    class="h-full w-full object-cover"
+                    class="h-full w-full object-contain rounded-lg"
                     src={currentStory.media_url}
                     alt={currentStory.username}
                   />
+                  <div class="info">
+                    <a target="_blank" href={currentStory.permalink}>
+                      {currentStory.username}
+                    </a>
+
+                    <p>
+                      {getTimeSince(currentStory.timestamp)}
+                    </p>
+                  </div>
                 {:else if currentStory && currentStory.media_type === "VIDEO"}
                   <!-- mostrar video -->
                   <!-- svelte-ignore a11y-media-has-caption -->
                   <video
-                    class="h-full w-full object-cover"
+                    class="h-full w-full object-contain rounded-lg"
                     src={currentStory.media_url}
-                    controls
+                    bind:this={video}
+                    on:click={togglePlay}
                   />
+                  {#if playButtonVisible}
+                    <div class="play-button" on:click={togglePlay}>
+                      <Icon
+                        class="text-white w-24 h-24 hover:text-gray-200 cursor-pointer"
+                        src={Play}
+                        theme="solid"
+                      />
+                    </div>
+                  {/if}
+                  <div class="info justify-between">
+                    <a target="_blank" href={currentStory.permalink}>
+                      {currentStory.username}
+                    </a>
+                    <p>
+                      {getTimeSince(currentStory.timestamp)}
+                    </p>
+                  </div>
                 {:else}
                   <!-- mostrar mensaje de error -->
                   <p class="text-center text-gray-500">
@@ -123,19 +179,49 @@
                   </p>
                 {/if}
               </div>
+              <span
+                class="absolute rounded-lg top-0 right-0"
+                id="closeModal"
+                on:click={closeModal}
+              >
+                <Icon
+                  class="text-white w-10 h-10 hover:text-gray-200 cursor-pointer"
+                  src={XMark}
+                />
+              </span>
             </div>
-          </div>
-          <div class="mt-5 sm:mt-6">
-            <button
-              type="button"
-              class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm"
-              on:click={closeModal}
-            >
-              Close
-            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 {/if}
+
+<style>
+  .story-container {
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+  }
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+  }
+  @media (max-width: 768px) {
+    .story-container {
+      height: 100vh;
+    }
+  }
+</style>
