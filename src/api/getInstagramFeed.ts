@@ -1,8 +1,9 @@
-import axios from "axios";
+import axios, { type AxiosResponse } from "axios";
 import cache from "memory-cache";
+import type { Posts } from "./types/Posts";
 
-let postsApi: any[] = [];
-let videoPostsApi: any[] = [];
+let postsApi: Posts[] = [];
+let videoPostsApi: Posts[] = [];
 
 // @ts-ignore
 const ACCOUNT_ID = process.env.ACCOUNT_ID;
@@ -18,9 +19,10 @@ export async function getInstagramFeed() {
       postsApi = cachedData.postsApi;
       videoPostsApi = cachedData.videoPostsApi;
     } else {
-      const response = await axios.get(
+      const response: AxiosResponse<{ data: Posts[] }> = await axios.get(
         `https://graph.facebook.com/${ACCOUNT_ID}/media?fields=id,username,caption,media_url,comments_count,like_count,media_type,permalink,children{media_url,media_type},timestamp,comments.limit(10)%7Blike_count,username,text,timestamp%7D&access_token=${ACCESS_TOKEN}`
       );
+
       postsApi = response.data.data;
       videoPostsApi = postsApi.filter((post) => post.media_type === "VIDEO");
       postsApi = postsApi.filter(
@@ -34,7 +36,7 @@ export async function getInstagramFeed() {
   }
 }
 
-export function getPosts(): Promise<any[]> {
+export function getPosts(): Promise<Posts[]> {
   const cachedData = cache.get(CACHE_KEY);
   if (cachedData) {
     return Promise.resolve(
@@ -52,7 +54,7 @@ export function getPosts(): Promise<any[]> {
   }
 }
 
-export function getVideoPosts(): Promise<any[]> {
+export function getVideoPosts(): Promise<Posts[]> {
   const cachedData = cache.get(CACHE_KEY);
   if (cachedData) {
     return Promise.resolve(
