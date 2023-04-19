@@ -1,5 +1,5 @@
 <script lang="ts">
-  import getTimeSince from "../static files/timeSince.js";
+  import getTimeSince from "../utils/timeSince.js";
   import { onMount } from "svelte";
   import { getInstagramStories } from "../api/getInstagramStories.ts";
   import { Icon } from "@steeze-ui/svelte-icon";

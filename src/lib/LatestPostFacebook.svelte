@@ -50,8 +50,7 @@
             scrolling="yes"
             src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fescapetoursmex&width=350&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=700"
             style="border:none; overflow:hidden; width:350px; height:700px; background: white;"
-            title="Nuestras últimas publicaciones en Facebook"
-          />
+            title="Nuestras últimas publicaciones en Facebook"></iframe>
         </div>
       </div>
     </div>
