@@ -1,5 +1,5 @@
 <script>
-  import { fly } from "svelte/transition";
+  import {fly} from "svelte/transition";
   import Footer from "../lib/Footer.svelte";
   import NavBar from "../lib/NavBar.svelte";
   import Tour from "../lib/Tour.svelte";
@@ -10,8 +10,9 @@
   import places from "../content/places.js";
   import ToursGallery from "../lib/ToursGallery.svelte";
   import ScrollTop from "../lib/ScrollTop.svelte";
-  import { onMount } from "svelte";
+  import {onMount} from "svelte";
 
+  export let location; // svelte-routing issue
   let buttonStyle = "";
 
   onMount(() => {
@@ -25,7 +26,7 @@
   }
 </script>
 
-<NavBar />
+<NavBar/>
 <main in:fly={{ y: 200, duration: 800 }} out:fly={{ y: 500, duration: 800 }}>
   <div class="px-3 md:lg:xl:px-40 py-20 mb-10">
     <div class="flex flex-col justify-center">
@@ -37,48 +38,48 @@
       </h3>
     </div>
     <div class="grid lg:xl:grid-cols-2 sm:grid-cols-1 gap-10">
-      <Places title={places.placesKino.title} img={places.placesKino.img} />
+      <Places img={places.placesKino.img} title={places.placesKino.title}/>
       <Places
-        title={places.placesSanCarlos.title}
         img={places.placesSanCarlos.img}
+        title={places.placesSanCarlos.title}
       />
     </div>
   </div>
-  <Divisor />
+  <Divisor/>
   <Tour
-    title={bahia.title}
-    description={bahia.description}
-    resume={bahia.resume}
-    imageWide={bahia.imageWide}
-    altImgWide={bahia.altImgWide}
-    imageTwo={bahia.imageTwo}
-    altImgTwo={bahia.altImgTwo}
-    imageThree={bahia.imageThree}
     altImgThree={bahia.altImgThree}
+    altImgTwo={bahia.altImgTwo}
+    altImgWide={bahia.altImgWide}
+    description={bahia.description}
+    imageThree={bahia.imageThree}
+    imageTwo={bahia.imageTwo}
+    imageWide={bahia.imageWide}
+    latitude={bahia.locationBahia.latitude}
     location={bahia.locationBahia.location}
     locationDescription={bahia.locationBahia.locationDescription}
-    latitude={bahia.locationBahia.latitude}
     longitude={bahia.locationBahia.longitude}
-    weather={bahia.locationBahia.weather}
     map={bahia.locationBahia.map}
+    resume={bahia.resume}
+    title={bahia.title}
+    weather={bahia.locationBahia.weather}
   />
-  <Divisor />
+  <Divisor/>
   <Tour
-    title={sanca.title}
-    description={sanca.description}
-    resume={sanca.resume}
-    imageWide={sanca.imageWide}
-    altImgWide={sanca.altImgWide}
-    imageTwo={sanca.imageTwo}
-    altImgTwo={sanca.altImgTwo}
-    imageThree={sanca.imageThree}
     altImgThree={sanca.altImgThree}
+    altImgTwo={sanca.altImgTwo}
+    altImgWide={sanca.altImgWide}
+    description={sanca.description}
+    imageThree={sanca.imageThree}
+    imageTwo={sanca.imageTwo}
+    imageWide={sanca.imageWide}
+    latitude={sanca.locationSanCarlos.latitude}
     location={sanca.locationSanCarlos.location}
     locationDescription={sanca.locationSanCarlos.locationDescription}
-    latitude={sanca.locationSanCarlos.latitude}
     longitude={sanca.locationSanCarlos.longitude}
-    weather={sanca.locationSanCarlos.weather}
     map={sanca.locationSanCarlos.map}
+    resume={sanca.resume}
+    title={sanca.title}
+    weather={sanca.locationSanCarlos.weather}
   />
   <div class="container">
     <div class="flex flex-col py-20 justify-center">
@@ -88,26 +89,26 @@
       <h3 class="text-2xl font-bold text-gray-400 mb-8">
         Algunas fotos de nuestros tours y lugares a visitar:
       </h3>
-      <Divisor />
+      <Divisor/>
     </div>
   </div>
   <div class="container">
-    <ToursGallery />
+    <ToursGallery/>
   </div>
-  <ScrollTop />
+  <ScrollTop/>
   <div class="bottom-0 w-full mt-20">
-    <Footer />
+    <Footer/>
   </div>
 </main>
 
 <style>
-  .container {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    height: 100%;
-    width: 85%;
-    gap: 50px;
-  }
+    .container {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        height: 100%;
+        width: 85%;
+        gap: 50px;
+    }
 </style>
