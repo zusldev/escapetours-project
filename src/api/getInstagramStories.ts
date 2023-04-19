@@ -20,7 +20,7 @@ export async function getInstagramStories() {
   }
 
   const response: AxiosResponse<{ data: Stories[] }> = await axios.get(
-    `http://graph.facebook.com/${ACCOUNT_ID}/stories?fields=media_url,caption,like_count,permalink,username,comments_count,media_type,timestamp,thumbnail_url&access_token=${ACCESS_TOKEN}`
+    `https://graph.facebook.com/${ACCOUNT_ID}/stories?fields=media_url,caption,like_count,permalink,username,comments_count,media_type,timestamp,thumbnail_url&access_token=${ACCESS_TOKEN}`
   );
   stories = response.data.data;
   cache.put(CACHE_KEY, { stories });
