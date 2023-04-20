@@ -2,135 +2,69 @@
   import { Link } from "svelte-routing";
   import imageLogo from "../assets/LogoEscapeTours.webp";
   import * as animateScroll from "svelte-scrollto";
+  
+  let isMenuOpen = false;
+  let isHidden = 'hidden';
+  let opacity = '0';
+  const toggleMenu = () => {
+    isMenuOpen = !isMenuOpen;
+    isHidden = isMenuOpen ? 'flex' : 'hidden';
+  }
+
+  document.body.addEventListener('click', () => {
+    if (isMenuOpen) {
+     toggleMenu(); 
+    }
+  });
+
 </script>
 
-<div class="navbar bg-[#050505] h-20 flex z-20 p-4">
-  <div class="navbar-start">
-    <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-    <div class="dropdown">
-      <!-- svelte-ignore a11y-label-has-associated-control -->
-      <label tabindex="0" class="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-7 w-7"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          /></svg
-        >
-      </label>
-      <ul
-        tabindex="0"
-        class="menu menu-compact text-gray-300 bg-black dropdown-content mt-3 p-2 w-52"
+<nav class="w-full bg-zinc-900 md:text-sm lg:text-base"> 
+  <div class=" flex mx-5 justify-between max-w-screen-xl  h-16  font-sans  items-center md: md:justify-around md:flex-row md:m-auto md:p-0">  
+  
+    <button class=" text-white md:hidden" on:click|stopPropagation={toggleMenu}>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>      
+    </button>
+    <Link to="/" class="text-amber-400 p-1 font-angry md:py-2 md:px-3 sm:block text-center text-2xl font-bold  rounded-md hover:scale-110 duration-200">
+        Escape tours
+    </Link>
+
+
+
+    <div class="{isHidden} bg-zinc-700/100 z-10 flex-col overflow-auto text-sm absolute left-5 top-12 text-start rounded-md md:relative md:flex md:justify-between md:gap-x-3 lg:gap-x-7 md:flex-row md:top-0 md:left-0 md:bg-zinc-900" >
+
+    <Link to="/" class="hidden font-sans p-2  rounded-sm h-full text-white hover:text-slate-300  font-bold md:flex">Inicio</Link>
+    <Link to="/tours"  class="font-sans p-2  rounded-sm h-full text-white hover:text-slate-300  font-bold">Tours</Link>
+    <Link to="/social"  class="font-sans p-2  rounded-sm h-full text-white hover:text-slate-300  font-bold">Social</Link>
+
+      <a  class="font-sans p-2  rounded-sm h-full  text-white hover:text-slate-300  font-bold"
+      href="/#faq"
+      on:click={() =>
+        animateScroll.scrollTo({
+          element: "#faq",
+          duration: 1000,
+        })}
+      on:keydown={() =>
+        animateScroll.scrollTo({
+          element: "#faq",
+          duration: 1000,
+        })}
       >
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <li class="hover:underline transition hover:text-yellow-300">
-          <Link to="/">Inicio</Link>
-        </li>
-        <li
-          class="hover:underline transition hover:text-yellow-300"
-          tabindex="0"
-        >
-          <!-- svelte-ignore a11y-missing-attribute -->
-          <Link to="/tours">Tours</Link>
-        </li>
-        <li
-          class="hover:underline transition hover:text-yellow-300"
-          tabindex="0"
-        >
-          <!-- svelte-ignore a11y-missing-attribute -->
-          <Link to="/social">Social</Link>
-        </li>
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <li class="hover:underline transition hover:text-yellow-300">
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <a
-            href="/#faq"
-            on:click={() =>
-              animateScroll.scrollTo({
-                element: "#faq",
-                duration: 1000,
-              })}
-            on:keydown={() =>
-              animateScroll.scrollTo({
-                element: "#faq",
-                duration: 1000,
-              })}
-          >
-            Preguntas frecuentes
-          </a>
-        </li>
-      </ul>
+      Preguntas frecuentes
+      </a>
     </div>
-    <div class="flex items-center">
-      <Link to="/" class="h-16 w-16 ">
-        <img src={imageLogo} alt="Logo" class="h-16 w-16" />
+      <Link to="/contact" class=" transition-all duration-300
+        [&_svg]:animate-[wiggle_1.2s_ease-in_infinite]  
+        font-bold gap-1 py-2 px-3 rounded-md hover:from-[#fd2e46] hover:to-[#ec3449] hover:bg-gradient-to-b text-white bg-[#fd2e46] overflow-visible
+        md:gap-0 md:p-3 lg:p-3 hidden md:flex
+        ">Contacto
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+        </svg>
+        
+        
       </Link>
-    </div>
-    <div>
-      <Link to="/" class="hidden sm:block">
-        <h1 class="ml-2 btn btn-ghost normal-case text-xl text-gray-300">
-          Escape tours
-        </h1>
-      </Link>
-    </div>
-  </div>
-  <div class="navbar-center hidden text-gray-300 lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li
-        class="hover:border-b-2 hover:bg-black hover:border-yellow-300 transition hover:bg-clip-border hover:text-yellow-300"
-      >
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <Link to="/">Inicio</Link>
-      </li>
-      <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-      <li
-        class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
-        tabindex="0"
-      >
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <Link to="/tours">Tours</Link>
-      </li>
-      <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-      <li
-        class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
-        tabindex="0"
-      >
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <Link to="/social">Social</Link>
-      </li>
-      <li
-        class="hover:border-b-2 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
-      >
-        <a
-          href="/#faq"
-          on:click={() =>
-            animateScroll.scrollTo({
-              element: "#faq",
-              duration: 1000,
-            })}
-          on:keydown={() =>
-            animateScroll.scrollTo({
-              element: "#faq",
-              duration: 1000,
-            })}
-        >
-          Preguntas frecuentes
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="navbar-end">
-    <!-- svelte-ignore a11y-missing-attribute -->
-    <a
-      class="btn hover:border-2 text-gray-300 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
-    >
-      <Link to="/contact">Contacto</Link>
-    </a>
-  </div>
-</div>
+    </div> 
+  </nav>
