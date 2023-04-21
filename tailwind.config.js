@@ -8,6 +8,9 @@ const config = {
 
   theme: {
     extend: {
+      colors: {
+        navbarBg: "#111111",
+      },
       fontFamily: {
         angry: ["angry_birds", "sans-serif"],
       },
