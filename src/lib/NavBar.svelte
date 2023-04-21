@@ -18,25 +18,25 @@
   });
 </script>
 
-<nav class="w-full bg-zinc-900 md:text-sm lg:text-base">
+<nav class="w-full bg-navbarBg py-2 md:text-sm lg:text-base">
   <div
-    class=" flex mx-5 justify-between max-w-screen-xl h-16 font-sans items-center md: md:justify-around md:flex-row md:m-auto md:p-0"
+    class=" flex px-2 mx-5 justify-between max-w-screen-xl h-16 font-sans items-center md: md:justify-around md:flex-row md:m-auto md:p-0"
   >
-    <button class=" text-white md:hidden" on:click|stopPropagation={toggleMenu}>
+    <button class="md:hidden" on:click|stopPropagation={toggleMenu}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
-        stroke="currentColor"
-        class="w-6 h-6"
-      >
-        <path
+        stroke="#9ca3af"
+        class="w-8 h-8"
+        ><path
           stroke-linecap="round"
           stroke-linejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-        />
-      </svg>
+          stroke-width="2"
+          d="M4 6h16M4 12h8m-8 6h16"
+        /></svg
+      >
     </button>
     <Link
       to="/"
@@ -46,26 +46,26 @@
     </Link>
 
     <div
-      class="{isHidden} bg-zinc-700/100 z-10 flex-col overflow-auto text-sm absolute left-5 top-12 text-start rounded-md md:relative md:flex md:justify-between md:gap-x-3 lg:gap-x-7 md:flex-row md:top-0 md:left-0 md:bg-zinc-900"
+      class="{isHidden} bg-navbarBg z-10 top-14 p-5 flex-col overflow-auto text-sm absolute left-5 text-start rounded-md md:relative md:flex md:justify-between md:gap-x-3 lg:gap-x-7 md:flex-row md:top-0 md:left-0"
     >
       <Link
         to="/"
-        class="hidden font-sans p-2  rounded-sm h-full text-white hover:text-slate-300  font-bold md:flex"
+        class="hidden font-sans p-2 text-md  rounded-sm  text-white hover:text-slate-300  font-bold md:flex"
         >Inicio</Link
       >
       <Link
         to="/tours"
-        class="font-sans p-2  rounded-sm h-full text-white hover:text-slate-300  font-bold"
+        class="font-sans p-2  text-md rounded-sm  text-white hover:text-slate-300  font-bold"
         >Tours</Link
       >
       <Link
         to="/social"
-        class="font-sans p-2  rounded-sm h-full text-white hover:text-slate-300  font-bold"
+        class="font-sans p-2  text-md rounded-sm  text-white hover:text-slate-300  font-bold"
         >Social</Link
       >
 
       <a
-        class="font-sans p-2 rounded-sm h-full text-white hover:text-slate-300 font-bold"
+        class="font-sans p-2 text-md rounded-sm text-white hover:text-slate-300 font-bold"
         href="/#faq"
         on:click={() =>
           animateScroll.scrollTo({
@@ -83,10 +83,10 @@
     </div>
     <Link
       to="/contact"
-      class=" transition-all duration-300
+      class="transition-all duration-300
         [&_svg]:animate-[wiggle_1.2s_ease-in_infinite]  
-        font-bold gap-1 py-2 px-3 rounded-md hover:from-[#fd2e46] hover:to-[#962230] hover:bg-gradient-to-b text-white bg-[#fd2e46] overflow-visible
-        md:gap-0 md:p-3 lg:p-3 hidden md:flex
+        font-bold gap-1 py-2 px-3 rounded-md hover:from-[#fd2e46] hover:to-[#962230] hover:bg-gradient-to-b text-white bg-[#fd2e46] flex overflow-visible
+        md:gap-0 md:p-3 lg:p-3 md:flex
         "
       >Contacto
       <svg
