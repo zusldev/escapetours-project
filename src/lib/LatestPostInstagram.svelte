@@ -1,11 +1,20 @@
 <script lang="ts">
-  import {Icon} from "@steeze-ui/svelte-icon";
-  import {ArrowTopRightOnSquare, ChatBubbleLeftRight, Heart, SpeakerXMark,} from "svelte-hero-icons";
+  import { Icon } from "@steeze-ui/svelte-icon";
+  import {
+    ArrowTopRightOnSquare,
+    ChatBubbleLeftRight,
+    Heart,
+    SpeakerXMark,
+  } from "svelte-hero-icons";
   import getTimeSince from "../utils/timeSince.js";
   import Swiper from "swiper";
   import "swiper/css/bundle";
-  import {onMount} from "svelte";
-  import {getInstagramFeed, getPosts, getVideoPosts,} from "../api/getInstagramFeed.ts";
+  import { onMount } from "svelte";
+  import {
+    getInstagramFeed,
+    getPosts,
+    getVideoPosts,
+  } from "../api/getInstagramFeed.ts";
 
   let loading = true;
   let posts: any[] = [];
@@ -88,7 +97,7 @@
     <a href="https://www.instagram.com/escapetours.mx" target="_blank">
       <button
         class="bg-white text-blue-600 px-6 py-3 rounded-full mt-8 hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out"
-      >Seguir en Instagram
+        >Seguir en Instagram
       </button>
     </a>
   </div>
@@ -162,7 +171,7 @@
               <div
                 class="text-xs font-medium text-gray-500 flex flex-row items-center mr-2"
               >
-                <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor"/>
+                <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor" />
                 <span>{post.like_count}</span>
               </div>
 
@@ -179,7 +188,7 @@
             </div>
           </div>
 
-          <hr class="border-gray-300"/>
+          <hr class="border-gray-300" />
           <div
             class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto"
           >
@@ -189,13 +198,13 @@
                 {post.caption.substring(0, 150).trim()}
                 {#if post.caption.length > 150}
                   <a href={post.permalink} class="text-blue-500 hover:underline"
-                  >...ver más</a
+                    >...ver más</a
                   >
                 {/if}
               </p>
             {/if}
           </div>
-          <hr class="border-gray-300"/>
+          <hr class="border-gray-300" />
           <!--COMENTARIOS - MOSTRAR LOS PRIMEROS 2 -->
           <div>
             <!-- Comentarios -->
@@ -237,7 +246,7 @@
             </div>
           </div>
 
-          <hr class="border-gray-300"/>
+          <hr class="border-gray-300" />
           <section class="px-4 py-2 mt-2">
             <div class="flex items-center justify-between">
               <div class="flex items-center flex-1">
@@ -254,7 +263,7 @@
                     {post.username}
                   </a>
                   <span class="mx-1 text-xs text-gray-600"
-                  >{getTimeSince(post.timestamp)}</span
+                    >{getTimeSince(post.timestamp)}</span
                   >
                 </div>
               </div>
@@ -333,7 +342,7 @@
               <div
                 class="text-xs font-medium text-gray-500 flex flex-row items-center mr-2"
               >
-                <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor"/>
+                <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor" />
                 <span>{post.like_count}</span>
               </div>
 
@@ -350,7 +359,7 @@
             </div>
           </div>
           <div>
-            <hr class="border-gray-300"/>
+            <hr class="border-gray-300" />
             {#if post.comments_count > 0}
               <!-- content here -->
               <a
@@ -369,37 +378,37 @@
 </section>
 
 <style>
-    .mute {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
+  .mute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
 
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-    ::-webkit-scrollbar-track {
-        background-color: #f1f1f1;
-    }
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
 
-    ::-webkit-scrollbar-thumb {
-        background-color: #888;
-        border-radius: 5px;
-    }
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
 
-    ::-moz-scrollbar {
-        width: 10px;
-    }
+  ::-moz-scrollbar {
+    width: 10px;
+  }
 
-    ::-moz-scrollbar-track {
-        background-color: #f1f1f1;
-    }
+  ::-moz-scrollbar-track {
+    background-color: #f1f1f1;
+  }
 
-    ::-moz-scrollbar-thumb {
-        background-color: #888;
-        border-radius: 5px;
-    }
+  ::-moz-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
 </style>

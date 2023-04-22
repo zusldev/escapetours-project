@@ -183,7 +183,7 @@
     height: 100%;
     object-fit: cover;
     filter: drop-shadow(0px 4px 4px rgba(210, 156, 156, 0.15)) hue-rotate(35deg)
-      brightness(0.8);
+      brightness(0.6);
 
     transform: scale(1.5);
     animation: scaleImage 2s forwards ease-in-out 0.5s;

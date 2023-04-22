@@ -4,7 +4,9 @@
   import * as animateScroll from "svelte-scrollto";
 </script>
 
-<div class="navbar bg-[#050505] h-20 flex z-20 p-4">
+<div
+  class="navbar bg-opacity-80 container-navbar bg-[#050505] h-20 flex z-20 p-4"
+>
   <div class="navbar-start">
     <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
     <div class="dropdown">
@@ -134,3 +136,18 @@
     </a>
   </div>
 </div>
+
+<style>
+  .container-navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 5rem;
+    padding: 0 2rem;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+</style>
