@@ -6,17 +6,16 @@
   import Instructions from "../lib/Instructions.svelte";
   import FAQ from "../lib/FAQ.svelte";
   import Footer from "../lib/Footer.svelte";
-  import {fly} from "svelte/transition";
+  import { fade, fly } from "svelte/transition";
   import ScrollTop from "../lib/ScrollTop.svelte";
 
   export let location; // svelte-routing issue
-
 </script>
 
-<NavBar/>
-<main in:fly={{ duration: 800 }} out:fly={{ y: 500, duration: 800 }}>
+<NavBar />
+<main transition:fade>
   <div>
-    <Body/>
+    <Body />
   </div>
   <div class="">
     <Presentation
@@ -26,13 +25,13 @@
     />
   </div>
 
-  <Instructions/>
+  <Instructions />
 
   <section id="faq">
-    <FAQ/>
+    <FAQ />
   </section>
-  <ScrollTop/>
+  <ScrollTop />
   <div class="bottom-0 w-full">
-    <Footer/>
+    <Footer />
   </div>
 </main>
