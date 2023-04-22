@@ -2,10 +2,27 @@
   import { Link } from "svelte-routing";
   import imageLogo from "../assets/LogoEscapeTours.webp";
   import * as animateScroll from "svelte-scrollto";
+
+  let opacity = 1;
+  const scrollThreshold = 200; // velocidad animacion
+  const navbar = document.getElementById("navbar");
+
+  function handleScroll() {
+    opacity = 0.9;
+    if (window.scrollY > scrollThreshold) {
+      navbar.classList.add("shadow-md");
+    } else {
+      navbar.classList.remove("shadow-md");
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
 </script>
 
 <div
-  class="navbar bg-opacity-80 container-navbar bg-[#050505] h-20 flex z-20 p-4"
+  class="navbar container-navbar bg-[#050505] h-20 flex z-20 p-4"
+  id="navbar"
+  style="opacity: {opacity}"
 >
   <div class="navbar-start">
     <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -149,5 +166,6 @@
     right: 0;
     z-index: 100;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s;
   }
 </style>
