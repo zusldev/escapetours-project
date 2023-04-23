@@ -75,34 +75,32 @@
 
     <ul class="flex space-x-6 font-serif">
       {#each stories as story}
-        {#if story.media_url}
-          <!-- content here -->
-          <li class="flex-shrink-0 flex flex-col items-center space-y-1">
-            <div
-              class="bg-gradient-to-tr from-yellow-500 to-fuchsia-600 p-1 rounded-full"
+        <!-- content here -->
+        <li class="flex-shrink-0 flex flex-col items-center space-y-1">
+          <div
+            class="bg-gradient-to-tr from-yellow-500 to-fuchsia-600 p-1 rounded-full"
+          >
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <a
+              class=" bg-white block rounded-full p-1 hover:-rotate-6 transform transition"
+              on:click={(event) => handleClick(event, story)}
+              on:keydown={(event) => handleClick(event, story)}
             >
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <a
-                class=" bg-white block rounded-full p-1 hover:-rotate-6 transform transition"
-                on:click={(event) => handleClick(event, story)}
-                on:keydown={(event) => handleClick(event, story)}
-              >
-                <!-- svelte-ignore a11y-media-has-caption -->
-                <img
-                  class="h-24 w-24 rounded-full"
-                  src={story.thumbnail_url
-                    ? story.thumbnail_url
-                    : escapeToursLogo}
-                  alt={story.caption}
-                />
-              </a>
-            </div>
-            <p class="text-md text-gray-500">{story.username}</p>
-            <p class="text-sm text-gray-500">
-              {getTimeSince(story.timestamp)}
-            </p>
-          </li>
-        {/if}
+              <!-- svelte-ignore a11y-media-has-caption -->
+              <img
+                class="h-24 w-24 rounded-full"
+                src={story.thumbnail_url
+                  ? story.thumbnail_url
+                  : escapeToursLogo}
+                alt={story.caption}
+              />
+            </a>
+          </div>
+          <p class="text-md text-gray-500">{story.username}</p>
+          <p class="text-sm text-gray-500">
+            {getTimeSince(story.timestamp)}
+          </p>
+        </li>
       {/each}
     </ul>
     <!--MODAL-->
@@ -135,46 +133,71 @@
               <div class="story-container rounded-lg">
                 {#if currentStory && currentStory.media_type === "IMAGE"}
                   <!-- mostrar imagen -->
-                  <img
-                    class="h-full w-full object-contain rounded-lg"
-                    src={currentStory.media_url}
-                    alt={currentStory.username}
-                  />
-                  <div class="info">
-                    <a target="_blank" href={currentStory.permalink}>
-                      {currentStory.username}
-                    </a>
+                  {#if currentStory.media_url}
+                    <!-- content here -->
+                    <img
+                      class="h-full w-full object-contain rounded-lg"
+                      src={currentStory.media_url}
+                      alt={currentStory.username}
+                    />
+                    <div class="info">
+                      <a target="_blank" href={currentStory.permalink}>
+                        {currentStory.username}
+                      </a>
 
-                    <p>
-                      {getTimeSince(currentStory.timestamp)}
-                    </p>
-                  </div>
+                      <p>
+                        {getTimeSince(currentStory.timestamp)}
+                      </p>
+                    </div>
+                  {:else}
+                    <!-- if no media_url -->
+                    Hola
+                  {/if}
                 {:else if currentStory && currentStory.media_type === "VIDEO"}
                   <!-- mostrar video -->
                   <!-- svelte-ignore a11y-media-has-caption -->
-                  <video
-                    class="h-full w-full object-contain rounded-lg"
-                    src={currentStory.media_url}
-                    bind:this={video}
-                    on:click={togglePlay}
-                  />
-                  {#if playButtonVisible}
-                    <div class="play-button" on:click={togglePlay}>
-                      <Icon
-                        class="text-white w-24 h-24 hover:text-gray-200 cursor-pointer"
-                        src={Play}
-                        theme="solid"
-                      />
+                  {#if currentStory.media_url}
+                    <video
+                      class="h-full w-full object-contain rounded-lg"
+                      src={currentStory.media_url}
+                      bind:this={video}
+                      on:click={togglePlay}
+                    />
+                    {#if playButtonVisible}
+                      <div class="play-button" on:click={togglePlay}>
+                        <Icon
+                          class="text-white w-24 h-24 hover:text-gray-200 cursor-pointer"
+                          src={Play}
+                          theme="solid"
+                        />
+                      </div>
+                    {/if}
+                    <div class="info justify-between">
+                      <a target="_blank" href={currentStory.permalink}>
+                        {currentStory.username}
+                      </a>
+                      <p>
+                        {getTimeSince(currentStory.timestamp)}
+                      </p>
                     </div>
+                  {:else}
+                    <!-- if no media_url -->
+                    No se puede cargar la historia.
+                    {#if currentStory.caption}
+                      <p class="text-center text-gray-500">
+                        {currentStory.caption}
+                      </p>
+                    {/if}
+                    {#if currentStory.permalink}
+                      <a
+                        class="text-primary hover:underline"
+                        href={currentStory.permalink}
+                        target="_blank"
+                      >
+                        Ver en Instagram
+                      </a>
+                    {/if}
                   {/if}
-                  <div class="info justify-between">
-                    <a target="_blank" href={currentStory.permalink}>
-                      {currentStory.username}
-                    </a>
-                    <p>
-                      {getTimeSince(currentStory.timestamp)}
-                    </p>
-                  </div>
                 {:else}
                   <!-- mostrar mensaje de error -->
                   <p class="text-center text-gray-500">
