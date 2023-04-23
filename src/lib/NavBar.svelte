@@ -3,26 +3,28 @@
   import imageLogo from "../assets/LogoEscapeTours.webp";
   import * as animateScroll from "svelte-scrollto";
 
-  let opacity = 1;
-  const scrollThreshold = 200; // velocidad animacion
-  const navbar = document.getElementById("navbar");
+  let navbarClass = "nav";
+  let navbarOpacity = 1;
 
   function handleScroll() {
-    opacity = 0.9;
-    if (window.scrollY > scrollThreshold) {
-      navbar.classList.add("shadow-md");
+    const scrollTop = window.scrollY;
+
+    // si la posición del scroll es mayor a 0, agrega la clase del max-width
+    if (scrollTop > 100) {
+      navbarClass = "container-navbar-scroll";
+      navbarOpacity = 0.8;
     } else {
-      navbar.classList.remove("shadow-md");
+      navbarClass = "nav";
+      navbarOpacity = 1;
     }
   }
-
   window.addEventListener("scroll", handleScroll);
 </script>
 
 <div
-  class="navbar container-navbar bg-[#050505] h-20 flex z-20 p-4"
+  class="navbar {navbarClass} fixed bg-[#050505] h-20 flex z-20 p-4 transition-all duration-500 ease-in-out"
   id="navbar"
-  style="opacity: {opacity}"
+  style="opacity: {navbarOpacity} "
 >
   <div class="navbar-start">
     <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -155,7 +157,7 @@
 </div>
 
 <style>
-  .container-navbar {
+  .container-navbar-scroll {
     max-width: 1200px;
     margin: 0 auto;
     border-radius: 5rem;
@@ -166,6 +168,6 @@
     right: 0;
     z-index: 100;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.2s;
+    transition: all 0.5s ease-in-out;
   }
 </style>
