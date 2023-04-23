@@ -2,7 +2,7 @@
   import ButtonWhatsapp from "./ButtonWhatsapp.svelte";
 
   let bg =
-    "https://ik.imagekit.io/escapetours/Home_page/1681531693116.jpeg?updatedAt=1681540059087";
+    "https://ik.imagekit.io/escapetours/Gallery_tour/1679453075590.jpg?updatedAt=1680588433342";
 </script>
 
 <div class="background">
@@ -47,14 +47,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     position: relative;
     overflow: hidden;
   }
 
   .text-container {
     position: absolute;
-    border: 6px solid white;
+    border: 6px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, white, orange);
     border-radius: 5px;
     display: flex;
     border-bottom: none;
@@ -69,7 +71,7 @@
     content: "";
     position: absolute;
     bottom: 0;
-    border-bottom: 6px solid white;
+    border-bottom: 6px solid;
     width: calc(20% - 12px);
     transform: translateX(-50%);
     border-bottom-left-radius: 2px;
@@ -78,11 +80,15 @@
 
   .text-container::after {
     left: 90px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, white, orange);
   }
 
   .text-container::before {
     right: 90px;
     transform: translateX(50%);
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, orange, orange);
   }
 
   .divEslogan {
@@ -182,10 +188,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: drop-shadow(0px 4px 4px rgba(210, 156, 156, 0.15)) hue-rotate(35deg)
-      brightness(0.8);
+    filter: drop-shadow(0px 4px 4px rgba(210, 156, 156, 0.15)) hue-rotate(35deg);
 
-    transform: scale(1.5);
+    transform: scale(1.3);
     animation: scaleImage 2s forwards ease-in-out 0.5s;
 
     animation-delay: 0.8s;
@@ -193,7 +198,7 @@
 
   @keyframes scaleImage {
     0% {
-      transform: scale(1.5);
+      transform: scale(1.3);
     }
     100% {
       transform: scale(1);

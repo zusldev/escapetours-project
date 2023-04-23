@@ -3,7 +3,7 @@
 </script>
 
 <section
-  class="py-12 px-4 sm:py-20 sm:px-6 lg:py-[120px] lg:px-24 overflow-hidden relative z-10"
+  class="py-28 lg:py-36 px-4 sm:px-6 overflow-hidden relative z-10"
 >
   <div class="max-w-screen-xl mx-auto">
     <div class="flex flex-wrap justify-between -mx-4">
@@ -108,7 +108,7 @@
                 type="submit"
                 href="mailto:escapetours.mex@gmail.com?subject=Formulario%20De%20Contácto"
                 class="
-                                
+
                         w-full
                         text-white
                         bg-[#5850ec]

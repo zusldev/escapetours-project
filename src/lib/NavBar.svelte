@@ -2,9 +2,31 @@
   import { Link } from "svelte-routing";
   import imageLogo from "../assets/LogoEscapeTours.webp";
   import * as animateScroll from "svelte-scrollto";
+  import { Icon } from "@steeze-ui/svelte-icon";
+
+  let navbarClass = "nav";
+  let navbarOpacity = 1;
+
+  function handleScroll() {
+    const scrollTop = window.scrollY;
+
+    // si la posición del scroll es mayor a 0, agrega la clase del max-width
+    if (scrollTop > 0) {
+      navbarClass = "container-navbar-scroll";
+      navbarOpacity = 0.8;
+    } else {
+      navbarClass = "nav";
+      navbarOpacity = 1;
+    }
+  }
+  window.addEventListener("scroll", handleScroll);
 </script>
 
-<div class="navbar bg-[#050505] h-20 flex z-20 p-4">
+<div
+  class="navbar {navbarClass} fixed bg-gradient-to-r from-transparent/80 to-gray-900 h-20 flex z-20 p-4 transition-all duration-1000 ease-in-out"
+  id="navbar"
+  style="opacity: {navbarOpacity} transition-delay: 1s"
+>
   <div class="navbar-start">
     <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
     <div class="dropdown">
@@ -128,9 +150,61 @@
   <div class="navbar-end">
     <!-- svelte-ignore a11y-missing-attribute -->
     <a
-      class="btn hover:border-2 text-gray-300 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
+      class="btn hover:border-2 bg-primary text-gray-100 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
+      id="contact"
     >
       <Link to="/contact">Contacto</Link>
+      <span>
+        <!--svg phone vibration-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 animate-pulse"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+          />
+        </svg>
+      </span>
     </a>
   </div>
 </div>
+
+<style>
+  .container-navbar-scroll {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 5rem;
+    padding: 0 2rem;
+    top: 10px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    .container-navbar-scroll {
+      padding: 0 1rem;
+      max-width: 20em;
+    }
+    #contact {
+      height: 2.5rem;
+    }
+  }
+  /* @media (max-width: 1024px) {
+    .container-navbar-scroll {
+      padding: 0 2rem;
+      max-width: 40em;
+    }
+    #contact {
+      height: 2.5rem;
+    }
+  } */
+</style>

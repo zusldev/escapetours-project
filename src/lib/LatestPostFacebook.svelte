@@ -4,7 +4,7 @@
 </script>
 
 <section
-  class="bg-gradient-to-r from-blue-800 to-indigo-600 dark:from-gray-900 dark:to-gray-800"
+  class="bg-gradient-to-r py-20 from-blue-800 to-indigo-600 dark:from-gray-900 dark:to-gray-800"
 >
   <div
     class="py-12 lg:flex lg:items-center flex-col lg:flex-row justify-center"
