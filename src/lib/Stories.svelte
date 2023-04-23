@@ -90,7 +90,9 @@
                 <!-- svelte-ignore a11y-media-has-caption -->
                 <img
                   class="h-24 w-24 rounded-full"
-                  src={story.thumbnail_url ? story.thumbnail_url : escapeToursLogo}
+                  src={story.thumbnail_url
+                    ? story.thumbnail_url
+                    : escapeToursLogo}
                   alt={story.caption}
                 />
               </a>
@@ -106,7 +108,8 @@
     <!--MODAL-->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
-      class="fixed z-10 inset-0"
+      class="fixed z-50 inset-0"
+      id="modal"
       style="display: {showModal ? 'block' : 'none'};"
     >
       <div
