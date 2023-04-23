@@ -12,8 +12,8 @@
   export let location; // svelte-routing issue
 </script>
 
-<NavBar />
 <main transition:fade>
+  <NavBar />
   <div>
     <Body />
   </div>

@@ -26,9 +26,9 @@
   }
 </script>
 
-<NavBar />
 <main transition:fade>
-  <div class="px-3 md:lg:xl:px-40 py-36 mb-10">
+  <NavBar />
+  <div class="px-3 md:lg:xl:px-40 py-32 mb-10">
     <div class="flex flex-col justify-center">
       <h1 class="text-5xl font-extrabold text-[#FFD200] dark:text-white mb-8">
         Nuestros Tours

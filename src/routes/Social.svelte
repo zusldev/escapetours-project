@@ -10,13 +10,13 @@
   export let location; // svelte-routing issue
 </script>
 
-<NavBar />
 <main class="bg-white" transition:fade>
+  <NavBar />
   <LatestPostFacebook />
   <Stories />
   <LatestPostInstagram />
   <ScrollTop />
-  <div class="footer bg-gray-700">
+  <div class="bg-gray-700">
     <Footer />
   </div>
 </main>

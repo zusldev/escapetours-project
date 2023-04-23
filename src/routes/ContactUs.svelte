@@ -8,12 +8,8 @@
   export let location; // svelte-routing issue
 </script>
 
-<NavBar />
-<main
-  class="py-20"
-  in:fly={{ y: 200, duration: 1000 }}
-  out:fly={{ y: 500, duration: 800 }}
->
+<main in:fly={{ y: 200, duration: 1000 }} out:fly={{ y: 500, duration: 800 }}>
+  <NavBar />
   <FormContact />
   <Contact />
   <Footer />
