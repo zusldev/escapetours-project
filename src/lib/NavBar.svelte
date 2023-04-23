@@ -151,6 +151,7 @@
     <!-- svelte-ignore a11y-missing-attribute -->
     <a
       class="btn hover:border-2 bg-primary text-gray-100 hover:border-yellow-300 transition hover:bg-clip-border hover:bg-black hover:text-yellow-300"
+      id="contact"
     >
       <Link to="/contact">Contacto</Link>
       <span>
@@ -180,12 +181,30 @@
     margin: 0 auto;
     border-radius: 5rem;
     padding: 0 2rem;
-    position: fixed;
-    top: 20px;
+    top: 10px;
     left: 0;
     right: 0;
     z-index: 40;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    .container-navbar-scroll {
+      padding: 0 1rem;
+      max-width: 20em;
+    }
+    #contact {
+      height: 2.5rem;
+    }
+  }
+  /* @media (max-width: 1024px) {
+    .container-navbar-scroll {
+      padding: 0 2rem;
+      max-width: 40em;
+    }
+    #contact {
+      height: 2.5rem;
+    }
+  } */
 </style>
