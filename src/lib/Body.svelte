@@ -47,14 +47,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     position: relative;
     overflow: hidden;
   }
 
   .text-container {
     position: absolute;
-    border: 6px solid white;
+    border: 6px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, white, orange);
     border-radius: 5px;
     display: flex;
     border-bottom: none;
@@ -69,7 +71,7 @@
     content: "";
     position: absolute;
     bottom: 0;
-    border-bottom: 6px solid white;
+    border-bottom: 6px solid;
     width: calc(20% - 12px);
     transform: translateX(-50%);
     border-bottom-left-radius: 2px;
@@ -78,11 +80,15 @@
 
   .text-container::after {
     left: 90px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, white, orange);
   }
 
   .text-container::before {
     right: 90px;
     transform: translateX(50%);
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, orange, orange);
   }
 
   .divEslogan {
