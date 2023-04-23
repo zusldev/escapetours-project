@@ -3,6 +3,7 @@
   import {
     ArrowTopRightOnSquare,
     ChatBubbleLeftRight,
+    ExclamationCircle,
     Heart,
     SpeakerXMark,
   } from "svelte-hero-icons";
@@ -288,91 +289,94 @@
 <section
   class="flex flex-row bg-gradient-to-r from-pink-500 to-orange-500 flex-wrap mx-auto"
 >
-  {#each videoPosts.slice(0, 3) as post, i}
+  {#each videoPosts.slice(0, 4) as post, i}
     <!-- content here -->
 
     {#if post.media_type === "VIDEO"}
-      <div
-        class="transition-all duration-150 flex justify-center w-full px-4 py-6 md:w-1/2 lg:w-1/3"
-      >
+      {#if post.media_url}
+        <!-- content here -->
         <div
-          class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl"
+          class="transition-all duration-150 flex justify-center w-full px-4 py-6 md:w-1/2 lg:w-1/3"
         >
-          <div class="md:flex-shrink-0 relative">
-            <video
-              src={post.media_url}
-              class="object-cover lg:max-h-[780px] sm:max-h-[780px] w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
-              muted
-              autoplay
-              loop
-              playsinline
-              preload="auto"
-              id={`video-${i}`}
-              bind:this={video}
-              on:click={toggleMute}
-            />
-            {#if muteVisible}
-              <!-- svelte-ignore a11y-click-events-have-key-events -->
-              <div class="mute opacity-70" on:click={toggleMute}>
-                <Icon
-                  src={SpeakerXMark}
-                  class="w-24 h-24 text-white cursor-pointer"
-                  color="currentColor"
-                  theme={"solid"}
-                />
-              </div>
-            {/if}
-          </div>
           <div
-            class="flex flex-col justify-between md:flex-row md:justify-between md:items-center w-full"
+            class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl"
           >
-            <div class="instaPost px-4 py-4">
-              <span class="text-xs font-medium text-blue-600 uppercase">
-                <a href={post.permalink} class="flex" target="_blank">
-                  Instagram post
+            <div class="md:flex-shrink-0 relative">
+              <video
+                src={post.media_url}
+                class="object-cover lg:max-h-[780px] sm:max-h-[780px] w-full border-l-4 border-r-4 border-t-4 rounded-lg rounded-b-none"
+                muted
+                autoplay
+                loop
+                playsinline
+                preload="auto"
+                id={`video-${i}`}
+                bind:this={video}
+                on:click={toggleMute}
+              />
+              {#if muteVisible}
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <div class="mute opacity-70" on:click={toggleMute}>
                   <Icon
-                    class="w-4 h-4 ml-1"
-                    src={ArrowTopRightOnSquare}
+                    src={SpeakerXMark}
+                    class="w-24 h-24 text-white cursor-pointer"
+                    color="currentColor"
+                    theme={"solid"}
+                  />
+                </div>
+              {/if}
+            </div>
+            <div
+              class="flex flex-col justify-between md:flex-row md:justify-between md:items-center w-full"
+            >
+              <div class="instaPost px-4 py-4">
+                <span class="text-xs font-medium text-blue-600 uppercase">
+                  <a href={post.permalink} class="flex" target="_blank">
+                    Instagram post
+                    <Icon
+                      class="w-4 h-4 ml-1"
+                      src={ArrowTopRightOnSquare}
+                      color="currentColor"
+                    />
+                  </a>
+                </span>
+              </div>
+              <div class="flex flex-row ml-4 items-center">
+                <div
+                  class="text-xs font-medium text-gray-500 flex flex-row items-center mr-2"
+                >
+                  <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor" />
+                  <span>{post.like_count}</span>
+                </div>
+
+                <div
+                  class="text-xs px-4 py-4 font-medium text-gray-500 flex flex-row items-center mr-2"
+                >
+                  <Icon
+                    class="w-4 h-4 mr-1"
+                    src={ChatBubbleLeftRight}
                     color="currentColor"
                   />
+                  <span>{post.comments_count}</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <hr class="border-gray-300" />
+              {#if post.comments_count > 0}
+                <!-- content here -->
+                <a
+                  href={post.permalink}
+                  target="_blank"
+                  class="text-sm font-medium text-blue-600 hover:text-blue-500 ml-4 mb-2 p-2"
+                >
+                  Ver {post.comments_count} comentarios
                 </a>
-              </span>
+              {/if}
             </div>
-            <div class="flex flex-row ml-4 items-center">
-              <div
-                class="text-xs font-medium text-gray-500 flex flex-row items-center mr-2"
-              >
-                <Icon class="w-4 h-4 mr-1" src={Heart} color="currentColor" />
-                <span>{post.like_count}</span>
-              </div>
-
-              <div
-                class="text-xs px-4 py-4 font-medium text-gray-500 flex flex-row items-center mr-2"
-              >
-                <Icon
-                  class="w-4 h-4 mr-1"
-                  src={ChatBubbleLeftRight}
-                  color="currentColor"
-                />
-                <span>{post.comments_count}</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <hr class="border-gray-300" />
-            {#if post.comments_count > 0}
-              <!-- content here -->
-              <a
-                href={post.permalink}
-                target="_blank"
-                class="text-sm font-medium text-blue-600 hover:text-blue-500 ml-4 mb-2 p-2"
-              >
-                Ver {post.comments_count} comentarios
-              </a>
-            {/if}
           </div>
         </div>
-      </div>
+      {/if}
     {/if}
   {/each}
 </section>
