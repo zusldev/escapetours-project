@@ -2,7 +2,7 @@
   import ButtonWhatsapp from "./ButtonWhatsapp.svelte";
 
   let bg =
-    "https://ik.imagekit.io/escapetours/Home_page/1681531693116.jpeg?updatedAt=1681540059087";
+    "https://ik.imagekit.io/escapetours/Gallery_tour/1679453075590.jpg?updatedAt=1680588433342";
 </script>
 
 <div class="background">
@@ -184,7 +184,7 @@
     object-fit: cover;
     filter: drop-shadow(0px 4px 4px rgba(210, 156, 156, 0.15)) hue-rotate(35deg);
 
-    transform: scale(1.5);
+    transform: scale(1.3);
     animation: scaleImage 2s forwards ease-in-out 0.5s;
 
     animation-delay: 0.8s;
@@ -192,7 +192,7 @@
 
   @keyframes scaleImage {
     0% {
-      transform: scale(1.5);
+      transform: scale(1.3);
     }
     100% {
       transform: scale(1);
