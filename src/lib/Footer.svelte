@@ -75,9 +75,15 @@
     <p>
       Developed by: <span>
         <a
-          href="mailto:liborio07zs@gmail.com?subject=Contact%20Web%20Developer"
+          href="https://github.com/zusldev"
           target="_blank"
           class="text-yellow-300">zusldev</a
+        >
+        and
+        <a
+          href="https://github.com/Jebus-Dev"
+          target="_blank"
+          class="text-yellow-300">Jebus-Dev</a
         >
       </span>
     </p>
