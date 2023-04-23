@@ -108,7 +108,7 @@
                 type="submit"
                 href="mailto:escapetours.mex@gmail.com?subject=Formulario%20De%20Contácto"
                 class="
-                                
+
                         w-full
                         text-white
                         bg-[#5850ec]
