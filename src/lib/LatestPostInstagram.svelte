@@ -108,7 +108,7 @@
   class="flex bg-gradient-to-r from-pink-500 to-orange-500 flex-row flex-wrap mx-auto"
 >
   <!-- Card Component for image post -->
-  {#each posts.slice(0, 6) as post}
+  {#each posts.slice(0, 3) as post}
     <!-- only images-->
     {#if post.media_type === "IMAGE" || post.media_type === "CAROUSEL_ALBUM"}
       <!---->
