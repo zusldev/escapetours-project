@@ -31,13 +31,13 @@
     <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
     <div class="dropdown">
       <!-- svelte-ignore a11y-label-has-associated-control -->
-      <label tabindex="0" class="btn btn-ghost lg:hidden">
+      <label tabindex="0" class="px-10 lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-7 w-7"
           fill="none"
           viewBox="0 0 24 24"
-          stroke="currentColor"
+          stroke="#fff"
           ><path
             stroke-linecap="round"
             stroke-linejoin="round"
